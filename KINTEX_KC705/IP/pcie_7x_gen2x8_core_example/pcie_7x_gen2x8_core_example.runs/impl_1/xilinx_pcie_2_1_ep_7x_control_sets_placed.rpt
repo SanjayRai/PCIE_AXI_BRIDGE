@@ -1,0 +1,127 @@
+Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2013.4 (lin64) Build 353583 Mon Dec  9 17:26:26 MST 2013
+| Date         : Sat Jan 11 03:12:04 2014
+| Host         : MCmicro running 64-bit CentOS release 6.5 (Final)
+| Command      : report_control_sets -verbose -file xilinx_pcie_2_1_ep_7x_control_sets_placed.rpt
+| Design       : xilinx_pcie_2_1_ep_7x
+| Device       : xc7k325t
+--------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |    74 |
+| Minimum Number of register sites lost to control set restrictions |   222 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             188 |          110 |
+| No           | No                    | Yes                    |              11 |            4 |
+| No           | Yes                   | No                     |            2845 |         1053 |
+| Yes          | No                    | No                     |             314 |          118 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             684 |          265 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+
+|                    Clock Signal                   |                                     Enable Signal                                    |                                          Set/Reset Signal                                         | Slice Load Count | Bel Load Count |
++---------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      |                                                                                      |                                                                                                   |                1 |              2 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      |                                                                                      | pcie_7x_gen2x8_core_i/inst/n_0_user_reset_out_i_1                                                 |                1 |              2 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out |                                                                                      | pcie_7x_gen2x8_core_i/inst/n_0_reset_n_reg1_i_1                                                   |                1 |              2 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_RX_inst/n_0_pio_rx_sm_128.req_be[3]_i_1                       | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |                2 |              4 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_RX_inst/n_0_pio_rx_sm_128.wr_be[3]_i_1                        | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |                2 |              4 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_reg_state_eios_det[4]_i_1                             | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_reg_state_eios_det[4]_i_1__0                          | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_reg_state_eios_det[4]_i_1__1                          | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_index[4]_i_1__6                                       | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_index[4]_i_1__5                                       | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                1 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_index[4]_i_1__4                                       | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_index[4]_i_1__3                                       | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                1 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_index[4]_i_1__2                                       | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_index[4]_i_1__1                                       | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_index[4]_i_1                                          | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_index[4]_i_1__0                                       | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                1 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_reg_state_eios_det[4]_i_1__2                          | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_reg_state_eios_det[4]_i_1__6                          | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[33]_i_1               |                                                                                                   |                3 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_reg_state_eios_det[4]_i_1__5                          | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_reg_state_eios_det[4]_i_1__4                          | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_reg_state_eios_det[4]_i_1__3                          | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |                2 |              5 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_preset[17]_i_1                                   |                                                                                                   |                4 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_preset[17]_i_1__0                                |                                                                                                   |                2 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_preset[17]_i_1__1                                |                                                                                                   |                2 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_preset[17]_i_1__2                                |                                                                                                   |                3 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_preset[17]_i_1__6                                |                                                                                                   |                4 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_preset[17]_i_1__3                                |                                                                                                   |                3 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_crscode[5]_i_1__0                                     | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                2 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_preset[17]_i_1__4                                |                                                                                                   |                3 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_preset[17]_i_1__5                                |                                                                                                   |                3 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      | pcie_7x_gen2x8_core_i/inst/n_0_crscode[5]_i_1                                        | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |                2 |              6 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[33]_i_1               | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[70]_i_1                            |                3 |              7 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out |                                                                                      | pcie_7x_gen2x8_core_i/inst/n_0_inst/gt_top_i/pl_ltssm_state_q[5]_i_1                              |                2 |              7 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | pcie_7x_gen2x8_core_i/inst/inst/pcie_top_i/trn_rdst_rdy                              | pcie_7x_gen2x8_core_i/inst/user_reset_out                                                         |                3 |              7 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[33]_i_1               | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[119]_i_1                           |                6 |              8 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[33]_i_1               | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[111]_i_1                           |                3 |              8 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[33]_i_1               | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[103]_i_1                           |                4 |              8 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[33]_i_1               | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[127]_i_1                           |                5 |              9 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_RX_inst/n_0_pio_rx_sm_128.req_addr[12]_i_1                    | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |                6 |             11 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_RX_inst/n_0_pio_rx_sm_128.wr_addr[10]_i_1                     | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |                5 |             11 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_RX_inst/n_0_pio_rx_sm_128.tlp_type[7]_i_1                     | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |                9 |             18 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_txcoeff[18]_i_1__3                               | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |               10 |             19 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_txcoeff[18]_i_1__5                               | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |               11 |             19 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_txcoeff[18]_i_1__2                               | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |               10 |             19 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_txcoeff[18]_i_1__1                               | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |               10 |             19 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_txcoeff[18]_i_1__4                               | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |                7 |             19 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_txcoeff[18]_i_1                                  | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |                8 |             19 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_txcoeff[18]_i_1__0                               | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |                9 |             19 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/n_0_txeq_txcoeff[18]_i_1__6                               | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |                7 |             19 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      |                                                                                      | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |                9 |             20 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[3].pipe_user_i/sel | pcie_7x_gen2x8_core_i/inst/n_0_converge_cnt[0]_i_1__5                                             |                6 |             22 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[2].pipe_user_i/sel | pcie_7x_gen2x8_core_i/inst/n_0_converge_cnt[0]_i_1__3                                             |                6 |             22 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[1].pipe_user_i/sel | pcie_7x_gen2x8_core_i/inst/n_0_converge_cnt[0]_i_1__1                                             |                6 |             22 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[4].pipe_user_i/sel | pcie_7x_gen2x8_core_i/inst/n_0_converge_cnt[0]_i_1__7                                             |                6 |             22 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[0].pipe_user_i/sel | pcie_7x_gen2x8_core_i/inst/n_0_converge_cnt[0]_i_1                                                |                6 |             22 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[5].pipe_user_i/sel | pcie_7x_gen2x8_core_i/inst/n_0_converge_cnt[0]_i_1__9                                             |                6 |             22 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[6].pipe_user_i/sel | pcie_7x_gen2x8_core_i/inst/n_0_converge_cnt[0]_i_1__11                                            |                6 |             22 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/sel | pcie_7x_gen2x8_core_i/inst/n_0_converge_cnt[0]_i_1__13                                            |                6 |             22 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_RX_inst/n_0_pio_rx_sm_128.req_attr[1]_i_1                     | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |               14 |             31 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_MEM_inst/n_0_post_wr_data[31]_i_1                             | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |                7 |             32 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_MEM_inst/n_0_pre_wr_data[31]_i_1                              | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |               12 |             32 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_RX_inst/n_0_pio_rx_sm_128.wr_en_i_1                           | app/PIO/PIO_EP_inst/EP_RX_inst/SR[0]                                                              |               14 |             32 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[33]_i_1               | app/PIO/PIO_EP_inst/EP_TX_inst/n_0_gen_cpl_128.s_axis_tx_tdata[95]_i_1                            |               17 |             42 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      |                                                                                      |                                                                                                   |               23 |             58 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      |                                                                                      | pcie_7x_gen2x8_core_i/inst/user_reset_out                                                         |               44 |            123 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out |                                                                                      |                                                                                                   |               86 |            128 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | pcie_7x_gen2x8_core_i/inst/n_0_trn_rd_prev[127]_i_1                                  |                                                                                                   |               44 |            128 |
+|  pcie_7x_gen2x8_core_i/inst/int_userclk2_out      | pcie_7x_gen2x8_core_i/inst/n_0_m_axis_rx_tdata[127]_i_1                              |                                                                                                   |               47 |            133 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out |                                                                                      | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/rxusrclk_rst_reg2 |               45 |            144 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out |                                                                                      | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/qpll_reset.qpll_reset_i/p_0_in__0         |               47 |            164 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out |                                                                                      | pcie_7x_gen2x8_core_i/inst/phy_rdy_n_int                                                          |              215 |            605 |
+|  pcie_7x_gen2x8_core_i/inst/ext_ch_gt_drpclk      |                                                                                      | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_reset.pipe_reset_i/dclk_rst_reg2     |              262 |            700 |
+|  pcie_7x_gen2x8_core_i/inst/int_pipe_rxusrclk_out |                                                                                      | pcie_7x_gen2x8_core_i/inst/inst/gt_top_i/pipe_wrapper_i/pipe_lane[7].pipe_user_i/clear            |              431 |           1089 |
++---------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+
+
+

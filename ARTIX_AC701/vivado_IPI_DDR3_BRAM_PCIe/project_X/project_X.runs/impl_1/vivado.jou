@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2013.4 (64-bit)
+# SW Build 353583 on Mon Dec  9 17:26:26 MST 2013
+# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
+# Start of session at: Mon Mar 10 10:00:25 2014
+# Process ID: 6366
+# Log file: /home/sanjayr/projects/AC701/PCIe_gen2x8_PIO_test18/vivado_IPI_example_2/project_X/project_X.runs/impl_1/pcie_gen1x1_sub_sys_wrapper.rdi
+# Journal file: /home/sanjayr/projects/AC701/PCIe_gen2x8_PIO_test18/vivado_IPI_example_2/project_X/project_X.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source pcie_gen1x1_sub_sys_wrapper.tcl -notrace

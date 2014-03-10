@@ -1,0 +1,81 @@
+#-----------------------------------------------------------
+# Vivado v2013.4 (64-bit)
+# SW Build 353583 on Mon Dec  9 17:26:26 MST 2013
+# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
+# Start of session at: Sat Jan 25 07:55:06 2014
+# Process ID: 1545
+# Log file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test18/IP/A7_gen1x1_pcie_example/vivado.log
+# Journal file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test18/IP/A7_gen1x1_pcie_example/vivado.jou
+#-----------------------------------------------------------
+Attempting to get a license: Implementation
+Feature available: Implementation
+Loading parts and site information from /home/applications/Xilinx/Vivado/2013.4/data/parts/arch.xml
+Parsing RTL primitives file [/home/applications/Xilinx/Vivado/2013.4/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/home/applications/Xilinx/Vivado/2013.4/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test18/IP/A7_gen1x1_pcie/A7_gen1x1_pcie_ex.tcl
+# set srcIpDir "/home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test18/IP/A7_gen1x1_pcie"
+# create_project -name A7_gen1x1_pcie_example -force
+# set_property part xc7a200tfbg676-2 [current_project]
+# set_property target_language verilog [current_project]
+# set_property simulator_language MIXED [current_project]
+# set_property board xilinx.com:artix7:ac701:1.0 [current_project]
+# import_ip -files [list [file join $srcIpDir A7_gen1x1_pcie.xci]] -name A7_gen1x1_pcie
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2013.4/data/ip'.
+# reset_target {example} [get_ips A7_gen1x1_pcie]
+# proc _filter_supported_targets {targets ip} {
+#   set res {}
+#   set all [get_property SUPPORTED_TARGETS $ip]
+#   foreach target $targets {
+#     lappend res {*}[lsearch -all -inline -nocase $all $target]
+#   }
+#   return $res
+# }
+# generate_target [_filter_supported_targets {instantiation_template synthesis simulation} [get_ips A7_gen1x1_pcie]] [get_ips A7_gen1x1_pcie]
+INFO: [IP_Flow 19-1706] Not generating 'Instantiation Template' target for IP 'A7_gen1x1_pcie'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'A7_gen1x1_pcie'. Target already exists and is up to date.
+INFO: [IP_Flow 19-1706] Not generating 'Simulation' target for IP 'A7_gen1x1_pcie'. Target already exists and is up to date.
+# add_files -scan_for_includes -fileset [current_fileset] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/EP_MEM.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/PIO_EP_MEM_ACCESS.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/PIO_EP.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/PIO_RX_ENGINE.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/PIO_TO_CTRL.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/PIO_TX_ENGINE.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/PIO.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/pcie_app_7x.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/xilinx_pcie_2_1_ep_7x.v]]
+# add_files -fileset [current_fileset -constrset] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/example_design/xilinx_pcie_7x_ep_x1g1_AC701.xdc]]
+# if { [catch {current_fileset -simset} exc] } { create_fileset -simset sim_1 }
+# add_files -scan_for_includes -fileset [current_fileset -simset] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/pci_exp_expect_tasks.vh]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_cfg.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_com.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_pl.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_rx.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_tx.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/functional/sys_clk_gen_ds.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/functional/sys_clk_gen.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/pcie_axi_trn_bridge.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/functional/board.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/functional/board_common.vh]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/tests/sample_tests1.vh]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/tests/tests.vh]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/pcie_2_1_rport_7x.v]] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/simulation/dsport/xilinx_pcie_2_1_rport_7x.v]]
+# if { [catch {current_fileset -simset} exc] } { create_fileset -simset sim_1 }
+# add_files -fileset [current_fileset -simset] \
+#   [list [file join $srcIpDir A7_gen1x1_pcie/hierarchy.txt]]
+# import_files
+# set_property TOP [lindex [find_top] 0] [current_fileset]
+# update_compile_order -fileset [current_fileset]
+# update_compile_order -fileset [current_fileset -simset]
+# set dfile /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test18/IP/A7_gen1x1_pcie/oepdone.txt
+# set doneFile [open $dfile w]
+# puts $doneFile "Open Example Project DONE"
+# close $doneFile
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jan 25 07:55:50 2014...

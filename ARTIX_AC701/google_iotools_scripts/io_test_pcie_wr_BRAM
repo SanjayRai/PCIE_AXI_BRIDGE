@@ -1,0 +1,6 @@
+iotools mmio_write32 0xc0020000 0xb1223344
+iotools mmio_write32 0xc0020004 0xb5667788
+iotools mmio_write32 0xc0020008 0xbabbccdd
+iotools mmio_write32 0xc002000c 0xb2345678
+iotools mmio_write32 0xc0020010 0xbbcdef01
+iotools mmio_write32 0xc0020014 0xbbadfeed

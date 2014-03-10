@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2013.4 (64-bit)
+# SW Build 353583 on Mon Dec  9 17:26:26 MST 2013
+# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
+# Start of session at: Sat Jan 11 03:09:45 2014
+# Process ID: 31140
+# Log file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test13/IP/pcie_7x_gen2x8_core_example/vivado.log
+# Journal file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test13/IP/pcie_7x_gen2x8_core_example/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test13/IP/pcie_7x_gen2x8_core/pcie_7x_gen2x8_core_ex.tcl
+launch_runs impl_1
+wait_on_run impl_1
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1

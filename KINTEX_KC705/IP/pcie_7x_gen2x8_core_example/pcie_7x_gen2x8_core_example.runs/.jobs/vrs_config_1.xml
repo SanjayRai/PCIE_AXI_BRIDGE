@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="synth_1" LaunchDir="/home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test13/IP/pcie_7x_gen2x8_core_example/pcie_7x_gen2x8_core_example.runs/synth_1" FlowId="Vivado Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="impl_1" LaunchDir="/home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test13/IP/pcie_7x_gen2x8_core_example/pcie_7x_gen2x8_core_example.runs/impl_1" FlowId="Vivado Implementation" FromStepId="init_design" ToStepId="route_design">
+		<Parent Id="synth_1"/>
+	</Run>
+</Runs>
+

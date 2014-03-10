@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2013.4 (64-bit)
+# SW Build 353583 on Mon Dec  9 17:26:26 MST 2013
+# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
+# Start of session at: Thu Jan 23 08:00:11 2014
+# Process ID: 11434
+# Log file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test16/vivado_IP_GEN/vivado.log
+# Journal file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test16/vivado_IP_GEN/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source vivado_project.tcl
+set_property vendor {sanjay} [ipx::current_core]
+set_property vendor {sanjayr} [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property ip_repo_paths  /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test16/vivado_IP_GEN [current_fileset]
+update_ip_catalog
+ipx::unload_core {sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0}

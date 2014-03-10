@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="30">
+  <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/EP_MEM.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/EP_MEM.v"/>
+        <Attr Name="ImportTime" Val="1390665301"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/PIO_TX_ENGINE.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/PIO_TX_ENGINE.v"/>
+        <Attr Name="ImportTime" Val="1390665302"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/PIO_RX_ENGINE.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/PIO_RX_ENGINE.v"/>
+        <Attr Name="ImportTime" Val="1390665302"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/PIO_EP_MEM_ACCESS.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/PIO_EP_MEM_ACCESS.v"/>
+        <Attr Name="ImportTime" Val="1390665301"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/PIO_TO_CTRL.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/PIO_TO_CTRL.v"/>
+        <Attr Name="ImportTime" Val="1390665302"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/PIO_EP.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/PIO_EP.v"/>
+        <Attr Name="ImportTime" Val="1390665301"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/PIO.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/PIO.v"/>
+        <Attr Name="ImportTime" Val="1390665302"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/A7_gen1x1_pcie/A7_gen1x1_pcie.xci">
+      <FileInfo>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/pcie_app_7x.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/pcie_app_7x.v"/>
+        <Attr Name="ImportTime" Val="1390665302"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/example_design/xilinx_pcie_2_1_ep_7x.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/xilinx_pcie_2_1_ep_7x.v"/>
+        <Attr Name="ImportTime" Val="1390665302"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="xilinx_pcie_2_1_ep_7x"/>
+    </Config>
+  </FileSet>
+</DARoots>

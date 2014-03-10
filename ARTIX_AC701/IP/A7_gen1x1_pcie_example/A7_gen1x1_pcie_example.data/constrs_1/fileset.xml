@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DARoots Version="1" Minor="30">
+  <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/example_design/xilinx_pcie_7x_ep_x1g1_AC701.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../A7_gen1x1_pcie/A7_gen1x1_pcie/example_design/xilinx_pcie_7x_ep_x1g1_AC701.xdc"/>
+        <Attr Name="ImportTime" Val="1390665302"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+</DARoots>
