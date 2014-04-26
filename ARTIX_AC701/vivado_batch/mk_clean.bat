@@ -4,6 +4,7 @@ rm vivado*.jou
 rm vivado*.log 
 rm fsm_encoding.os
 rm *.ltx 
+rm -rf .cache
 rm -rf .data
 rm -rf pcie_gen1x1_axi_lite_bridge_example_top.bit
 rm -rf pcie_gen1x1_axi_lite_bridge_example_top.drc.rpt

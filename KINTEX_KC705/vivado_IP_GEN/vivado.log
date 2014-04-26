@@ -1,17 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2013.4 (64-bit)
-# SW Build 353583 on Mon Dec  9 17:26:26 MST 2013
-# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
-# Start of session at: Thu Jan 23 08:00:11 2014
-# Process ID: 11434
-# Log file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test16/vivado_IP_GEN/vivado.log
-# Journal file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test16/vivado_IP_GEN/vivado.jou
+# Vivado v2014.1 (64-bit)
+# SW Build 881834 on Fri Apr  4 13:56:21 MDT 2014
+# IP Build 877625 on Fri Mar 28 16:29:15 MDT 2014
+# Start of session at: Fri Apr 25 16:52:47 2014
+# Process ID: 9229
+# Log file: /home/sanjayr/projects/KC705/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.log
+# Journal file: /home/sanjayr/projects/KC705/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.jou
 #-----------------------------------------------------------
-Attempting to get a license: Implementation
-Feature available: Implementation
-Loading parts and site information from /home/applications/Xilinx/Vivado/2013.4/data/parts/arch.xml
-Parsing RTL primitives file [/home/applications/Xilinx/Vivado/2013.4/data/parts/xilinx/rtl/prims/rtl_prims.xml]
-Finished parsing RTL primitives file [/home/applications/Xilinx/Vivado/2013.4/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
 source vivado_project.tcl
 # set DEVICE_TYPE xc7k325tffg900-2
@@ -34,7 +29,7 @@ source vivado_project.tcl
 # }
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2013.4/data/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2014.1/data/ip'.
 # set_property top $TOP_module [get_filesets sources_1]
 # set ROOT_DIR [pwd]
 # ipx::package_project -root_dir $ROOT_DIR
@@ -60,30 +55,14 @@ INFO: [IP_Flow 19-2228] Inferred bus interface "M_AXI_signal_reset" of definitio
 # set_property supported_families {{kintex7} {Pre-Production} {kintex7l} {Pre-Production} {qkintex7} {Pre-Production} {qkintex7l} {Pre-Production} {artix7} {Pre-Production} {artix7l} {Pre-Production} {aartix7} {Pre-Production} {qartix7} {Pre-Production} {zynq} {Pre-Production} {qzynq} {Pre-Production} {azynq} {Pre-Production}} [ipx::current_core]
 # set_property company_url {www.xilinx.com} [ipx::current_core]
 # set_property value_validation_list {{128} {64} {32}} [ipx::get_user_parameter C_DATA_WIDTH [ipx::current_core]]
-# ipx::add_bus_interface {M_AXI_LITE_CLK} [ipx::current_core]
-# set_property abstraction_type_vlnv {xilinx.com:signal:clock_rtl:1.0} [ipx::get_bus_interface M_AXI_LITE_CLK [ipx::current_core]]
-# set_property bus_type_vlnv {xilinx.com:signal:clock:1.0} [ipx::get_bus_interface M_AXI_LITE_CLK [ipx::current_core]]
-# set_property display_name {M_AXI_LITE_CLK} [ipx::get_bus_interface M_AXI_LITE_CLK [ipx::current_core]]
-# ipx::add_port_map {CLK} [ipx::get_bus_interface M_AXI_LITE_CLK [ipx::current_core]]
-# set_property physical_name {user_clk} [ipx::get_port_map CLK [ipx::get_bus_interface M_AXI_LITE_CLK [ipx::current_core]]]
-# ipx::add_bus_parameter {ASSOCIATED_BUSIF} [ipx::get_bus_interface M_AXI_LITE_CLK [ipx::current_core]]
-# set_property value {M_AXI} [ipx::get_bus_parameter ASSOCIATED_BUSIF [ipx::get_bus_interface M_AXI_LITE_CLK [ipx::current_core]]]
-# ipx::add_bus_interface {m_axis_tx_clk} [ipx::current_core]
-# set_property abstraction_type_vlnv {xilinx.com:signal:clock_rtl:1.0} [ipx::get_bus_interface m_axis_tx_clk [ipx::current_core]]
-# set_property bus_type_vlnv {xilinx.com:signal:clock:1.0} [ipx::get_bus_interface m_axis_tx_clk [ipx::current_core]]
-# set_property display_name {m_axis_tx_clk} [ipx::get_bus_interface m_axis_tx_clk [ipx::current_core]]
-# ipx::add_port_map {CLK} [ipx::get_bus_interface m_axis_tx_clk [ipx::current_core]]
-# set_property physical_name {user_clk} [ipx::get_port_map CLK [ipx::get_bus_interface m_axis_tx_clk [ipx::current_core]]]
-# ipx::add_bus_parameter {ASSOCIATED_BUSIF} [ipx::get_bus_interface m_axis_tx_clk [ipx::current_core]]
-# set_property value {m_axis_tx} [ipx::get_bus_parameter ASSOCIATED_BUSIF [ipx::get_bus_interface m_axis_tx_clk [ipx::current_core]]]
-# ipx::add_bus_interface {s_axis_rx_clk} [ipx::current_core]
-# set_property abstraction_type_vlnv {xilinx.com:signal:clock_rtl:1.0} [ipx::get_bus_interface s_axis_rx_clk [ipx::current_core]]
-# set_property bus_type_vlnv {xilinx.com:signal:clock:1.0} [ipx::get_bus_interface s_axis_rx_clk [ipx::current_core]]
-# set_property display_name {s_axis_rx_clk} [ipx::get_bus_interface s_axis_rx_clk [ipx::current_core]]
-# ipx::add_port_map {CLK} [ipx::get_bus_interface s_axis_rx_clk [ipx::current_core]]
-# set_property physical_name {user_clk} [ipx::get_port_map CLK [ipx::get_bus_interface s_axis_rx_clk [ipx::current_core]]]
-# ipx::add_bus_parameter {ASSOCIATED_BUSIF} [ipx::get_bus_interface s_axis_rx_clk [ipx::current_core]]
-# set_property value {s_axis_rx} [ipx::get_bus_parameter ASSOCIATED_BUSIF [ipx::get_bus_interface s_axis_rx_clk [ipx::current_core]]]
+# ipx::add_bus_interface {AXI_CLK} [ipx::current_core]
+# set_property abstraction_type_vlnv {xilinx.com:signal:clock_rtl:1.0} [ipx::get_bus_interface AXI_CLK [ipx::current_core]]
+# set_property bus_type_vlnv {xilinx.com:signal:clock:1.0} [ipx::get_bus_interface AXI_CLK [ipx::current_core]]
+# set_property display_name {AXI_CLK} [ipx::get_bus_interface AXI_CLK [ipx::current_core]]
+# ipx::add_port_map {CLK} [ipx::get_bus_interface AXI_CLK [ipx::current_core]]
+# set_property physical_name {user_clk} [ipx::get_port_map CLK [ipx::get_bus_interface AXI_CLK [ipx::current_core]]]
+# ipx::add_bus_parameter {ASSOCIATED_BUSIF} [ipx::get_bus_interface AXI_CLK [ipx::current_core]]
+# set_property value {M_AXI:m_axis_tx:s_axis_rx} [ipx::get_bus_parameter ASSOCIATED_BUSIF [ipx::get_bus_interface AXI_CLK [ipx::current_core]]]
 # set_property order {10000} [ipx::get_user_parameter AXI_BAR_0_ADDR [ipx::current_core]]
 # set_property order {10100} [ipx::get_user_parameter AXI_BAR_0_MASK [ipx::current_core]]
 # set_property order {10200} [ipx::get_user_parameter AXI_BAR_1_ADDR [ipx::current_core]]
@@ -99,14 +78,5 @@ INFO: [IP_Flow 19-2228] Inferred bus interface "M_AXI_signal_reset" of definitio
 # ipx::check_integrity -quiet [ipx::current_core]
 # ipx::archive_core {./pcie_axi_stream_to_axi_lite_bridge.zip} [ipx::current_core]
 set_property vendor {sanjay} [ipx::current_core]
-set_property vendor {sanjayr} [ipx::current_core]
-ipx::create_xgui_files [ipx::current_core]
-ipx::save_core [ipx::current_core]
-set_property ip_repo_paths  /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test16/vivado_IP_GEN [current_fileset]
-update_ip_catalog
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test16/vivado_IP_GEN'.
-WARNING: [IP_Flow 19-3299] If you move the project, the path for repository '/home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test16/vivado_IP_GEN' may become invalid. A better location for the repository would be in a path adjacent to the project.
-ipx::unload_core {sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0}
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Jan 23 08:01:35 2014...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 25 16:53:13 2014...

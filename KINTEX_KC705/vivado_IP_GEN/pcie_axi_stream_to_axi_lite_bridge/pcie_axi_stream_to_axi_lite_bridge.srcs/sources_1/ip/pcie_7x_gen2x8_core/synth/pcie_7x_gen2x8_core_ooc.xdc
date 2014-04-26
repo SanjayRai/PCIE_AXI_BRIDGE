@@ -60,4 +60,3 @@
 create_clock -name pcie_7x_gen2x8_core_sys_clk -period 10 [get_ports sys_clk]
 # 100/125/250 MHz
 
-

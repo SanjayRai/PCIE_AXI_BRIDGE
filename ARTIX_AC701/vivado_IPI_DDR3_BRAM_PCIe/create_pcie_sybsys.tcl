@@ -10,7 +10,7 @@
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2013.4
+set scripts_vivado_version 2014.1
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -30,7 +30,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # If you do not already have a project created,
 # you can create a project using the following command:
 #    create_project project_1 myproj -part xc7a200tfbg676-2
-#    set_property BOARD xilinx.com:artix7:ac701:1.0 [current_project]
+#    set_property BOARD_PART xilinx.com:ac701:part0:1.0 [current_project]
 
 
 # CHANGE DESIGN NAME HERE
@@ -52,15 +52,24 @@ set errMsg ""
 set nRet 0
 
 set cur_design [current_bd_design -quiet]
-if { ${design_name} ne "" && ${cur_design} eq ${design_name} } {
-   # Checks if design is empty or not
-   set list_cells [get_bd_cells -quiet]
+set list_cells [get_bd_cells -quiet]
 
+if { ${design_name} ne "" && ${cur_design} eq ${design_name} } {
+
+   # Checks if design is empty or not
    if { $list_cells ne "" } {
       set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
       set nRet 1
    } else {
       puts "INFO: Constructing design in IPI design <$design_name>..."
+   }
+} elseif { ${cur_design} ne "" && ${cur_design} ne ${design_name} } {
+
+   if { $list_cells eq "" } {
+      puts "INFO: You have an empty design <${cur_design}>. Will go ahead and create design..."
+   } else {
+      set errMsg "ERROR: Design <${cur_design}> is not empty! Please do not source this script on non-empty designs."
+      set nRet 1
    }
 } else {
 
@@ -352,23 +361,24 @@ proc create_root_design { parentCell } {
   set_property -dict [ list CONFIG.POLARITY {ACTIVE_HIGH}  ] $reset
 
   # Create instance: axi_bram_ctrl_0, and set properties
-  set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:3.0 axi_bram_ctrl_0 ]
+  set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.0 axi_bram_ctrl_0 ]
+  set_property -dict [ list CONFIG.SUPPORTS_NARROW_BURST {0}  ] $axi_bram_ctrl_0
 
   # Create instance: axi_gpio_LED, and set properties
   set axi_gpio_LED [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_LED ]
-  set_property -dict [ list CONFIG.GPIO_BOARD_INTERFACE {LED_4Bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_LED
+  set_property -dict [ list CONFIG.C_GPIO_WIDTH {4} CONFIG.GPIO_BOARD_INTERFACE {LED_4Bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_LED
 
   # Create instance: axi_gpio_sw, and set properties
   set axi_gpio_sw [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_sw ]
-  set_property -dict [ list CONFIG.GPIO_BOARD_INTERFACE {DIP_Switches_4Bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_sw
+  set_property -dict [ list CONFIG.C_GPIO_WIDTH {4} CONFIG.GPIO_BOARD_INTERFACE {DIP_Switches_4Bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_sw
 
   # Create instance: axi_mem_intercon, and set properties
   set axi_mem_intercon [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_mem_intercon ]
   set_property -dict [ list CONFIG.NUM_MI {4}  ] $axi_mem_intercon
 
   # Create instance: blk_mem_gen_0, and set properties
-  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.1 blk_mem_gen_0 ]
-  set_property -dict [ list CONFIG.Memory_Type {True_Dual_Port_RAM}  ] $blk_mem_gen_0
+  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.2 blk_mem_gen_0 ]
+  set_property -dict [ list CONFIG.Enable_B {Use_ENB_Pin} CONFIG.MEM_FILE {NONE} CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Use_RSTB_Pin {true}  ] $blk_mem_gen_0
 
   # Create instance: mig_7series_0, and set properties
   set mig_7series_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:2.0 mig_7series_0 ]
@@ -384,7 +394,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: pcie_7x_0, and set properties
   set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 pcie_7x_0 ]
-  set_property -dict [ list CONFIG.Bar0_Scale {Kilobytes} CONFIG.Bar0_Size {32} CONFIG.Bar1_Enabled {true} CONFIG.Bar1_Size {64} CONFIG.Bar2_Enabled {true} CONFIG.Bar2_Size {64} CONFIG.Bar3_Enabled {true} CONFIG.Bar3_Scale {Gigabytes} CONFIG.Bar3_Size {1} CONFIG.PCIe_Debug_Ports {false} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
+  set_property -dict [ list CONFIG.Bar0_Scale {Kilobytes} CONFIG.Bar0_Size {32} CONFIG.Bar1_Enabled {true} CONFIG.Bar1_Size {64} CONFIG.Bar1_Type {Memory} CONFIG.Bar2_Enabled {true} CONFIG.Bar2_Size {64} CONFIG.Bar2_Type {Memory} CONFIG.Bar3_Enabled {true} CONFIG.Bar3_Scale {Gigabytes} CONFIG.Bar3_Size {1} CONFIG.Bar3_Type {Memory} CONFIG.PCIe_Debug_Ports {false} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
 
   # Create instance: pcie_axi_stream_to_axi_lite_bridge_0, and set properties
   set pcie_axi_stream_to_axi_lite_bridge_0 [ create_bd_cell -type ip -vlnv sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0 pcie_axi_stream_to_axi_lite_bridge_0 ]
@@ -392,10 +402,11 @@ proc create_root_design { parentCell } {
 
   # Create instance: rst_mig_7series_0_100M, and set properties
   set rst_mig_7series_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_mig_7series_0_100M ]
+  set_property -dict [ list CONFIG.C_AUX_RESET_HIGH {0}  ] $rst_mig_7series_0_100M
 
   # Create instance: rst_pcie_sys_clk_100M, and set properties
   set rst_pcie_sys_clk_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_pcie_sys_clk_100M ]
-  set_property -dict [ list CONFIG.RESET_BOARD_INTERFACE {reset} CONFIG.USE_BOARD_FLOW {true}  ] $rst_pcie_sys_clk_100M
+  set_property -dict [ list CONFIG.C_AUX_RESET_HIGH {0} CONFIG.RESET_BOARD_INTERFACE {reset} CONFIG.USE_BOARD_FLOW {true}  ] $rst_pcie_sys_clk_100M
 
   # Create interface connections
   connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTA [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:pcie_7x:3.0
-// IP Revision: 0
+// IP Revision: 1
 
 `timescale 1ns/1ps
 
@@ -154,7 +154,7 @@ input wire sys_clk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.sys_rst_n RST" *)
 input wire sys_rst_n;
 
-  pcie_7x_v3_0_top #(
+  A7_gen1x1_pcie_pcie2_top #(
     .c_component_name("A7_gen1x1_pcie"),
     .dev_port_type("0000"),
     .c_dev_port_type("0"),

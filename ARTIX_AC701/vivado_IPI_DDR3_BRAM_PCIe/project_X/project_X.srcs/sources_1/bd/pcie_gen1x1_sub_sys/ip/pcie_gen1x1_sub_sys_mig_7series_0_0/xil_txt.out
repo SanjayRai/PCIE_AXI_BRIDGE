@@ -1,4 +1,0 @@
-SET_ERROR_CODE 0
-SET_XMDF_PATH ./pcie_gen1x1_sub_sys_mig_7series_0_0_xmdf.tcl
-SET_PARAMETER component_name pcie_gen1x1_sub_sys_mig_7series_0_0
-SET_PARAMETER xml_input_file ./pcie_gen1x1_sub_sys_mig_7series_0_0/mig.prj

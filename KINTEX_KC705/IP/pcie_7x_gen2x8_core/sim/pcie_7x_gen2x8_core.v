@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:pcie_7x:3.0
-// IP Revision: 0
+// IP Revision: 1
 
 `timescale 1ns/1ps
 
@@ -174,7 +174,7 @@ output wire [15 : 0] pcie_drp_do;
 (* X_INTERFACE_INFO = "xilinx.com:interface:drp:1.0 drp DRDY" *)
 output wire pcie_drp_rdy;
 
-  pcie_7x_v3_0_top #(
+  pcie_7x_gen2x8_core_pcie2_top #(
     .c_component_name("pcie_7x_gen2x8_core"),
     .dev_port_type("0000"),
     .c_dev_port_type("0"),
@@ -247,7 +247,7 @@ output wire pcie_drp_rdy;
     .c_slot_cap_pwr_limit_scale("0"),
     .c_slot_cap_physical_slot_num("0"),
     .intx("FALSE"),
-    .int_pin("1"),
+    .int_pin("0"),
     .c_msi_cap_on("FALSE"),
     .c_pm_cap_next_ptr("60"),
     .c_msi_64b_addr("TRUE"),

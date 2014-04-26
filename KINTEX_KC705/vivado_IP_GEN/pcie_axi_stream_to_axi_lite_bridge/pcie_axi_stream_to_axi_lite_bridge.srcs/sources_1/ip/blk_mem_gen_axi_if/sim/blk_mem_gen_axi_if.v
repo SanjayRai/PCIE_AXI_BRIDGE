@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:ip:blk_mem_gen:8.1
+// IP VLNV: xilinx.com:ip:blk_mem_gen:8.2
 // IP Revision: 0
 
 `timescale 1ns/1ps
@@ -114,13 +114,16 @@ output wire s_axi_rvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXILite_SLAVE_S_AXI RREADY" *)
 input wire s_axi_rready;
 
-  blk_mem_gen_v8_1 #(
+  blk_mem_gen_v8_2 #(
     .C_FAMILY("kintex7"),
     .C_XDEVICEFAMILY("kintex7"),
     .C_ELABORATION_DIR("./"),
     .C_INTERFACE_TYPE(1),
     .C_AXI_TYPE(0),
     .C_AXI_SLAVE_TYPE(0),
+    .C_USE_BRAM_BLOCK(0),
+    .C_ENABLE_32BIT_ADDRESS(0),
+    .C_CTRL_ECC_ALGO("NONE"),
     .C_HAS_AXI_ID(0),
     .C_AXI_ID_WIDTH(4),
     .C_MEM_TYPE(1),
@@ -132,7 +135,6 @@ input wire s_axi_rready;
     .C_INIT_FILE("blk_mem_gen_axi_if.mem"),
     .C_USE_DEFAULT_DATA(0),
     .C_DEFAULT_DATA("0"),
-    .C_RST_TYPE("ASYNC"),
     .C_HAS_RSTA(0),
     .C_RST_PRIORITY_A("CE"),
     .C_RSTRAM_A(0),
@@ -170,36 +172,40 @@ input wire s_axi_rready;
     .C_HAS_SOFTECC_OUTPUT_REGS_B(0),
     .C_USE_SOFTECC(0),
     .C_USE_ECC(0),
+    .C_EN_ECC_PIPE(0),
     .C_HAS_INJECTERR(0),
     .C_SIM_COLLISION_CHECK("ALL"),
     .C_COMMON_CLK(1),
-    .C_ENABLE_32BIT_ADDRESS(0),
     .C_DISABLE_WARN_BHV_COLL(0),
+    .C_EN_SLEEP_PIN(0),
     .C_DISABLE_WARN_BHV_RANGE(0),
-    .C_USE_BRAM_BLOCK(0),
-    .C_CTRL_ECC_ALGO("NONE")
+    .C_COUNT_36K_BRAM("1"),
+    .C_COUNT_18K_BRAM("0"),
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     5.96515 mW")
   ) inst (
-    .clka(1'B0),
-    .rsta(1'B0),
-    .ena(1'B0),
-    .regcea(1'B0),
+    .clka(1'D0),
+    .rsta(1'D0),
+    .ena(1'D0),
+    .regcea(1'D0),
     .wea(4'B0),
     .addra(10'B0),
     .dina(32'B0),
     .douta(),
-    .clkb(1'B0),
-    .rstb(1'B0),
-    .enb(1'B0),
-    .regceb(1'B0),
+    .clkb(1'D0),
+    .rstb(1'D0),
+    .enb(1'D0),
+    .regceb(1'D0),
     .web(4'B0),
     .addrb(10'B0),
     .dinb(32'B0),
     .doutb(),
-    .injectsbiterr(1'B0),
-    .injectdbiterr(1'B0),
+    .injectsbiterr(1'D0),
+    .injectdbiterr(1'D0),
+    .eccpipece(1'D0),
     .sbiterr(),
     .dbiterr(),
     .rdaddrecc(),
+    .sleep(1'D0),
     .s_aclk(s_aclk),
     .s_aresetn(s_aresetn),
     .s_axi_awid(4'B0),
@@ -211,7 +217,7 @@ input wire s_axi_rready;
     .s_axi_awready(s_axi_awready),
     .s_axi_wdata(s_axi_wdata),
     .s_axi_wstrb(s_axi_wstrb),
-    .s_axi_wlast(1'B0),
+    .s_axi_wlast(1'D0),
     .s_axi_wvalid(s_axi_wvalid),
     .s_axi_wready(s_axi_wready),
     .s_axi_bid(),
@@ -231,8 +237,8 @@ input wire s_axi_rready;
     .s_axi_rlast(),
     .s_axi_rvalid(s_axi_rvalid),
     .s_axi_rready(s_axi_rready),
-    .s_axi_injectsbiterr(1'B0),
-    .s_axi_injectdbiterr(1'B0),
+    .s_axi_injectsbiterr(1'D0),
+    .s_axi_injectdbiterr(1'D0),
     .s_axi_sbiterr(),
     .s_axi_dbiterr(),
     .s_axi_rdaddrecc()

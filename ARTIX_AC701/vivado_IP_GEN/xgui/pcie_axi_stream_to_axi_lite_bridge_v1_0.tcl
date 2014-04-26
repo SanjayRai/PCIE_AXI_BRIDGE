@@ -1,7 +1,7 @@
-#Definitional proc to organize widgets for parameters.
+# Definitional proc to organize widgets for parameters.
 proc init_gui { IPINST } {
-	set Page0 [ ipgui::add_page $IPINST  -name "Page 0" -layout vertical]
-	set Component_Name [ ipgui::add_param  $IPINST  -parent  $Page0  -name Component_Name ]
+	set Page0 [ipgui::add_page $IPINST -name "Page 0" -layout vertical]
+	set Component_Name [ipgui::add_param $IPINST -parent $Page0 -name Component_Name]
 	set AXI_BAR_3_MASK [ipgui::add_param $IPINST -parent $Page0 -name AXI_BAR_3_MASK]
 	set AXI_BAR_3_ADDR [ipgui::add_param $IPINST -parent $Page0 -name AXI_BAR_3_ADDR]
 	set AXI_BAR_2_MASK [ipgui::add_param $IPINST -parent $Page0 -name AXI_BAR_2_MASK]

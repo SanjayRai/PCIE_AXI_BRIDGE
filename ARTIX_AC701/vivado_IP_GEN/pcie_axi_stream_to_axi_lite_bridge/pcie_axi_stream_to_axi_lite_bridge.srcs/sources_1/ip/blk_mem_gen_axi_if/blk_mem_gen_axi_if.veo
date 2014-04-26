@@ -46,7 +46,7 @@
 // 
 // DO NOT MODIFY THIS FILE.
 
-// IP VLNV: xilinx.com:ip:blk_mem_gen:8.1
+// IP VLNV: xilinx.com:ip:blk_mem_gen:8.2
 // IP Revision: 0
 
 // The following must be inserted into your Verilog file for this

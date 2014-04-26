@@ -10,7 +10,7 @@
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2013.4
+set scripts_vivado_version 2014.1
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -30,7 +30,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # If you do not already have a project created,
 # you can create a project using the following command:
 #    create_project project_1 myproj -part xc7k325tffg900-2
-#    set_property BOARD xilinx.com:kintex7:kc705:1.1 [current_project]
+#    set_property BOARD_PART xilinx.com:kc705:part0:1.0 [current_project]
 
 
 # CHANGE DESIGN NAME HERE
@@ -52,15 +52,24 @@ set errMsg ""
 set nRet 0
 
 set cur_design [current_bd_design -quiet]
-if { ${design_name} ne "" && ${cur_design} eq ${design_name} } {
-   # Checks if design is empty or not
-   set list_cells [get_bd_cells -quiet]
+set list_cells [get_bd_cells -quiet]
 
+if { ${design_name} ne "" && ${cur_design} eq ${design_name} } {
+
+   # Checks if design is empty or not
    if { $list_cells ne "" } {
       set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
       set nRet 1
    } else {
       puts "INFO: Constructing design in IPI design <$design_name>..."
+   }
+} elseif { ${cur_design} ne "" && ${cur_design} ne ${design_name} } {
+
+   if { $list_cells eq "" } {
+      puts "INFO: You have an empty design <${cur_design}>. Will go ahead and create design..."
+   } else {
+      set errMsg "ERROR: Design <${cur_design}> is not empty! Please do not source this script on non-empty designs."
+      set nRet 1
    }
 } else {
 
@@ -368,7 +377,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: pcie_7x_0, and set properties
   set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 pcie_7x_0 ]
-  set_property -dict [ list CONFIG.Bar0_Scale {Megabytes} CONFIG.Bar0_Size {512} CONFIG.Bar1_Enabled {true} CONFIG.Bar1_Size {64} CONFIG.Bar2_Enabled {true} CONFIG.Bar3_Enabled {true} CONFIG.Link_Speed {5.0_GT/s} CONFIG.Maximum_Link_Width {X8} CONFIG.Xlnx_Ref_Board {KC705_REVC} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
+  set_property -dict [ list CONFIG.Bar0_Scale {Megabytes} CONFIG.Bar0_Size {512} CONFIG.Bar1_Enabled {true} CONFIG.Bar1_Size {64} CONFIG.Bar1_Type {Memory} CONFIG.Bar2_Enabled {true} CONFIG.Bar2_Type {Memory} CONFIG.Bar3_Enabled {true} CONFIG.Bar3_Type {Memory} CONFIG.Device_ID {7028} CONFIG.Interface_Width {128_bit} CONFIG.Link_Speed {5.0_GT/s} CONFIG.Max_Payload_Size {256_bytes} CONFIG.Maximum_Link_Width {X8} CONFIG.Trgt_Link_Speed {4'h2} CONFIG.User_Clk_Freq {250} CONFIG.Xlnx_Ref_Board {KC705_REVC} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
 
   # Create instance: pcie_axi_stream_to_axi_lite_bridge_0, and set properties
   set pcie_axi_stream_to_axi_lite_bridge_0 [ create_bd_cell -type ip -vlnv sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0 pcie_axi_stream_to_axi_lite_bridge_0 ]
@@ -376,6 +385,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: rst_mig_7series_0_200M, and set properties
   set rst_mig_7series_0_200M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_mig_7series_0_200M ]
+  set_property -dict [ list CONFIG.C_AUX_RESET_HIGH {0}  ] $rst_mig_7series_0_200M
 
   # Create interface connections
   connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins pcie_axi_stream_to_axi_lite_bridge_0/M_AXI]

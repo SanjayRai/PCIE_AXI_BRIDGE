@@ -60,4 +60,3 @@
 create_clock -name A7_gen1x1_pcie_sys_clk -period 10 [get_ports sys_clk]
 # 100/125/250 MHz
 
-
