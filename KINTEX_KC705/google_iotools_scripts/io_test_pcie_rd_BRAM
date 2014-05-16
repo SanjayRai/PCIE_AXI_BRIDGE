@@ -1,0 +1,6 @@
+iotools mmio_read32 0xf7c18000
+iotools mmio_read32 0xf7c18004
+iotools mmio_read32 0xf7c18008
+iotools mmio_read32 0xf7c1800c
+iotools mmio_read32 0xf7c18010
+iotools mmio_read32 0xf7c18014
