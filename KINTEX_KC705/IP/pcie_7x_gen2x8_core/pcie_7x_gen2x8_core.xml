@@ -2860,116 +2860,6 @@
 				</spirit:parameters>
 			</spirit:view>
 			<spirit:view>
-				<spirit:name>xilinx_verilogsynthesis</spirit:name>
-				<spirit:displayName>Verilog Synthesis</spirit:displayName>
-				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
-				<spirit:language>verilog</spirit:language>
-				<spirit:modelName>pcie_7x_gen2x8_core_pcie2_top</spirit:modelName>
-				<spirit:fileSetRef>
-					<spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
-				</spirit:fileSetRef>
-				<spirit:parameters>
-					<spirit:parameter>
-						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>9fa04ab2</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>customizationCRCversion</spirit:name>
-						<spirit:value>4</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Fri Apr 25 23:27:00 UTC 2014</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>StaleAtRelink</spirit:name>
-						<spirit:value>false</spirit:value>
-					</spirit:parameter>
-				</spirit:parameters>
-			</spirit:view>
-			<spirit:view>
-				<spirit:name>xilinx_verilogsynthesiswrapper</spirit:name>
-				<spirit:displayName>Verilog Synthesis Wrapper</spirit:displayName>
-				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
-				<spirit:language>verilog</spirit:language>
-				<spirit:fileSetRef>
-					<spirit:localName>xilinx_verilogsynthesiswrapper_view_fileset</spirit:localName>
-				</spirit:fileSetRef>
-				<spirit:parameters>
-					<spirit:parameter>
-						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>9fa04ab2</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>customizationCRCversion</spirit:name>
-						<spirit:value>4</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Fri Apr 25 23:27:00 UTC 2014</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>StaleAtRelink</spirit:name>
-						<spirit:value>false</spirit:value>
-					</spirit:parameter>
-				</spirit:parameters>
-			</spirit:view>
-			<spirit:view>
-				<spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
-				<spirit:displayName>Verilog Simulation</spirit:displayName>
-				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
-				<spirit:language>verilog</spirit:language>
-				<spirit:modelName>pcie_7x_gen2x8_core_pcie2_top</spirit:modelName>
-				<spirit:fileSetRef>
-					<spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
-				</spirit:fileSetRef>
-				<spirit:parameters>
-					<spirit:parameter>
-						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>cafab9b9</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>customizationCRCversion</spirit:name>
-						<spirit:value>4</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Fri Apr 25 23:27:07 UTC 2014</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>StaleAtRelink</spirit:name>
-						<spirit:value>false</spirit:value>
-					</spirit:parameter>
-				</spirit:parameters>
-			</spirit:view>
-			<spirit:view>
-				<spirit:name>xilinx_verilogsimulationwrapper</spirit:name>
-				<spirit:displayName>Verilog Simulation Wrapper</spirit:displayName>
-				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
-				<spirit:language>verilog</spirit:language>
-				<spirit:fileSetRef>
-					<spirit:localName>xilinx_verilogsimulationwrapper_view_fileset</spirit:localName>
-				</spirit:fileSetRef>
-				<spirit:parameters>
-					<spirit:parameter>
-						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>cafab9b9</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>customizationCRCversion</spirit:name>
-						<spirit:value>4</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Fri Apr 25 23:27:07 UTC 2014</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>StaleAtRelink</spirit:name>
-						<spirit:value>false</spirit:value>
-					</spirit:parameter>
-				</spirit:parameters>
-			</spirit:view>
-			<spirit:view>
 				<spirit:name>xilinx_versioninformation</spirit:name>
 				<spirit:displayName>Version Information</spirit:displayName>
 				<spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
@@ -3010,6 +2900,116 @@
 					<spirit:parameter>
 						<spirit:name>customizationCRCversion</spirit:name>
 						<spirit:value>4</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_verilogsynthesis</spirit:name>
+				<spirit:displayName>Verilog Synthesis</spirit:displayName>
+				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+				<spirit:language>verilog</spirit:language>
+				<spirit:modelName>pcie_7x_gen2x8_core_pcie2_top</spirit:modelName>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>customizationCRC</spirit:name>
+						<spirit:value>9fa04ab2</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>customizationCRCversion</spirit:name>
+						<spirit:value>4</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>GENtimestamp</spirit:name>
+						<spirit:value>Fri May 16 14:21:39 UTC 2014</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>StaleAtRelink</spirit:name>
+						<spirit:value>false</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_verilogsynthesiswrapper</spirit:name>
+				<spirit:displayName>Verilog Synthesis Wrapper</spirit:displayName>
+				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
+				<spirit:language>verilog</spirit:language>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_verilogsynthesiswrapper_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>customizationCRC</spirit:name>
+						<spirit:value>9fa04ab2</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>customizationCRCversion</spirit:name>
+						<spirit:value>4</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>GENtimestamp</spirit:name>
+						<spirit:value>Fri May 16 14:21:39 UTC 2014</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>StaleAtRelink</spirit:name>
+						<spirit:value>false</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
+				<spirit:displayName>Verilog Simulation</spirit:displayName>
+				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+				<spirit:language>verilog</spirit:language>
+				<spirit:modelName>pcie_7x_gen2x8_core_pcie2_top</spirit:modelName>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>customizationCRC</spirit:name>
+						<spirit:value>cafab9b9</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>customizationCRCversion</spirit:name>
+						<spirit:value>4</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>GENtimestamp</spirit:name>
+						<spirit:value>Fri May 16 14:21:45 UTC 2014</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>StaleAtRelink</spirit:name>
+						<spirit:value>false</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_verilogsimulationwrapper</spirit:name>
+				<spirit:displayName>Verilog Simulation Wrapper</spirit:displayName>
+				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation.wrapper</spirit:envIdentifier>
+				<spirit:language>verilog</spirit:language>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_verilogsimulationwrapper_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>customizationCRC</spirit:name>
+						<spirit:value>cafab9b9</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>customizationCRCversion</spirit:name>
+						<spirit:value>4</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>GENtimestamp</spirit:name>
+						<spirit:value>Fri May 16 14:21:45 UTC 2014</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>StaleAtRelink</spirit:name>
+						<spirit:value>false</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -12115,6 +12115,16 @@
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
+			<spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>doc/pcie_7x_v3_0_changelog.txt</spirit:name>
+				<spirit:userFileType>text</spirit:userFileType>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>xilinx_elaboratesubcores_view_fileset</spirit:name>
+		</spirit:fileSet>
+		<spirit:fileSet>
 			<spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
 			<spirit:file>
 				<spirit:name>source/pcie_7x_gen2x8_core_pipe_clock.v</spirit:name>
@@ -12508,16 +12518,6 @@
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:logicalName>xil_defaultlib</spirit:logicalName>
 			</spirit:file>
-		</spirit:fileSet>
-		<spirit:fileSet>
-			<spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
-			<spirit:file>
-				<spirit:name>doc/pcie_7x_v3_0_changelog.txt</spirit:name>
-				<spirit:userFileType>text</spirit:userFileType>
-			</spirit:file>
-		</spirit:fileSet>
-		<spirit:fileSet>
-			<spirit:name>xilinx_elaboratesubcores_view_fileset</spirit:name>
 		</spirit:fileSet>
 	</spirit:fileSets>
 	<spirit:description>The Xilinx 7 Series Integrated Block for PCI Express (1-lane, 2-lane, 4-lane, and 8-lane) uses the 7-Series Integrated Hard IP Block for PCI Express in conjunction with flexible 7-Series architectural features to implement a PCI Express Base Specification v2.1 compliant PCI Express Endpoint or Root Port. Unique features of the LogiCORE Block for PCI Express are the high performance AXI Interface, optimal buffering for high bandwidth applications, and BAR checking and filtering.</spirit:description>

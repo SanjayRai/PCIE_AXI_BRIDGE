@@ -10,7 +10,7 @@ source ./create_pcie_sybsys.tcl
 #set_property CONFIG.FREQ_HZ 250000000 [get_bd_intf_pins pcie_axi_stream_to_axi_lite_bridge_0/m_axis_tx]
 validate_bd_design
 save_bd_design
-generate_target all [get_files ./project_X/project_X.srcs/sources_1/bd/pcie_dsn/pcie_dsn.bd]
+#generate_target all [get_files ./project_X/project_X.srcs/sources_1/bd/pcie_dsn/pcie_dsn.bd]
 add_files -norecurse ./pcie_gen2x8_sub_sys_wrapper.v
 add_files -fileset constrs_1 ./pcie_gen2x8_sub_sys_wrapper.xdc
 update_compile_order -fileset sources_1

@@ -377,15 +377,19 @@ proc create_root_design { parentCell } {
 
   # Create instance: pcie_7x_0, and set properties
   set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 pcie_7x_0 ]
-  set_property -dict [ list CONFIG.Bar0_Scale {Megabytes} CONFIG.Bar0_Size {512} CONFIG.Bar1_Enabled {true} CONFIG.Bar1_Size {64} CONFIG.Bar1_Type {Memory} CONFIG.Bar2_Enabled {true} CONFIG.Bar2_Type {Memory} CONFIG.Bar3_Enabled {true} CONFIG.Bar3_Type {Memory} CONFIG.Device_ID {7028} CONFIG.Interface_Width {128_bit} CONFIG.Link_Speed {5.0_GT/s} CONFIG.Max_Payload_Size {256_bytes} CONFIG.Maximum_Link_Width {X8} CONFIG.Trgt_Link_Speed {4'h2} CONFIG.User_Clk_Freq {250} CONFIG.Xlnx_Ref_Board {KC705_REVC} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
+  set_property -dict [ list CONFIG.Bar0_Scale {Megabytes} CONFIG.Bar0_Size {512} CONFIG.Bar1_Enabled {false} CONFIG.Bar2_Enabled {false} CONFIG.Bar3_Enabled {false} CONFIG.Device_ID {7028} CONFIG.Interface_Width {128_bit} CONFIG.Link_Speed {5.0_GT/s} CONFIG.Max_Payload_Size {256_bytes} CONFIG.Maximum_Link_Width {X8} CONFIG.Trgt_Link_Speed {4'h2} CONFIG.User_Clk_Freq {250} CONFIG.Xlnx_Ref_Board {KC705_REVC} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
 
   # Create instance: pcie_axi_stream_to_axi_lite_bridge_0, and set properties
   set pcie_axi_stream_to_axi_lite_bridge_0 [ create_bd_cell -type ip -vlnv sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0 pcie_axi_stream_to_axi_lite_bridge_0 ]
-  set_property -dict [ list CONFIG.AXI_BAR_0_ADDR {0x20000000} CONFIG.AXI_BAR_1_ADDR {0x40000000} CONFIG.AXI_BAR_2_ADDR {0x60000000} CONFIG.AXI_BAR_3_ADDR {0x80000000}  ] $pcie_axi_stream_to_axi_lite_bridge_0
+  set_property -dict [ list CONFIG.AXI_BAR_0_ADDR {0x20000000} CONFIG.AXI_BAR_0_MASK {0xE0000000} CONFIG.AXI_BAR_1_ADDR {0x40000000} CONFIG.AXI_BAR_2_ADDR {0x60000000} CONFIG.AXI_BAR_3_ADDR {0x80000000}  ] $pcie_axi_stream_to_axi_lite_bridge_0
 
   # Create instance: rst_mig_7series_0_200M, and set properties
   set rst_mig_7series_0_200M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_mig_7series_0_200M ]
   set_property -dict [ list CONFIG.C_AUX_RESET_HIGH {0}  ] $rst_mig_7series_0_200M
+
+  # Create instance: rst_pcie_sys_250M, and set properties
+  set rst_pcie_sys_250M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_pcie_sys_250M ]
+  set_property -dict [ list CONFIG.C_AUX_RESET_HIGH {0}  ] $rst_pcie_sys_250M
 
   # Create interface connections
   connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins pcie_axi_stream_to_axi_lite_bridge_0/M_AXI]
@@ -400,10 +404,12 @@ proc create_root_design { parentCell } {
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_pins mig_7series_0/mmcm_locked] [get_bd_pins rst_mig_7series_0_200M/dcm_locked]
   connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins mig_7series_0/ui_clk] [get_bd_pins rst_mig_7series_0_200M/slowest_sync_clk]
   connect_bd_net -net mig_7series_0_ui_clk_sync_rst [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins rst_mig_7series_0_200M/ext_reset_in]
-  connect_bd_net -net pcie_7x_0_user_clk_out [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins pcie_7x_0/user_clk_out] [get_bd_pins pcie_axi_stream_to_axi_lite_bridge_0/user_clk]
+  connect_bd_net -net pcie_7x_0_user_clk_out [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins pcie_7x_0/user_clk_out] [get_bd_pins pcie_axi_stream_to_axi_lite_bridge_0/user_clk] [get_bd_pins rst_pcie_sys_250M/slowest_sync_clk]
   connect_bd_net -net pcie_7x_0_user_lnk_up [get_bd_pins pcie_7x_0/user_lnk_up] [get_bd_pins pcie_axi_stream_to_axi_lite_bridge_0/user_lnk_up]
+  connect_bd_net -net pcie_7x_0_user_reset_out [get_bd_pins pcie_7x_0/user_reset_out] [get_bd_pins rst_pcie_sys_250M/ext_reset_in]
   connect_bd_net -net reset_1 [get_bd_ports mig_reset] [get_bd_pins mig_7series_0/sys_rst]
-  connect_bd_net -net rst_mig_7series_0_200M_peripheral_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins mig_7series_0/aresetn] [get_bd_pins pcie_axi_stream_to_axi_lite_bridge_0/M_AXI_ARESETN] [get_bd_pins rst_mig_7series_0_200M/peripheral_aresetn]
+  connect_bd_net -net rst_mig_7series_0_200M1_peripheral_aresetn [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins pcie_axi_stream_to_axi_lite_bridge_0/M_AXI_ARESETN] [get_bd_pins rst_pcie_sys_250M/peripheral_aresetn]
+  connect_bd_net -net rst_mig_7series_0_200M_peripheral_aresetn [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins mig_7series_0/aresetn] [get_bd_pins rst_mig_7series_0_200M/peripheral_aresetn]
   connect_bd_net -net sys_clk_1 [get_bd_ports pcie_ref_clk] [get_bd_pins pcie_7x_0/sys_clk]
   connect_bd_net -net sys_rst_n_1 [get_bd_ports pcie_rst_n] [get_bd_pins pcie_7x_0/sys_rst_n]
 
