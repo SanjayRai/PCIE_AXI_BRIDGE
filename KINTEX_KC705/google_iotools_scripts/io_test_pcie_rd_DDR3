@@ -1,6 +1,6 @@
-iotools mmio_read32 0xc0000000
-iotools mmio_read32 0xc0000004
-iotools mmio_read32 0xc0000008
-iotools mmio_read32 0xc000000c
-iotools mmio_read32 0xc0000010
-iotools mmio_read32 0xc0000014
+iotools mmio_read32 0x80000000
+iotools mmio_read32 0x80000004
+iotools mmio_read32 0x80000008
+iotools mmio_read32 0x8000000c
+iotools mmio_read32 0x80000010
+iotools mmio_read32 0x80000014
