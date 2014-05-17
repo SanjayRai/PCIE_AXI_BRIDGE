@@ -2,11 +2,12 @@
 # Vivado v2014.1 (64-bit)
 # SW Build 881834 on Fri Apr  4 13:56:21 MDT 2014
 # IP Build 877625 on Fri Mar 28 16:29:15 MDT 2014
-# Start of session at: Fri Apr 25 16:52:47 2014
-# Process ID: 9229
-# Log file: /home/sanjayr/projects/KC705/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.log
-# Journal file: /home/sanjayr/projects/KC705/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.jou
+# Start of session at: Sat May 17 07:53:48 2014
+# Process ID: 31044
+# Log file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.log
+# Journal file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.jou
 #-----------------------------------------------------------
 start_gui
 source vivado_project.tcl
 set_property vendor {sanjay} [ipx::current_core]
+set_property vendor {sanjayr} [ipx::current_core]

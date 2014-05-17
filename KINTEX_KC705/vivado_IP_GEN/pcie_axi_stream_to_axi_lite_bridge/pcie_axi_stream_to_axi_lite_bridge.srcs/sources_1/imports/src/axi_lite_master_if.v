@@ -89,19 +89,19 @@ assign rd_data_valid = axi_rready;
     case (AXI_WR_BAR_INDEX)
 
       2'b01 : begin //BAR_1
-        i_M_AXI_AWADDR	<= (({wr_addr[29:0], 2'b00}  & ~AXI_BAR_1_MASK) | AXI_BAR_1_ADDR);
+        i_M_AXI_AWADDR	<= (({wr_addr[29:0], 2'b00}  & ~AXI_BAR_1_MASK) + AXI_BAR_1_ADDR);
       end // 2'b01
 
       2'b10 : begin //BAR_2
-        i_M_AXI_AWADDR	<= (({wr_addr[29:0], 2'b00}  & ~AXI_BAR_2_MASK) | AXI_BAR_2_ADDR);
+        i_M_AXI_AWADDR	<= (({wr_addr[29:0], 2'b00}  & ~AXI_BAR_2_MASK) + AXI_BAR_2_ADDR);
       end // 2'b10
 
       2'b11 : begin //BAR_3
-        i_M_AXI_AWADDR	<= (({wr_addr[29:0], 2'b00}  & ~AXI_BAR_3_MASK) | AXI_BAR_3_ADDR);
+        i_M_AXI_AWADDR	<= (({wr_addr[29:0], 2'b00}  & ~AXI_BAR_3_MASK) + AXI_BAR_3_ADDR);
       end // 2'b11
 
       default : begin //BAR_0
-        i_M_AXI_AWADDR	<= (({wr_addr[29:0], 2'b00}  & ~AXI_BAR_0_MASK) | AXI_BAR_0_ADDR);
+        i_M_AXI_AWADDR	<= (({wr_addr[29:0], 2'b00}  & ~AXI_BAR_0_MASK) + AXI_BAR_0_ADDR);
       end // default Bar_0
 
     endcase
@@ -113,19 +113,19 @@ assign rd_data_valid = axi_rready;
     case (AXI_RD_BAR_INDEX)
 
       2'b01 : begin //BAR_1
-        i_M_AXI_ARADDR	<= (({rd_addr[29:0], 2'b00}  & ~AXI_BAR_1_MASK) | AXI_BAR_1_ADDR);
+        i_M_AXI_ARADDR	<= (({rd_addr[29:0], 2'b00}  & ~AXI_BAR_1_MASK) + AXI_BAR_1_ADDR);
       end // 2'b01
 
       2'b10 : begin //BAR_2
-        i_M_AXI_ARADDR	<= (({rd_addr[29:0], 2'b00}  & ~AXI_BAR_2_MASK) | AXI_BAR_2_ADDR);
+        i_M_AXI_ARADDR	<= (({rd_addr[29:0], 2'b00}  & ~AXI_BAR_2_MASK) + AXI_BAR_2_ADDR);
       end // 2'b10
 
       2'b11 : begin //BAR_3
-        i_M_AXI_ARADDR	<= (({rd_addr[29:0], 2'b00}  & ~AXI_BAR_3_MASK) | AXI_BAR_3_ADDR);
+        i_M_AXI_ARADDR	<= (({rd_addr[29:0], 2'b00}  & ~AXI_BAR_3_MASK) + AXI_BAR_3_ADDR);
       end // 2'b11
 
       default : begin //BAR_0
-        i_M_AXI_ARADDR	<= (({rd_addr[29:0], 2'b00}  & ~AXI_BAR_0_MASK) | AXI_BAR_0_ADDR);
+        i_M_AXI_ARADDR	<= (({rd_addr[29:0], 2'b00}  & ~AXI_BAR_0_MASK) + AXI_BAR_0_ADDR);
       end // default Bar_0
 
     endcase
