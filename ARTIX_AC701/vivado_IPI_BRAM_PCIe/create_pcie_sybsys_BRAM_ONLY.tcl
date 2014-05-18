@@ -159,15 +159,15 @@ proc create_root_design { parentCell } {
 
   # Create instance: blk_mem_gen_0, and set properties
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.2 blk_mem_gen_0 ]
-  set_property -dict [ list CONFIG.Enable_B {Use_ENB_Pin} CONFIG.MEM_FILE {NONE} CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Use_RSTB_Pin {true}  ] $blk_mem_gen_0
+  set_property -dict [ list CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Use_RSTB_Pin {true}  ] $blk_mem_gen_0
 
   # Create instance: pcie_7x_0, and set properties
   set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 pcie_7x_0 ]
   set_property -dict [ list CONFIG.Bar0_Scale {Megabytes} CONFIG.Bar0_Size {512} CONFIG.Bar1_Enabled {true} CONFIG.Bar1_Size {2} CONFIG.Bar1_Type {Memory} CONFIG.Bar2_Enabled {true} CONFIG.Bar2_Type {Memory} CONFIG.Bar3_Enabled {false} CONFIG.PCIe_Debug_Ports {false} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
 
-  # Create instance: pcie_axi_stream_to_axi_lite_bridge_0, and set properties
-  set pcie_axi_stream_to_axi_lite_bridge_0 [ create_bd_cell -type ip -vlnv sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0 pcie_axi_stream_to_axi_lite_bridge_0 ]
-  set_property -dict [ list CONFIG.AXI_BAR_0_ADDR {0x20000000} CONFIG.AXI_BAR_0_MASK {0xFFFF0000} CONFIG.AXI_BAR_1_ADDR {0x40000000} CONFIG.AXI_BAR_1_MASK {0xFFFF0000} CONFIG.AXI_BAR_2_ADDR {0x60000000} CONFIG.AXI_BAR_2_MASK {0xFFFFF800} CONFIG.AXI_BAR_3_ADDR {0x80000000} CONFIG.AXI_BAR_3_MASK {0xFFFFF800} CONFIG.C_DATA_WIDTH {64}  ] $pcie_axi_stream_to_axi_lite_bridge_0
+  # Create instance: pcie_axi_brdg, and set properties
+  set pcie_axi_brdg [ create_bd_cell -type ip -vlnv sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0 pcie_axi_brdg ]
+  set_property -dict [ list CONFIG.AXI_BAR_0_ADDR {0x20000000} CONFIG.AXI_BAR_0_MASK {0xFFFF0000} CONFIG.AXI_BAR_1_ADDR {0x40000000} CONFIG.AXI_BAR_1_MASK {0xFFFF0000} CONFIG.AXI_BAR_2_ADDR {0x60000000} CONFIG.AXI_BAR_2_MASK {0xFFFFF800} CONFIG.AXI_BAR_3_ADDR {0x80000000} CONFIG.AXI_BAR_3_MASK {0xFFFFF800} CONFIG.C_DATA_WIDTH {64}  ] $pcie_axi_brdg
 
   # Create instance: rst_pcie_sys_clk_100M, and set properties
   set rst_pcie_sys_clk_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_pcie_sys_clk_100M ]
@@ -181,23 +181,23 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins axi_mem_intercon/M00_AXI]
   connect_bd_intf_net -intf_net axi_mem_intercon_M01_AXI [get_bd_intf_pins axi_gpio_sw/S_AXI] [get_bd_intf_pins axi_mem_intercon/M01_AXI]
   connect_bd_intf_net -intf_net axi_mem_intercon_M02_AXI [get_bd_intf_pins axi_gpio_LED/S_AXI] [get_bd_intf_pins axi_mem_intercon/M02_AXI]
-  connect_bd_intf_net -intf_net pcie_7x_0_m_axis_rx [get_bd_intf_pins pcie_7x_0/m_axis_rx] [get_bd_intf_pins pcie_axi_stream_to_axi_lite_bridge_0/s_axis_rx]
+  connect_bd_intf_net -intf_net pcie_7x_0_m_axis_rx [get_bd_intf_pins pcie_7x_0/m_axis_rx] [get_bd_intf_pins pcie_axi_brdg/s_axis_rx]
   connect_bd_intf_net -intf_net pcie_7x_0_pcie_7x_mgt [get_bd_intf_ports pcie_7x_mgt] [get_bd_intf_pins pcie_7x_0/pcie_7x_mgt]
-  connect_bd_intf_net -intf_net pcie_axi_stream_to_axi_lite_bridge_0_M_AXI [get_bd_intf_pins axi_mem_intercon/S00_AXI] [get_bd_intf_pins pcie_axi_stream_to_axi_lite_bridge_0/M_AXI]
-  connect_bd_intf_net -intf_net pcie_axi_stream_to_axi_lite_bridge_0_m_axis_tx [get_bd_intf_pins pcie_7x_0/s_axis_tx] [get_bd_intf_pins pcie_axi_stream_to_axi_lite_bridge_0/m_axis_tx]
+  connect_bd_intf_net -intf_net pcie_axi_stream_to_axi_lite_bridge_0_M_AXI [get_bd_intf_pins axi_mem_intercon/S00_AXI] [get_bd_intf_pins pcie_axi_brdg/M_AXI]
+  connect_bd_intf_net -intf_net pcie_axi_stream_to_axi_lite_bridge_0_m_axis_tx [get_bd_intf_pins pcie_7x_0/s_axis_tx] [get_bd_intf_pins pcie_axi_brdg/m_axis_tx]
 
   # Create port connections
-  connect_bd_net -net pcie_7x_0_user_clk_out [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_LED/s_axi_aclk] [get_bd_pins axi_gpio_sw/s_axi_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/M01_ACLK] [get_bd_pins axi_mem_intercon/M02_ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins pcie_7x_0/user_clk_out] [get_bd_pins pcie_axi_stream_to_axi_lite_bridge_0/user_clk] [get_bd_pins rst_pcie_sys_clk_100M/slowest_sync_clk]
-  connect_bd_net -net pcie_7x_0_user_lnk_up [get_bd_pins pcie_7x_0/user_lnk_up] [get_bd_pins pcie_axi_stream_to_axi_lite_bridge_0/user_lnk_up]
+  connect_bd_net -net pcie_7x_0_user_clk_out [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_LED/s_axi_aclk] [get_bd_pins axi_gpio_sw/s_axi_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/M01_ACLK] [get_bd_pins axi_mem_intercon/M02_ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins pcie_7x_0/user_clk_out] [get_bd_pins pcie_axi_brdg/user_clk] [get_bd_pins rst_pcie_sys_clk_100M/slowest_sync_clk]
+  connect_bd_net -net pcie_7x_0_user_lnk_up [get_bd_pins pcie_7x_0/user_lnk_up] [get_bd_pins pcie_axi_brdg/user_lnk_up]
   connect_bd_net -net pcie_sys_clk_1 [get_bd_ports pcie_sys_clk] [get_bd_pins pcie_7x_0/sys_clk]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins rst_pcie_sys_clk_100M/ext_reset_in]
-  connect_bd_net -net rst_pcie_sys_clk_100M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_gpio_LED/s_axi_aresetn] [get_bd_pins axi_gpio_sw/s_axi_aresetn] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/M01_ARESETN] [get_bd_pins axi_mem_intercon/M02_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins pcie_axi_stream_to_axi_lite_bridge_0/M_AXI_ARESETN] [get_bd_pins rst_pcie_sys_clk_100M/peripheral_aresetn]
+  connect_bd_net -net rst_pcie_sys_clk_100M_peripheral_aresetn [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_gpio_LED/s_axi_aresetn] [get_bd_pins axi_gpio_sw/s_axi_aresetn] [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/M01_ARESETN] [get_bd_pins axi_mem_intercon/M02_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins pcie_axi_brdg/M_AXI_ARESETN] [get_bd_pins rst_pcie_sys_clk_100M/peripheral_aresetn]
   connect_bd_net -net sys_rst_n_1 [get_bd_ports pcie_sys_rst_n] [get_bd_pins pcie_7x_0/sys_rst_n]
 
   # Create address segments
-  create_bd_addr_seg -range 0x8000 -offset 0x20000000 [get_bd_addr_spaces pcie_axi_stream_to_axi_lite_bridge_0/M_AXI] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
-  create_bd_addr_seg -range 0x10000 -offset 0x40010000 [get_bd_addr_spaces pcie_axi_stream_to_axi_lite_bridge_0/M_AXI] [get_bd_addr_segs axi_gpio_LED/S_AXI/Reg] SEG_axi_gpio_LED_Reg
-  create_bd_addr_seg -range 0x10000 -offset 0x40000000 [get_bd_addr_spaces pcie_axi_stream_to_axi_lite_bridge_0/M_AXI] [get_bd_addr_segs axi_gpio_sw/S_AXI/Reg] SEG_axi_gpio_sw_Reg
+  create_bd_addr_seg -range 0x8000 -offset 0x20000000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
+  create_bd_addr_seg -range 0x10000 -offset 0x40010000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_gpio_LED/S_AXI/Reg] SEG_axi_gpio_LED_Reg
+  create_bd_addr_seg -range 0x10000 -offset 0x40000000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_gpio_sw/S_AXI/Reg] SEG_axi_gpio_sw_Reg
   
 
   # Restore current instance
