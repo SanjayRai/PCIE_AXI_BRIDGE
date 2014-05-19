@@ -2860,6 +2860,32 @@
 				</spirit:parameters>
 			</spirit:view>
 			<spirit:view>
+				<spirit:name>xilinx_versioninformation</spirit:name>
+				<spirit:displayName>Version Information</spirit:displayName>
+				<spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>customizationCRC</spirit:name>
+						<spirit:value>51ef0518</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>customizationCRCversion</spirit:name>
+						<spirit:value>4</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>GENtimestamp</spirit:name>
+						<spirit:value>Thu Apr 24 22:59:08 UTC 2014</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>StaleAtRelink</spirit:name>
+						<spirit:value>false</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
 				<spirit:name>xilinx_verilogsynthesis</spirit:name>
 				<spirit:displayName>Verilog Synthesis</spirit:displayName>
 				<spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
@@ -2879,7 +2905,7 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Thu Apr 24 22:59:02 UTC 2014</spirit:value>
+						<spirit:value>Mon May 19 00:35:16 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
@@ -2906,7 +2932,7 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Thu Apr 24 22:59:02 UTC 2014</spirit:value>
+						<spirit:value>Mon May 19 00:35:16 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
@@ -2934,7 +2960,7 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Thu Apr 24 22:59:08 UTC 2014</spirit:value>
+						<spirit:value>Mon May 19 00:35:22 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
@@ -2961,33 +2987,7 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Thu Apr 24 22:59:08 UTC 2014</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>StaleAtRelink</spirit:name>
-						<spirit:value>false</spirit:value>
-					</spirit:parameter>
-				</spirit:parameters>
-			</spirit:view>
-			<spirit:view>
-				<spirit:name>xilinx_versioninformation</spirit:name>
-				<spirit:displayName>Version Information</spirit:displayName>
-				<spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
-				<spirit:fileSetRef>
-					<spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
-				</spirit:fileSetRef>
-				<spirit:parameters>
-					<spirit:parameter>
-						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>51ef0518</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>customizationCRCversion</spirit:name>
-						<spirit:value>4</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Thu Apr 24 22:59:08 UTC 2014</spirit:value>
+						<spirit:value>Mon May 19 00:35:22 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
@@ -12117,6 +12117,13 @@
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
+			<spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>doc/pcie_7x_v3_0_changelog.txt</spirit:name>
+				<spirit:userFileType>text</spirit:userFileType>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
 			<spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
 			<spirit:file>
 				<spirit:name>source/A7_gen1x1_pcie_pipe_clock.v</spirit:name>
@@ -12509,13 +12516,6 @@
 				<spirit:name>sim/A7_gen1x1_pcie.v</spirit:name>
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:logicalName>xil_defaultlib</spirit:logicalName>
-			</spirit:file>
-		</spirit:fileSet>
-		<spirit:fileSet>
-			<spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
-			<spirit:file>
-				<spirit:name>doc/pcie_7x_v3_0_changelog.txt</spirit:name>
-				<spirit:userFileType>text</spirit:userFileType>
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
