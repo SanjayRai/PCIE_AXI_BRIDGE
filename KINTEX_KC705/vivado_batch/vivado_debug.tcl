@@ -1,6 +1,5 @@
 open_hw
-#connect_hw_server -host 192.168.0.22 -port 60001
-connect_hw_server -host localhost -port 60001
+connect_hw_server -host localhost -port 60001 -url 192.168.0.22:3121
 current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210203300172A]
 set_property PARAM.FREQUENCY 6000000 [get_hw_targets */xilinx_tcf/Digilent/210203300172A]
 open_hw_target
