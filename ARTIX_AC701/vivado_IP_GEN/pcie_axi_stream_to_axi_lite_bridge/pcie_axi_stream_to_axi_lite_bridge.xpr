@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2014.1 (64-bit)              -->
+<!-- Product Version: Vivado v2014.2 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright (c) 2001-2013 Xilinx Inc, All rights reserved -->
 
-<Project Version="7" Minor="0" Path="/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.xpr">
+<Project Version="7" Minor="1" Path="/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="4acc8193b5284ff2a60f6941c1edfc6a"/>
+    <Option Name="Id" Val="70fd4f1d04a443fcaaa9fec85877bab6"/>
     <Option Name="Part" Val="xc7a200tfbg676-2"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="BoardPart" Val=""/>
@@ -19,7 +19,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/PIO_TX_ENGINE.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/PIO_TX_ENGINE.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -28,7 +28,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/PIO_RX_ENGINE.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/PIO_RX_ENGINE.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -37,7 +37,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/PIO_TO_CTRL.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/PIO_TO_CTRL.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -46,7 +46,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/PIO_EP.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/PIO_EP.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -55,7 +55,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/PIO.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/PIO.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -64,7 +64,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/pcie_app_7x.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/pcie_app_7x.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -73,7 +73,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/axi_lite_master_if.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/axi_lite_master_if.v"/>
-          <Attr Name="ImportTime" Val="1400361497"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -82,7 +82,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/axiLite_debug.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/axiLite_debug.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -91,7 +91,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/pcie_axi_stream_to_axi_lite_bridge.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/pcie_axi_stream_to_axi_lite_bridge.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -100,7 +100,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/pcie_gen1x1_axi_lite_bridge.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/pcie_gen1x1_axi_lite_bridge.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -109,7 +109,7 @@
       <File Path="$PSRCDIR/sources_1/imports/src/pcie_gen1x1_axi_lite_bridge_example_top.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/pcie_gen1x1_axi_lite_bridge_example_top.v"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1402914779"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -118,20 +118,94 @@
       <File Path="$PSRCDIR/sources_1/ip/A7_gen1x1_pcie/A7_gen1x1_pcie.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../IP/A7_gen1x1_pcie/A7_gen1x1_pcie.xci"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1403017873"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_axi_basic_rx_pipeline.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_axi_basic_rx_null_gen.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_core_top.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie_top.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_rxeq_scan.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_qpll_wrapper.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_qpll_reset.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_qpll_drp.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pipe_wrapper.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pipe_user.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_gtp_pipe_reset.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_gtp_pipe_drp.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_gtp_pipe_rate.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pipe_sync.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pipe_reset.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pipe_rate.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pipe_drp.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pipe_eq.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pipe_clock.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="A7_gen1x1_pcie.veo"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="doc/pcie_7x_v3_0_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="A7_gen1x1_pcie.xml"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="synth/A7_gen1x1_pcie.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="synth/A7_gen1x1_pcie_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie-PCIE_X0Y0.xdc"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="sim/A7_gen1x1_pcie.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie2_top.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_gt_wrapper.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_gt_rx_valid_filter_7x.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_gt_common.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_gt_top.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie_pipe_pipeline.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie_pipe_misc.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie_pipe_lane.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie_brams_7x.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie_bram_top_7x.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie_7x.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_axi_basic_tx.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_axi_basic_tx_thrtl_ctl.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_axi_basic_tx_pipeline.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_axi_basic_top.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_axi_basic_rx.v"/>
+        <CompFileExtendedInfo CompFileName="A7_gen1x1_pcie.xci" FileRelPathName="source/A7_gen1x1_pcie_pcie_bram_7x.v"/>
       </File>
       <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../IP/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci"/>
-          <Attr Name="ImportTime" Val="1400249839"/>
+          <Attr Name="ImportTime" Val="1403017512"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="doc/blk_mem_gen_v8_2_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/simulation/blk_mem_gen_v8_2.v"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="summary.log"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_axi_if.veo"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_axi_if.xml"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="synth/blk_mem_gen_axi_if.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_synth.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_top.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_regs_fwd.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_write_wrapper.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_write_fsm.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_read_wrapper.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_read_fsm.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_output_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_input_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_ecc_decoder.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_ecc_encoder.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_generic_cstr.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_width.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_wrapper_init.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_wrapper.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_mux.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_bindec.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_min_area_pkg.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_getinit_pkg.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_pkg.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_defaults.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_synth_comp.vhd"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="blk_mem_gen_axi_if_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="blk_mem_gen_axi_if.xci" FileRelPathName="sim/blk_mem_gen_axi_if.v"/>
       </File>
       <File Path="$PPRDIR/../component.xml">
         <FileInfo SFType="IPXACT"/>

@@ -117,7 +117,6 @@ report_drc -file $TOP_module.drc.rpt
 set_property config_mode SPIx4 [current_design]
 set_property config_mode B_SCAN [current_design]
 set_property config_mode SPIx4 [current_design]
-set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN DIV-1 [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 
 write_bitstream $TOP_module.bit      

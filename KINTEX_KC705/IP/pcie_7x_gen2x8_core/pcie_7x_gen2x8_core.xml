@@ -2843,7 +2843,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>9fa04ab2</spirit:value>
+						<spirit:value>67ef9299</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>customizationCRCversion</spirit:name>
@@ -2851,55 +2851,11 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Fri Apr 25 23:26:54 UTC 2014</spirit:value>
+						<spirit:value>Mon Jun 16 10:34:43 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
 						<spirit:value>false</spirit:value>
-					</spirit:parameter>
-				</spirit:parameters>
-			</spirit:view>
-			<spirit:view>
-				<spirit:name>xilinx_versioninformation</spirit:name>
-				<spirit:displayName>Version Information</spirit:displayName>
-				<spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
-				<spirit:fileSetRef>
-					<spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
-				</spirit:fileSetRef>
-				<spirit:parameters>
-					<spirit:parameter>
-						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>9fa04ab2</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>customizationCRCversion</spirit:name>
-						<spirit:value>4</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Fri Apr 25 23:27:07 UTC 2014</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>StaleAtRelink</spirit:name>
-						<spirit:value>false</spirit:value>
-					</spirit:parameter>
-				</spirit:parameters>
-			</spirit:view>
-			<spirit:view>
-				<spirit:name>xilinx_elaboratesubcores</spirit:name>
-				<spirit:displayName>Elaborate Sub-Cores</spirit:displayName>
-				<spirit:envIdentifier>:vivado.xilinx.com:elaborate.subcores</spirit:envIdentifier>
-				<spirit:fileSetRef>
-					<spirit:localName>xilinx_elaboratesubcores_view_fileset</spirit:localName>
-				</spirit:fileSetRef>
-				<spirit:parameters>
-					<spirit:parameter>
-						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>9fa04ab2</spirit:value>
-					</spirit:parameter>
-					<spirit:parameter>
-						<spirit:name>customizationCRCversion</spirit:name>
-						<spirit:value>4</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -2915,7 +2871,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>9fa04ab2</spirit:value>
+						<spirit:value>67ef9299</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>customizationCRCversion</spirit:name>
@@ -2923,7 +2879,7 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Mon May 19 00:39:20 UTC 2014</spirit:value>
+						<spirit:value>Mon Jun 16 10:35:00 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
@@ -2942,7 +2898,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>9fa04ab2</spirit:value>
+						<spirit:value>67ef9299</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>customizationCRCversion</spirit:name>
@@ -2950,7 +2906,7 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Mon May 19 00:39:20 UTC 2014</spirit:value>
+						<spirit:value>Mon Jun 16 10:35:00 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
@@ -2970,7 +2926,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>cafab9b9</spirit:value>
+						<spirit:value>14b2c54f</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>customizationCRCversion</spirit:name>
@@ -2978,7 +2934,7 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Mon May 19 00:39:26 UTC 2014</spirit:value>
+						<spirit:value>Mon Jun 16 10:35:06 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
@@ -2997,7 +2953,7 @@
 				<spirit:parameters>
 					<spirit:parameter>
 						<spirit:name>customizationCRC</spirit:name>
-						<spirit:value>cafab9b9</spirit:value>
+						<spirit:value>14b2c54f</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>customizationCRCversion</spirit:name>
@@ -3005,11 +2961,55 @@
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>GENtimestamp</spirit:name>
-						<spirit:value>Mon May 19 00:39:26 UTC 2014</spirit:value>
+						<spirit:value>Mon Jun 16 10:35:06 UTC 2014</spirit:value>
 					</spirit:parameter>
 					<spirit:parameter>
 						<spirit:name>StaleAtRelink</spirit:name>
 						<spirit:value>false</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_versioninformation</spirit:name>
+				<spirit:displayName>Version Information</spirit:displayName>
+				<spirit:envIdentifier>:vivado.xilinx.com:docs.versioninfo</spirit:envIdentifier>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_versioninformation_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>customizationCRC</spirit:name>
+						<spirit:value>67ef9299</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>customizationCRCversion</spirit:name>
+						<spirit:value>4</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>GENtimestamp</spirit:name>
+						<spirit:value>Mon Jun 16 10:35:06 UTC 2014</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>StaleAtRelink</spirit:name>
+						<spirit:value>false</spirit:value>
+					</spirit:parameter>
+				</spirit:parameters>
+			</spirit:view>
+			<spirit:view>
+				<spirit:name>xilinx_elaboratesubcores</spirit:name>
+				<spirit:displayName>Elaborate Sub-Cores</spirit:displayName>
+				<spirit:envIdentifier>:vivado.xilinx.com:elaborate.subcores</spirit:envIdentifier>
+				<spirit:fileSetRef>
+					<spirit:localName>xilinx_elaboratesubcores_view_fileset</spirit:localName>
+				</spirit:fileSetRef>
+				<spirit:parameters>
+					<spirit:parameter>
+						<spirit:name>customizationCRC</spirit:name>
+						<spirit:value>67ef9299</spirit:value>
+					</spirit:parameter>
+					<spirit:parameter>
+						<spirit:name>customizationCRCversion</spirit:name>
+						<spirit:value>4</spirit:value>
 					</spirit:parameter>
 				</spirit:parameters>
 			</spirit:view>
@@ -12115,16 +12115,6 @@
 			</spirit:file>
 		</spirit:fileSet>
 		<spirit:fileSet>
-			<spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
-			<spirit:file>
-				<spirit:name>doc/pcie_7x_v3_0_changelog.txt</spirit:name>
-				<spirit:userFileType>text</spirit:userFileType>
-			</spirit:file>
-		</spirit:fileSet>
-		<spirit:fileSet>
-			<spirit:name>xilinx_elaboratesubcores_view_fileset</spirit:name>
-		</spirit:fileSet>
-		<spirit:fileSet>
 			<spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
 			<spirit:file>
 				<spirit:name>source/pcie_7x_gen2x8_core_pipe_clock.v</spirit:name>
@@ -12518,6 +12508,16 @@
 				<spirit:fileType>verilogSource</spirit:fileType>
 				<spirit:logicalName>xil_defaultlib</spirit:logicalName>
 			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>xilinx_versioninformation_view_fileset</spirit:name>
+			<spirit:file>
+				<spirit:name>doc/pcie_7x_v3_0_changelog.txt</spirit:name>
+				<spirit:userFileType>text</spirit:userFileType>
+			</spirit:file>
+		</spirit:fileSet>
+		<spirit:fileSet>
+			<spirit:name>xilinx_elaboratesubcores_view_fileset</spirit:name>
 		</spirit:fileSet>
 	</spirit:fileSets>
 	<spirit:description>The Xilinx 7 Series Integrated Block for PCI Express (1-lane, 2-lane, 4-lane, and 8-lane) uses the 7-Series Integrated Hard IP Block for PCI Express in conjunction with flexible 7-Series architectural features to implement a PCI Express Base Specification v2.1 compliant PCI Express Endpoint or Root Port. Unique features of the LogiCORE Block for PCI Express are the high performance AXI Interface, optimal buffering for high bandwidth applications, and BAR checking and filtering.</spirit:description>
@@ -14210,8 +14210,9 @@
 				<xilinx:family xilinx:lifeCycle="Production">aartix7{(.*)(7a(100t|75t|35t|50t))(fgg484|cpg236|csg325)-(.*)}</xilinx:family>
 				<xilinx:family xilinx:lifeCycle="Production">artix7l{(.*)(7a(35tl|50tl|75tl|100tl|200tl))(fgg484|fbg484|fgg676|fbg676|ffg1156|sbg484|cpg236|csg325)-(.*)}</xilinx:family>
 				<xilinx:family xilinx:lifeCycle="Production">artix7{(.*)(7a(100t|200t|35t|50t|75t))(fgg484|fbg484|fgg676|fbg676|ffg1156|sbg484|cpg236|csg325)-(.*)}</xilinx:family>
+				<xilinx:family xilinx:lifeCycle="Pre-Production">azynq{(.*)(7(z030))(.*)-(.*)}</xilinx:family>
 				<xilinx:family xilinx:lifeCycle="Production">kintex7{(.*)(7k(160t|325t|410t|480t|70t|355t|420t))(.*)-(.*)}</xilinx:family>
-				<xilinx:family xilinx:lifeCycle="Production">qartix7{(.*)(7a(100t|200t))(fg484|rb484|rb676|rs484)-(.*)}</xilinx:family>
+				<xilinx:family xilinx:lifeCycle="Production">qartix7{(.*)(7a(50t|100t|200t))(cs325|fg484|rb484|rb676|rs484)-(.*)}</xilinx:family>
 				<xilinx:family xilinx:lifeCycle="Production">qkintex7{(.*)(7k(325t|410t))(.*)-(.*)}</xilinx:family>
 				<xilinx:family xilinx:lifeCycle="Production">qvirtex7{(.*)(7(vx485t|v585t))(.*)-(.*)}</xilinx:family>
 				<xilinx:family xilinx:lifeCycle="Production">qzynq{(.*)(7(z030|z045))(.*)-(.*)}</xilinx:family>
@@ -14223,7 +14224,7 @@
 				<xilinx:taxonomy>/Standard_Bus_Interfaces/PCI_Express</xilinx:taxonomy>
 			</xilinx:taxonomies>
 			<xilinx:displayName>7 Series Integrated Block for PCI Express</xilinx:displayName>
-			<xilinx:coreRevision>1</xilinx:coreRevision>
+			<xilinx:coreRevision>2</xilinx:coreRevision>
 			<xilinx:upgrades>
 				<xilinx:canUpgradeFrom>xilinx.com:ip:pcie_7x:1.7</xilinx:canUpgradeFrom>
 				<xilinx:canUpgradeFrom>xilinx.com:ip:pcie_7x:1.8</xilinx:canUpgradeFrom>
@@ -14231,14 +14232,14 @@
 				<xilinx:canUpgradeFrom>xilinx.com:ip:pcie_7x:2.1</xilinx:canUpgradeFrom>
 				<xilinx:canUpgradeFrom>xilinx.com:ip:pcie_7x:2.2</xilinx:canUpgradeFrom>
 			</xilinx:upgrades>
-			<xilinx:coreCreationDateTime>2014-03-28T22:18:27Z</xilinx:coreCreationDateTime>
+			<xilinx:coreCreationDateTime>2014-05-30T15:09:35Z</xilinx:coreCreationDateTime>
 		</xilinx:coreExtensions>
 		<xilinx:packagingInfo>
-			<xilinx:xilinxVersion>2014.1</xilinx:xilinxVersion>
+			<xilinx:xilinxVersion>2014.2</xilinx:xilinxVersion>
 			<xilinx:checksum xilinx:scope="busInterfaces"
 					xilinx:value="6f694cb5"/>
 			<xilinx:checksum xilinx:scope="fileGroups"
-					xilinx:value="2d5d2986"/>
+					xilinx:value="a1e604e8"/>
 			<xilinx:checksum xilinx:scope="ports"
 					xilinx:value="d84f30e5"/>
 			<xilinx:checksum xilinx:scope="hdlParameters"

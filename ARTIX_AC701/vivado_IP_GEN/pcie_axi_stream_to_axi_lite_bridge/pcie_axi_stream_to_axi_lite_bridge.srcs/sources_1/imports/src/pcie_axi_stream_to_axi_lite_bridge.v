@@ -1,8 +1,5 @@
-// __SRAI (Supports four 23bit bars, Upper 2 address of the AXI ARADDR and
-// AWADDR indicate the correspoing 4 Bars. 
 `timescale 1ns / 1ps
-(* DowngradeIPIdentifiedWarnings = "yes" *)
-module pcie_axi_stream_to_axi_lite_bridge # (
+(* dont_touch="true" *) module pcie_axi_stream_to_axi_lite_bridge # (
   parameter C_DATA_WIDTH = 128,                           // RX/TX interface data width
   parameter AXI_BAR_0_ADDR                = 32'h10000000, // AXI BAR 0 Address
   parameter AXI_BAR_0_MASK                = 32'hFFFF8000, // AXI BAR 0 MASK - Must match PCIe BAR MASK (dtermines BAR Address Size)
@@ -194,7 +191,7 @@ axi_lite_master_if # (
     .M_AXI_RREADY(M_AXI_RREADY)           // output wire                     
 );
 
-axiLite_debug u_axiLite_debug (
+(*dont_touch="true" *) axiLite_debug u_axiLite_debug (
     .M_AXI_ACLK(user_clk),
     .M_AXI_ARESETN(M_AXI_ARESETN),
     .M_AXI_AWADDR(M_AXI_AWADDR),

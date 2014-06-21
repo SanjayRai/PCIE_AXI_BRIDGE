@@ -916,48 +916,39 @@
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO_TX_ENGINE.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO_RX_ENGINE.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO_TO_CTRL.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO_EP.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_app_7x.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/axi_lite_master_if.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/axiLite_debug.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_axi_stream_to_axi_lite_bridge.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_d7a03728</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -965,47 +956,38 @@
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO_TX_ENGINE.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO_RX_ENGINE.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO_TO_CTRL.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO_EP.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/PIO.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_app_7x.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/axi_lite_master_if.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/axiLite_debug.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_axi_stream_to_axi_lite_bridge.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1111,10 +1093,14 @@
       <xilinx:vendorDisplayName>sanjayr</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.xilinx.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2014-05-17T14:54:00Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2014-06-17T10:01:27Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="user.org:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN</xilinx:tag>
+        <xilinx:tag xilinx:name="sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN</xilinx:tag>
+      </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2014.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2014.2</xilinx:xilinxVersion>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

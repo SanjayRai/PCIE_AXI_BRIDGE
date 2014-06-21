@@ -7,8 +7,6 @@ set_false_path -from [get_ports pcie_sys_rst_n]
 
 set_property LOC IBUFDS_GTE2_X0Y2 [get_cells refclk_ibuf]
 
-set_clock_groups -name TIG_AXI_ARESET_N -asynchronous  -group [get_clocks {inst/gt_top_i/pipe_wrapper_i/pipe_clock_int.pipe_clock_i/userclk1}] -group [get_clocks {u_pcie_gen1x1_sub_sys_mig_7series_0_0_mig/u_ddr3_infrastructure/clk_pll_i}]
-
 create_debug_core u_ila_0 labtools_ila_v3
 set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
 set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]

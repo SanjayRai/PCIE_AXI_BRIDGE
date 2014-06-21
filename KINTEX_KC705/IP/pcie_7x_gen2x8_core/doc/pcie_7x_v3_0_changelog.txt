@@ -1,3 +1,9 @@
+2014.2:
+ * Version 3.0 (Rev. 2)
+ * Added AZynq7030 device support
+ * Added QArtix 50t device support
+ * Enabled PIPE simulation and External PIPE interface support only when shared logic option Shared Logic (clocking) in example design is selected
+
 2014.1:
  * Version 3.0 (Rev. 1)
  * Added Zynq7015 device support
