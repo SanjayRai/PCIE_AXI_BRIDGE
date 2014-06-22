@@ -1,4 +1,4 @@
-module axiLite_debug (
+(* dont_touch = "true" *)module axiLite_debug (
 input                        M_AXI_ACLK,
 input                        M_AXI_ARESETN,
 input [31:0]                 M_AXI_AWADDR,

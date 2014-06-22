@@ -6,19 +6,15 @@ create_project pcie_axi_stream_to_axi_lite_bridge pcie_axi_stream_to_axi_lite_br
 
 
 import_files -force -norecurse {
-../src/PIO.v
-../src/PIO_EP.v
-../src/PIO_RX_ENGINE.v
-../src/PIO_TO_CTRL.v
-../src/PIO_TX_ENGINE.v
-../src/pcie_app_7x.v
-../src/axi_lite_master_if.v
-../src/axiLite_debug.v
-../src/pcie_axi_stream_to_axi_lite_bridge.v
-../src/pcie_gen2x8_axi_lite_bridge.v
-../src/pcie_gen2x8_axi_lite_bridge_example_top.v
-../IP/pcie_7x_gen2x8_core/pcie_7x_gen2x8_core.xci
-../IP/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci
+../../common_src/PIO.v
+../../common_src/PIO_EP.v
+../../common_src/PIO_RX_ENGINE.v
+../../common_src/PIO_TO_CTRL.v
+../../common_src/PIO_TX_ENGINE.v
+../../common_src/pcie_app_7x.v
+../../common_src/axi_lite_master_if.v
+../../common_src/axiLite_debug.v
+../../common_src/pcie_axi_stream_to_axi_lite_bridge.v
 }
 
 set_property top $TOP_module [get_filesets sources_1]
@@ -28,16 +24,6 @@ set ROOT_DIR [pwd]
 ipx::package_project -root_dir $ROOT_DIR
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
-
-ipx::add_file_group -type {example} {} [ipx::current_core]
-ipx::add_file {pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci} [ipx::get_file_group xilinx_examples [ipx::current_core]]
-set_property type {{xci}} [ipx::get_file pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci [ipx::get_file_group xilinx_examples [ipx::current_core]]]
-ipx::add_file {pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/pcie_7x_gen2x8_core/pcie_7x_gen2x8_core.xci} [ipx::get_file_group xilinx_examples [ipx::current_core]]
-set_property type {{xci}} [ipx::get_file pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/pcie_7x_gen2x8_core/pcie_7x_gen2x8_core.xci [ipx::get_file_group xilinx_examples [ipx::current_core]]]
-ipx::add_file {pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge_example_top.v} [ipx::get_file_group xilinx_examples [ipx::current_core]]
-set_property type {{verilogSource}} [ipx::get_file pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge_example_top.v [ipx::get_file_group xilinx_examples [ipx::current_core]]]
-ipx::add_file {pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge.v} [ipx::get_file_group xilinx_examples [ipx::current_core]]
-set_property type {{verilogSource}} [ipx::get_file pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge.v [ipx::get_file_group xilinx_examples [ipx::current_core]]]
 
 set_property vendor {sanjayr} [ipx::current_core]
 set_property vendor_display_name {sanjayr} [ipx::current_core]

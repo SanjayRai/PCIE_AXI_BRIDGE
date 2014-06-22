@@ -2,8 +2,8 @@
 # Vivado v2014.2 (64-bit)
 # SW Build 928826 on Thu Jun  5 17:55:10 MDT 2014
 # IP Build 924643 on Fri May 30 09:20:16 MDT 2014
-# Start of session at: Tue Jun 17 03:01:18 2014
-# Process ID: 22565
+# Start of session at: Sun Jun 22 05:56:40 2014
+# Process ID: 5497
 # Log file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.log
 # Journal file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.jou
 #-----------------------------------------------------------
@@ -13,31 +13,23 @@ source vivado_project.tcl
 # set TOP_module pcie_axi_stream_to_axi_lite_bridge
 # create_project pcie_axi_stream_to_axi_lite_bridge pcie_axi_stream_to_axi_lite_bridge -part $DEVICE_TYPE 
 # import_files -force -norecurse {
-# ../src/PIO.v
-# ../src/PIO_EP.v
-# ../src/PIO_RX_ENGINE.v
-# ../src/PIO_TO_CTRL.v
-# ../src/PIO_TX_ENGINE.v
-# ../src/pcie_app_7x.v
-# ../src/axi_lite_master_if.v
-# ../src/axiLite_debug.v
-# ../src/pcie_axi_stream_to_axi_lite_bridge.v
-# ../src/pcie_gen2x8_axi_lite_bridge.v
-# ../src/pcie_gen2x8_axi_lite_bridge_example_top.v
-# ../IP/pcie_7x_gen2x8_core/pcie_7x_gen2x8_core.xci
-# ../IP/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci
+# ../../common_src/PIO.v
+# ../../common_src/PIO_EP.v
+# ../../common_src/PIO_RX_ENGINE.v
+# ../../common_src/PIO_TO_CTRL.v
+# ../../common_src/PIO_TX_ENGINE.v
+# ../../common_src/pcie_app_7x.v
+# ../../common_src/axi_lite_master_if.v
+# ../../common_src/axiLite_debug.v
+# ../../common_src/pcie_axi_stream_to_axi_lite_bridge.v
 # }
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2014.2/data/ip'.
 # set_property top $TOP_module [get_filesets sources_1]
 # set ROOT_DIR [pwd]
 # ipx::package_project -root_dir $ROOT_DIR
-WARNING: [IP_Flow 19-3833] Not packaging sources file marked as disabled: '/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge.v'.
-WARNING: [IP_Flow 19-3833] Not packaging sources file marked as disabled: '/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge_example_top.v'.
-WARNING: [IP_Flow 19-3833] Not packaging sources file marked as disabled: '/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/pcie_7x_gen2x8_core/pcie_7x_gen2x8_core.xci'.
-WARNING: [IP_Flow 19-3833] Not packaging sources file marked as disabled: '/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci'.
 WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable to for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2014.2/data/ip'.
 INFO: [IP_Flow 19-2418] Expression "((C_DATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
 INFO: [IP_Flow 19-2418] Expression "((C_DATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
 INFO: [IP_Flow 19-2228] Inferred bus interface "M_AXI" of definition type "xilinx.com:interface:aximm:1.0".
@@ -46,15 +38,6 @@ INFO: [IP_Flow 19-2228] Inferred bus interface "s_axis_rx" of definition type "x
 INFO: [IP_Flow 19-2228] Inferred bus interface "M_AXI_signal_reset" of definition type "xilinx.com:signal:reset:1.0".
 # update_compile_order -fileset sources_1
 # update_compile_order -fileset sim_1
-# ipx::add_file_group -type {example} {} [ipx::current_core]
-# ipx::add_file {pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci} [ipx::get_file_group xilinx_examples [ipx::current_core]]
-# set_property type {{xci}} [ipx::get_file pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci [ipx::get_file_group xilinx_examples [ipx::current_core]]]
-# ipx::add_file {pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/pcie_7x_gen2x8_core/pcie_7x_gen2x8_core.xci} [ipx::get_file_group xilinx_examples [ipx::current_core]]
-# set_property type {{xci}} [ipx::get_file pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/ip/pcie_7x_gen2x8_core/pcie_7x_gen2x8_core.xci [ipx::get_file_group xilinx_examples [ipx::current_core]]]
-# ipx::add_file {pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge_example_top.v} [ipx::get_file_group xilinx_examples [ipx::current_core]]
-# set_property type {{verilogSource}} [ipx::get_file pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge_example_top.v [ipx::get_file_group xilinx_examples [ipx::current_core]]]
-# ipx::add_file {pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge.v} [ipx::get_file_group xilinx_examples [ipx::current_core]]
-# set_property type {{verilogSource}} [ipx::get_file pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/src/pcie_gen2x8_axi_lite_bridge.v [ipx::get_file_group xilinx_examples [ipx::current_core]]]
 # set_property vendor {sanjayr} [ipx::current_core]
 # set_property vendor_display_name {sanjayr} [ipx::current_core]
 # set_property supported_families {{kintex7} {Pre-Production} {kintex7l} {Pre-Production} {qkintex7} {Pre-Production} {qkintex7l} {Pre-Production} {artix7} {Pre-Production} {artix7l} {Pre-Production} {aartix7} {Pre-Production} {qartix7} {Pre-Production} {zynq} {Pre-Production} {qzynq} {Pre-Production} {azynq} {Pre-Production}} [ipx::current_core]
@@ -83,4 +66,4 @@ INFO: [IP_Flow 19-2228] Inferred bus interface "M_AXI_signal_reset" of definitio
 # ipx::check_integrity -quiet [ipx::current_core]
 # ipx::archive_core {./pcie_axi_stream_to_axi_lite_bridge.zip} [ipx::current_core]
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Jun 17 03:03:35 2014...
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 22 05:57:20 2014...

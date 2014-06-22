@@ -52,6 +52,17 @@ localparam PIO_CPL_FMT_TYPE  = 7'b00_01010;
 localparam PIO_TX_RST_STATE  = 1'b0;
 localparam PIO_TX_CPLD_QW1   = 1'b1;
 
+(* dont_touch = "true", mark_debug = "true" *) reg [31:0]      dbg_rd_addr;
+(* dont_touch = "true", mark_debug = "true" *) reg             dbg_rd_en;
+(* dont_touch = "true", mark_debug = "true" *) reg [3:0]       dbg_rd_be;
+(* dont_touch = "true", mark_debug = "true" *) reg [31:0]      dbg_rd_data;
+(* dont_touch = "true", mark_debug = "true" *) reg             dbg_rd_data_valid;
+(* dont_touch = "true", mark_debug = "true" *) reg                     dbg_s_axis_tx_tready;
+(* dont_touch = "true", mark_debug = "true" *) reg [C_DATA_WIDTH-1:0]  dbg_s_axis_tx_tdata;
+(* dont_touch = "true", mark_debug = "true" *) reg [KEEP_WIDTH-1:0]    dbg_s_axis_tx_tkeep;
+(* dont_touch = "true", mark_debug = "true" *) reg                     dbg_s_axis_tx_tlast;
+(* dont_touch = "true", mark_debug = "true" *) reg                     dbg_s_axis_tx_tvalid;
+
   // Local registers
 
   reg [11:0]              byte_count;
@@ -234,8 +245,10 @@ localparam PIO_TX_CPLD_QW1   = 1'b1;
                 state             <= #TCQ PIO_TX_RST_STATE;
 
               end // if (s_axis_tx_tready)
-              else
+              else begin
                 state             <= #TCQ PIO_TX_CPLD_QW1;
+                s_axis_tx_tvalid <= #TCQ 1'b0;
+              end
 
             end // PIO_TX_CPLD_QW1
 
@@ -343,5 +356,18 @@ localparam PIO_TX_CPLD_QW1   = 1'b1;
       end
     end
   endgenerate
+
+always @ (posedge clk) begin
+    dbg_rd_addr <= rd_addr;
+    dbg_rd_en <= rd_en;
+    dbg_rd_be <= rd_be;
+    dbg_rd_data <= rd_data;
+    dbg_rd_data_valid <= rd_data_valid;
+    dbg_s_axis_tx_tready <= s_axis_tx_tready;
+    dbg_s_axis_tx_tdata <= s_axis_tx_tdata;
+    dbg_s_axis_tx_tkeep <= s_axis_tx_tkeep;
+    dbg_s_axis_tx_tlast <= s_axis_tx_tlast;
+    dbg_s_axis_tx_tvalid <= s_axis_tx_tvalid;
+end
 
 endmodule // PIO_TX_ENGINE

@@ -100,7 +100,7 @@ module PIO #(
     .rd_en(rd_en),                            // O 
     .rd_be(rd_be), //O
     .rd_data(rd_data), //I
-    .rd_data_valid(rd_data_valid),   // output 
+    .rd_data_valid(rd_data_valid),   // I 
 
     .wr_addr(wr_addr), //O
     .wr_be(wr_be), //O
