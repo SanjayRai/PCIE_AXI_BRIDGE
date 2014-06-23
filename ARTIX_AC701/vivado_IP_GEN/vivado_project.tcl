@@ -15,7 +15,6 @@ import_files -force -norecurse {
 ../../common_src/axi_lite_master_if.v
 ../../common_src/axiLite_debug.v
 ../../common_src/pcie_axi_stream_to_axi_lite_bridge.v
-../../common_src/pcie_gen1x1_axi_lite_bridge.v
 }
 
 set_property top $TOP_module [get_filesets sources_1]
