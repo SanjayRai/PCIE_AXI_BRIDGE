@@ -107,15 +107,15 @@ set_property ip_repo_paths  ../vivado_IP_GEN [current_fileset]
 update_ip_catalog
 
 read_verilog {
-../src/PIO.v
-../src/PIO_EP.v
-../src/PIO_RX_ENGINE.v
-../src/PIO_TO_CTRL.v
-../src/PIO_TX_ENGINE.v
-../src/pcie_app_7x.v
-../src/axi_lite_master_if.v
-../src/axiLite_debug.v
-../src/pcie_axi_stream_to_axi_lite_bridge.v
+../../common_src/PIO.v
+../../common_src/PIO_EP.v
+../../common_src/PIO_RX_ENGINE.v
+../../common_src/PIO_TO_CTRL.v
+../../common_src/PIO_TX_ENGINE.v
+../../common_src/pcie_app_7x.v
+../../common_src/axi_lite_master_if.v
+../../common_src/axiLite_debug.v
+../../common_src/pcie_axi_stream_to_axi_lite_bridge.v
 ../src/pcie_gen1x1_axi_lite_bridge.v
 ../src/pcie_gen1x1_axi_lite_bridge_example_top.v
 }
@@ -149,7 +149,7 @@ report_drc -file $TOP_module.drc.rpt
 set_property config_mode SPIx4 [current_design]
 set_property config_mode B_SCAN [current_design]
 set_property config_mode SPIx4 [current_design]
-set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN DIV-1 [current_design]
+#set_property BITSTREAM.CONFIG.EXTMASTERCCLK_EN DIV-1 [current_design]
 set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 
 write_bitstream $TOP_module.bit      

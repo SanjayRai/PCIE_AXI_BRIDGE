@@ -6,7 +6,7 @@ set_property PARAM.FREQUENCY 6000000 [get_hw_targets */xilinx_tcf/Digilent/21020
 open_hw_target
 current_hw_device [lindex [get_hw_devices] 0]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
-set_property PROGRAM.FILE {./project_X/project_X.runs/impl_1/pcie_gen2x8_sub_sys_wrapper.bit} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {./project_X/project_X.runs/impl_1/pcie_gen2x1_sub_sys_wrapper.bit} [lindex [get_hw_devices] 0]
 set_property PROBES.FILE  {./project_X/project_X.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 0]
 refresh_hw_device [lindex [get_hw_devices] 0]
 

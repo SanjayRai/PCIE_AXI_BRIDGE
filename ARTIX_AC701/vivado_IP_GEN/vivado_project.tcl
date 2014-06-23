@@ -6,19 +6,16 @@ create_project pcie_axi_stream_to_axi_lite_bridge pcie_axi_stream_to_axi_lite_br
 
 
 import_files -force -norecurse {
-../src/PIO.v
-../src/PIO_EP.v
-../src/PIO_RX_ENGINE.v
-../src/PIO_TO_CTRL.v
-../src/PIO_TX_ENGINE.v
-../src/pcie_app_7x.v
-../src/axi_lite_master_if.v
-../src/axiLite_debug.v
-../src/pcie_axi_stream_to_axi_lite_bridge.v
-../src/pcie_gen1x1_axi_lite_bridge.v
-../src/pcie_gen1x1_axi_lite_bridge_example_top.v
-../IP/A7_gen1x1_pcie/A7_gen1x1_pcie.xci
-../IP/blk_mem_gen_axi_if/blk_mem_gen_axi_if.xci
+../../common_src/PIO.v
+../../common_src/PIO_EP.v
+../../common_src/PIO_RX_ENGINE.v
+../../common_src/PIO_TO_CTRL.v
+../../common_src/PIO_TX_ENGINE.v
+../../common_src/pcie_app_7x.v
+../../common_src/axi_lite_master_if.v
+../../common_src/axiLite_debug.v
+../../common_src/pcie_axi_stream_to_axi_lite_bridge.v
+../../common_src/pcie_gen1x1_axi_lite_bridge.v
 }
 
 set_property top $TOP_module [get_filesets sources_1]
