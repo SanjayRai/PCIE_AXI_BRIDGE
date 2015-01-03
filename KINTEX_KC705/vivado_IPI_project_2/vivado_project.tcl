@@ -12,3 +12,6 @@ add_files -norecurse ./pcie_gen2x8_sub_sys_wrapper.v
 add_files -fileset constrs_1 ./pcie_gen2x8_sub_sys_wrapper.xdc
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1

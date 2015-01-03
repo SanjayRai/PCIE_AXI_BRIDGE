@@ -1,6 +1,6 @@
 
 ################################################################
-# This is a generated script based on design: pcie_gen2x8_sub_sys
+# This is a generated script based on design: pcie_gen2x1_sub_sys
 #
 # Though there are limitations about the generated script,
 # the main purpose of this utility is to make learning
@@ -10,7 +10,7 @@
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2014.2
+set scripts_vivado_version 2014.4
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -25,7 +25,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 ################################################################
 
 # To test this script, run the following commands from Vivado Tcl console:
-# source pcie_gen2x8_sub_sys_script.tcl
+# source pcie_gen2x1_sub_sys_script.tcl
 
 # If you do not already have a project created,
 # you can create a project using the following command:
@@ -54,37 +54,50 @@ set nRet 0
 set cur_design [current_bd_design -quiet]
 set list_cells [get_bd_cells -quiet]
 
-if { ${design_name} ne "" && ${cur_design} eq ${design_name} } {
+if { ${design_name} eq "" } {
+   # USE CASES:
+   #    1) Design_name not set
 
-   # Checks if design is empty or not
-   if { $list_cells ne "" } {
-      set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
-      set nRet 1
-   } else {
-      puts "INFO: Constructing design in IPI design <$design_name>..."
-   }
-} elseif { ${cur_design} ne "" && ${cur_design} ne ${design_name} } {
+   set errMsg "ERROR: Please set the variable <design_name> to a non-empty value."
+   set nRet 1
 
-   if { $list_cells eq "" } {
-      puts "INFO: You have an empty design <${cur_design}>. Will go ahead and create design..."
-   } else {
-      set errMsg "ERROR: Design <${cur_design}> is not empty! Please do not source this script on non-empty designs."
-      set nRet 1
+} elseif { ${cur_design} ne "" && ${list_cells} eq "" } {
+   # USE CASES:
+   #    2): Current design opened AND is empty AND names same.
+   #    3): Current design opened AND is empty AND names diff; design_name NOT in project.
+   #    4): Current design opened AND is empty AND names diff; design_name exists in project.
+
+   if { $cur_design ne $design_name } {
+      puts "INFO: Changing value of <design_name> from <$design_name> to <$cur_design> since current design is empty."
+      set design_name [get_property NAME $cur_design]
    }
+   puts "INFO: Constructing design in IPI design <$cur_design>..."
+
+} elseif { ${cur_design} ne "" && $list_cells ne "" && $cur_design eq $design_name } {
+   # USE CASES:
+   #    5) Current design opened AND has components AND same names.
+
+   set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
+   set nRet 1
+} elseif { [get_files -quiet ${design_name}.bd] ne "" } {
+   # USE CASES: 
+   #    6) Current opened design, has components, but diff names, design_name exists in project.
+   #    7) No opened design, design_name exists in project.
+
+   set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
+   set nRet 2
+
 } else {
+   # USE CASES:
+   #    8) No opened design, design_name not in project.
+   #    9) Current opened design, has components, but diff names, design_name not in project.
 
-   if { [get_files -quiet ${design_name}.bd] eq "" } {
-      puts "INFO: Currently there is no design <$design_name> in project, so creating one..."
+   puts "INFO: Currently there is no design <$design_name> in project, so creating one..."
 
-      create_bd_design $design_name
+   create_bd_design $design_name
 
-      puts "INFO: Making design <$design_name> as current_bd_design."
-      current_bd_design $design_name
-
-   } else {
-      set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
-      set nRet 3
-   }
+   puts "INFO: Making design <$design_name> as current_bd_design."
+   current_bd_design $design_name
 
 }
 
@@ -100,7 +113,7 @@ if { $nRet != 0 } {
 # MIG PRJ FILE TCL PROCs
 ##################################################################
 
-proc write_mig_file_pcie_gen2x8_sub_sys_mig_7series_0_0 { str_mig_prj_filepath } {
+proc write_mig_file_pcie_gen2x1_sub_sys_mig_7series_0_0 { str_mig_prj_filepath } {
 
    set mig_prj_file [open $str_mig_prj_filepath  w+]
 
@@ -308,7 +321,7 @@ proc write_mig_file_pcie_gen2x8_sub_sys_mig_7series_0_0 { str_mig_prj_filepath }
 
    close $mig_prj_file
 }
-# End of write_mig_file_pcie_gen2x8_sub_sys_mig_7series_0_0()
+# End of write_mig_file_pcie_gen2x1_sub_sys_mig_7series_0_0()
 
 
 
@@ -366,7 +379,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
-  set_property -dict [ list CONFIG.C_GPIO_WIDTH {8} CONFIG.GPIO_BOARD_INTERFACE {led_8bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_0
+  set_property -dict [ list CONFIG.GPIO_BOARD_INTERFACE {led_8bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_0
 
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
@@ -377,20 +390,31 @@ proc create_root_design { parentCell } {
   set_property -dict [ list CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Use_RSTB_Pin {true}  ] $blk_mem_gen_0
 
   # Create instance: mig_7series_0, and set properties
-  set mig_7series_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:2.1 mig_7series_0 ]
+  set mig_7series_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:2.3 mig_7series_0 ]
 
   # Generate the PRJ File for MIG
   set str_mig_folder [get_property IP_DIR [ get_ips [ get_property CONFIG.Component_Name $mig_7series_0 ] ] ]
   set str_mig_file_name mig_a.prj
   set str_mig_file_path ${str_mig_folder}/${str_mig_file_name}
 
-  write_mig_file_pcie_gen2x8_sub_sys_mig_7series_0_0 $str_mig_file_path
+  write_mig_file_pcie_gen2x1_sub_sys_mig_7series_0_0 $str_mig_file_path
 
   set_property -dict [ list CONFIG.MIG_DONT_TOUCH_PARAM {Custom} CONFIG.RESET_BOARD_INTERFACE {reset} CONFIG.XML_INPUT_FILE {mig_a.prj}  ] $mig_7series_0
 
   # Create instance: pcie_7x_0, and set properties
   set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 pcie_7x_0 ]
-  set_property -dict [ list CONFIG.Bar0_Scale {Gigabytes} CONFIG.Bar0_Size {1} CONFIG.Bar1_Enabled {false} CONFIG.Bar2_Enabled {false} CONFIG.Bar3_Enabled {false} CONFIG.Device_ID {7021} CONFIG.Interface_Width {64_bit} CONFIG.Link_Speed {5.0_GT/s} CONFIG.Max_Payload_Size {512_bytes} CONFIG.Maximum_Link_Width {X1} CONFIG.Trgt_Link_Speed {4'h2} CONFIG.User_Clk_Freq {62.5} CONFIG.Xlnx_Ref_Board {KC705_REVC} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
+  set_property -dict [ list CONFIG.Bar0_Scale {Gigabytes} \
+CONFIG.Bar0_Size {1} CONFIG.Bar1_Enabled {false} \
+CONFIG.Bar2_Enabled {false} CONFIG.Bar3_Enabled {false} \
+CONFIG.Device_ID {7021} CONFIG.Interface_Width {64_bit} \
+CONFIG.Link_Speed {5.0_GT/s} CONFIG.Max_Payload_Size {512_bytes} \
+CONFIG.Maximum_Link_Width {X1} CONFIG.Trgt_Link_Speed {4'h2} \
+CONFIG.User_Clk_Freq {62.5} CONFIG.Xlnx_Ref_Board {KC705_REVC} \
+CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} \
+CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} \
+CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} \
+CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} \
+CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
 
   # Create instance: pcie_axi_brdg, and set properties
   set pcie_axi_brdg [ create_bd_cell -type ip -vlnv sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0 pcie_axi_brdg ]

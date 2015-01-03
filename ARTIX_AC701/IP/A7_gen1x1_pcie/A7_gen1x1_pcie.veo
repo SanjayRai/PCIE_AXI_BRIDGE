@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2014 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2015 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 // IP VLNV: xilinx.com:ip:pcie_7x:3.0
-// IP Revision: 2
+// IP Revision: 4
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections

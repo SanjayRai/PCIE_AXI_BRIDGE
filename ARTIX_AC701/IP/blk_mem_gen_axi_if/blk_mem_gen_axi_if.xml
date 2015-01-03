@@ -742,7 +742,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>d5d8d708</spirit:value>
+            <spirit:value>7a52473a</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -750,7 +750,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jun 17 15:05:13 UTC 2014</spirit:value>
+            <spirit:value>Fri Jan 02 19:16:17 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -769,7 +769,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>d5d8d708</spirit:value>
+            <spirit:value>7a52473a</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -777,7 +777,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jun 17 15:05:19 UTC 2014</spirit:value>
+            <spirit:value>Fri Jan 02 19:16:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -796,7 +796,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>d5d8d708</spirit:value>
+            <spirit:value>7a52473a</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -804,7 +804,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jun 17 15:05:19 UTC 2014</spirit:value>
+            <spirit:value>Fri Jan 02 19:16:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -817,13 +817,14 @@
         <spirit:displayName>Verilog Simulation</spirit:displayName>
         <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
         <spirit:language>verilog</spirit:language>
+        <spirit:modelName>blk_mem_gen_v8_2</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>beb250ed</spirit:value>
+            <spirit:value>9c12fa76</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -831,7 +832,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jun 17 15:05:19 UTC 2014</spirit:value>
+            <spirit:value>Fri Jan 02 19:16:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -850,7 +851,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>beb250ed</spirit:value>
+            <spirit:value>9c12fa76</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -858,7 +859,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jun 17 15:05:19 UTC 2014</spirit:value>
+            <spirit:value>Fri Jan 02 19:16:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -876,7 +877,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>d5d8d708</spirit:value>
+            <spirit:value>7a52473a</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -884,7 +885,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jun 17 15:05:19 UTC 2014</spirit:value>
+            <spirit:value>Fri Jan 02 19:16:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -902,7 +903,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>d5d8d708</spirit:value>
+            <spirit:value>7a52473a</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -910,7 +911,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jun 17 15:05:20 UTC 2014</spirit:value>
+            <spirit:value>Fri Jan 02 19:16:22 UTC 2015</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>StaleAtRelink</spirit:name>
@@ -2807,112 +2808,7 @@
         <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_synth_comp.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_defaults.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_pkg.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_getinit_pkg.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_min_area_pkg.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_bindec.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_mux.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_wrapper.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_wrapper_init.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_width.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_generic_cstr.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_ecc_encoder.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_ecc_decoder.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_input_block.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_output_block.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_axi_read_fsm.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_axi_read_wrapper.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_axi_write_fsm.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_axi_write_wrapper.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_axi_regs_fwd.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_top.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_synth.vhd</spirit:name>
+        <spirit:name>blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_vhsyn_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
       </spirit:file>
@@ -2936,6 +2832,7 @@
         <spirit:name>blk_mem_gen_v8_2/simulation/blk_mem_gen_v8_2.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:logicalName>blk_mem_gen_v8_2</spirit:logicalName>
+        <spirit:exportedName>blk_mem_gen_v8_2</spirit:exportedName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -3196,7 +3093,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Write_Depth_A</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Write_Depth_A" spirit:order="19" spirit:minimum="1024" spirit:maximum="131072">1024</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Write_Depth_A" spirit:order="19" spirit:minimum="1024" spirit:maximum="262144">1024</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3682,10 +3579,8 @@
         <xilinx:family xilinx:lifeCycle="Production">qkintex7</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">qkintex7l</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">qvirtex7</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">qvirtex7l</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">qzynq</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">virtex7</xilinx:family>
-        <xilinx:family xilinx:lifeCycle="Production">virtex7l</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Pre-Production">virtexu</xilinx:family>
         <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
       </xilinx:supportedFamilies>
@@ -3694,7 +3589,7 @@
         <xilinx:taxonomy>/Basic_Elements/Memory_Elements</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Block Memory Generator</xilinx:displayName>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
       <xilinx:paymentRequired>false</xilinx:paymentRequired>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:ip:blk_mem_gen:7.1</xilinx:canUpgradeFrom>
@@ -3703,16 +3598,16 @@
         <xilinx:canUpgradeFrom>xilinx.com:ip:blk_mem_gen:8.0</xilinx:canUpgradeFrom>
         <xilinx:canUpgradeFrom>xilinx.com:ip:blk_mem_gen:8.1</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2014-05-30T15:09:27Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2014-11-18T07:59:48Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2014.2</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="72eccd43"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="0811be43"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ce765770"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="eb1d9518"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="ccaede22"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="be05ae92"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="834a7a24"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="3a13b855"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

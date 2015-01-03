@@ -1,3 +1,17 @@
+2014.4:
+ * Version 3.0 (Rev. 4)
+ * Enhancement to allow debug cores to work better within Tandem designs. Build_stage1.tcl now runs befor place_design and handles bscan primitives.
+ * Added support for Artix7 xc7a15t, xc7a15tl and xa7a15t devices
+ * Added support for Zynq xc7z035 device
+ * Changed the pipe mode simulation options in GUI to radio buttons (No change in the functionality)
+
+2014.3:
+ * Version 3.0 (Rev. 3)
+ * Enabled PIPE Sim support for Root Port configuration
+ * Added support for Kintex7 Low voltage (0.9v) variants, for only Gen1 speed
+ * Added support for Kintex7 Defense grade Low voltage (0.9v) variants, for only Gen1 speed
+ * Fixed CPLL Power spike on power up issue (AR59294)
+
 2014.2:
  * Version 3.0 (Rev. 2)
  * Added AZynq7030 device support

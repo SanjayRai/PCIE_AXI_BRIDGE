@@ -286,6 +286,22 @@
       </spirit:parameters>
     </spirit:busInterface>
     <spirit:busInterface>
+      <spirit:name>user_signal_clock</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>user_clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
       <spirit:name>AXI_CLK</spirit:name>
       <spirit:displayName>AXI_CLK</spirit:displayName>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
@@ -906,19 +922,19 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_TX_ENGINE.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_RX_ENGINE.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_TO_CTRL.v</spirit:name>
+        <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_TX_ENGINE.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_EP.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_TO_CTRL.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -946,19 +962,19 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_TX_ENGINE.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_RX_ENGINE.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_TO_CTRL.v</spirit:name>
+        <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_TX_ENGINE.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_EP.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.srcs/sources_1/imports/common_src/PIO_TO_CTRL.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -986,48 +1002,18 @@
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>xgui/pcie_axi_stream_to_axi_lite_bridge_v1_0.tcl</spirit:name>
-        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_101877e6</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_4f274e51</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
   <spirit:description>pcie_axi_stream_to_axi_lite_bridge_v1_0</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
-      <spirit:name>AXI_BAR_3_MASK</spirit:name>
-      <spirit:displayName>Axi Bar 3 Mask</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_3_MASK" spirit:order="10700" spirit:bitStringLength="32">0xFFFF8000</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>AXI_BAR_3_ADDR</spirit:name>
-      <spirit:displayName>Axi Bar 3 Addr</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_3_ADDR" spirit:order="10600" spirit:bitStringLength="32">0x40000000</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>AXI_BAR_2_MASK</spirit:name>
-      <spirit:displayName>Axi Bar 2 Mask</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_2_MASK" spirit:order="10500" spirit:bitStringLength="32">0xFFFF8000</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>AXI_BAR_2_ADDR</spirit:name>
-      <spirit:displayName>Axi Bar 2 Addr</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_2_ADDR" spirit:order="10400" spirit:bitStringLength="32">0x30000000</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>AXI_BAR_1_MASK</spirit:name>
-      <spirit:displayName>Axi Bar 1 Mask</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_1_MASK" spirit:order="10300" spirit:bitStringLength="32">0xFFFF8000</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>AXI_BAR_1_ADDR</spirit:name>
-      <spirit:displayName>Axi Bar 1 Addr</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_1_ADDR" spirit:order="10200" spirit:bitStringLength="32">0x20000000</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>AXI_BAR_0_MASK</spirit:name>
-      <spirit:displayName>Axi Bar 0 Mask</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_0_MASK" spirit:order="10100" spirit:bitStringLength="32">0xFFFF8000</spirit:value>
+      <spirit:name>C_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C Data Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DATA_WIDTH" spirit:choiceRef="choices_1" spirit:order="10800">128</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>AXI_BAR_0_ADDR</spirit:name>
@@ -1035,9 +1021,39 @@
       <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_0_ADDR" spirit:order="10000" spirit:bitStringLength="32">0x10000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>C_DATA_WIDTH</spirit:name>
-      <spirit:displayName>C Data Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DATA_WIDTH" spirit:choiceRef="choices_1" spirit:order="10800">128</spirit:value>
+      <spirit:name>AXI_BAR_0_MASK</spirit:name>
+      <spirit:displayName>Axi Bar 0 Mask</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_0_MASK" spirit:order="10100" spirit:bitStringLength="32">0xFFFF8000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>AXI_BAR_1_ADDR</spirit:name>
+      <spirit:displayName>Axi Bar 1 Addr</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_1_ADDR" spirit:order="10200" spirit:bitStringLength="32">0x20000000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>AXI_BAR_1_MASK</spirit:name>
+      <spirit:displayName>Axi Bar 1 Mask</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_1_MASK" spirit:order="10300" spirit:bitStringLength="32">0xFFFF8000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>AXI_BAR_2_ADDR</spirit:name>
+      <spirit:displayName>Axi Bar 2 Addr</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_2_ADDR" spirit:order="10400" spirit:bitStringLength="32">0x30000000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>AXI_BAR_2_MASK</spirit:name>
+      <spirit:displayName>Axi Bar 2 Mask</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_2_MASK" spirit:order="10500" spirit:bitStringLength="32">0xFFFF8000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>AXI_BAR_3_ADDR</spirit:name>
+      <spirit:displayName>Axi Bar 3 Addr</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_3_ADDR" spirit:order="10600" spirit:bitStringLength="32">0x40000000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>AXI_BAR_3_MASK</spirit:name>
+      <spirit:displayName>Axi Bar 3 Mask</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_BAR_3_MASK" spirit:order="10700" spirit:bitStringLength="32">0xFFFF8000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -1066,14 +1082,14 @@
       <xilinx:vendorDisplayName>sanjayr</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.xilinx.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2014-06-23T20:55:21Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2015-01-02T19:36:18Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="user.org:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN</xilinx:tag>
-        <xilinx:tag xilinx:name="sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN</xilinx:tag>
+        <xilinx:tag xilinx:name="user.org:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/mnt/projects_MCshare/GIT_HUB_UPDATE_2014_4/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN</xilinx:tag>
+        <xilinx:tag xilinx:name="sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/mnt/projects_MCshare/GIT_HUB_UPDATE_2014_4/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2014.2</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2014.4</xilinx:xilinxVersion>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

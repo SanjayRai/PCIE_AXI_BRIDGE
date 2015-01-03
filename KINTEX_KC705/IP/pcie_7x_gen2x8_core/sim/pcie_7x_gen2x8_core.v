@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2014 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2015 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:pcie_7x:3.0
-// IP Revision: 2
+// IP Revision: 4
 
 `timescale 1ns/1ps
 
@@ -231,7 +231,7 @@ output wire pcie_drp_rdy;
     .c_trgt_lnk_spd("2"),
     .c_hw_auton_spd_disable("FALSE"),
     .c_de_emph("FALSE"),
-    .slot_clk("TRUE"),
+    .slot_clk("FALSE"),
     .c_rcb("0"),
     .c_root_cap_crs("FALSE"),
     .c_slot_cap_attn_butn("FALSE"),

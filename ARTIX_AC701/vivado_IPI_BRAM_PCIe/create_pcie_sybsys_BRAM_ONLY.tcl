@@ -10,7 +10,7 @@
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2014.2
+set scripts_vivado_version 2014.4
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -54,37 +54,50 @@ set nRet 0
 set cur_design [current_bd_design -quiet]
 set list_cells [get_bd_cells -quiet]
 
-if { ${design_name} ne "" && ${cur_design} eq ${design_name} } {
+if { ${design_name} eq "" } {
+   # USE CASES:
+   #    1) Design_name not set
 
-   # Checks if design is empty or not
-   if { $list_cells ne "" } {
-      set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
-      set nRet 1
-   } else {
-      puts "INFO: Constructing design in IPI design <$design_name>..."
-   }
-} elseif { ${cur_design} ne "" && ${cur_design} ne ${design_name} } {
+   set errMsg "ERROR: Please set the variable <design_name> to a non-empty value."
+   set nRet 1
 
-   if { $list_cells eq "" } {
-      puts "INFO: You have an empty design <${cur_design}>. Will go ahead and create design..."
-   } else {
-      set errMsg "ERROR: Design <${cur_design}> is not empty! Please do not source this script on non-empty designs."
-      set nRet 1
+} elseif { ${cur_design} ne "" && ${list_cells} eq "" } {
+   # USE CASES:
+   #    2): Current design opened AND is empty AND names same.
+   #    3): Current design opened AND is empty AND names diff; design_name NOT in project.
+   #    4): Current design opened AND is empty AND names diff; design_name exists in project.
+
+   if { $cur_design ne $design_name } {
+      puts "INFO: Changing value of <design_name> from <$design_name> to <$cur_design> since current design is empty."
+      set design_name [get_property NAME $cur_design]
    }
+   puts "INFO: Constructing design in IPI design <$cur_design>..."
+
+} elseif { ${cur_design} ne "" && $list_cells ne "" && $cur_design eq $design_name } {
+   # USE CASES:
+   #    5) Current design opened AND has components AND same names.
+
+   set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
+   set nRet 1
+} elseif { [get_files -quiet ${design_name}.bd] ne "" } {
+   # USE CASES: 
+   #    6) Current opened design, has components, but diff names, design_name exists in project.
+   #    7) No opened design, design_name exists in project.
+
+   set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
+   set nRet 2
+
 } else {
+   # USE CASES:
+   #    8) No opened design, design_name not in project.
+   #    9) Current opened design, has components, but diff names, design_name not in project.
 
-   if { [get_files -quiet ${design_name}.bd] eq "" } {
-      puts "INFO: Currently there is no design <$design_name> in project, so creating one..."
+   puts "INFO: Currently there is no design <$design_name> in project, so creating one..."
 
-      create_bd_design $design_name
+   create_bd_design $design_name
 
-      puts "INFO: Making design <$design_name> as current_bd_design."
-      current_bd_design $design_name
-
-   } else {
-      set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
-      set nRet 3
-   }
+   puts "INFO: Making design <$design_name> as current_bd_design."
+   current_bd_design $design_name
 
 }
 
@@ -147,11 +160,11 @@ proc create_root_design { parentCell } {
 
   # Create instance: axi_gpio_LED, and set properties
   set axi_gpio_LED [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_LED ]
-  set_property -dict [ list CONFIG.C_GPIO_WIDTH {4} CONFIG.GPIO_BOARD_INTERFACE {LED_4Bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_LED
+  set_property -dict [ list CONFIG.GPIO_BOARD_INTERFACE {LED_4Bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_LED
 
   # Create instance: axi_gpio_sw, and set properties
   set axi_gpio_sw [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_sw ]
-  set_property -dict [ list CONFIG.C_GPIO_WIDTH {4} CONFIG.GPIO_BOARD_INTERFACE {DIP_Switches_4Bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_sw
+  set_property -dict [ list CONFIG.GPIO_BOARD_INTERFACE {DIP_Switches_4Bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_sw
 
   # Create instance: axi_mem_intercon, and set properties
   set axi_mem_intercon [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_mem_intercon ]
@@ -159,7 +172,7 @@ proc create_root_design { parentCell } {
 
   # Create instance: blk_mem_gen_0, and set properties
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.2 blk_mem_gen_0 ]
-  set_property -dict [ list CONFIG.Enable_B {Use_ENB_Pin} CONFIG.MEM_FILE {NONE} CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Use_RSTB_Pin {true}  ] $blk_mem_gen_0
+  set_property -dict [ list CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Use_RSTB_Pin {true}  ] $blk_mem_gen_0
 
   # Create instance: pcie_7x_0, and set properties
   set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 pcie_7x_0 ]
