@@ -1082,10 +1082,10 @@
       <xilinx:vendorDisplayName>sanjayr</xilinx:vendorDisplayName>
       <xilinx:vendorURL>http://www.xilinx.com</xilinx:vendorURL>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2015-01-03T01:43:20Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2015-01-14T03:53:19Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="user.org:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/mnt/projects_MCshare/GIT_HUB_UPDATE_2014_4/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN</xilinx:tag>
-        <xilinx:tag xilinx:name="sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/mnt/projects_MCshare/GIT_HUB_UPDATE_2014_4/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN</xilinx:tag>
+        <xilinx:tag xilinx:name="user.org:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN</xilinx:tag>
+        <xilinx:tag xilinx:name="sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0_ARCHIVE_LOCATION">/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
