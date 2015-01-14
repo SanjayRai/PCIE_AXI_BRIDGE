@@ -11,25 +11,25 @@ set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores $ILA_name]
 set_property port_width 1 [get_debug_ports $ILA_name/clk]
 connect_debug_port $ILA_name/clk [get_nets [list user_clk ]]
 set_property port_width 32 [get_debug_ports $ILA_name/probe0]
-connect_debug_port $ILA_name/probe0 [lreverse [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_AWADDR[*]}]]]
+connect_debug_port $ILA_name/probe0 [lsort -dictionary [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_AWADDR[*]}]]]
 create_debug_port $ILA_name probe
 set_property port_width 4 [get_debug_ports $ILA_name/probe1]
-connect_debug_port $ILA_name/probe1 [lreverse [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_WSTRB[*]}]]]
+connect_debug_port $ILA_name/probe1 [lsort -dictionary [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_WSTRB[*]}]]]
 create_debug_port $ILA_name probe
 set_property port_width 32 [get_debug_ports $ILA_name/probe2]
-connect_debug_port $ILA_name/probe2 [lreverse [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_WDATA[*]}]]]
+connect_debug_port $ILA_name/probe2 [lsort -dictionary [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_WDATA[*]}]]]
 create_debug_port $ILA_name probe
 set_property port_width 2 [get_debug_ports $ILA_name/probe3]
-connect_debug_port $ILA_name/probe3 [lreverse [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_RRESP[*]}]]]
+connect_debug_port $ILA_name/probe3 [lsort -dictionary [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_RRESP[*]}]]]
 create_debug_port $ILA_name probe
 set_property port_width 32 [get_debug_ports $ILA_name/probe4]
-connect_debug_port $ILA_name/probe4 [lreverse [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_ARADDR[*]}]]]
+connect_debug_port $ILA_name/probe4 [lsort -dictionary [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_ARADDR[*]}]]]
 create_debug_port $ILA_name probe
 set_property port_width 2 [get_debug_ports $ILA_name/probe5]
-connect_debug_port $ILA_name/probe5 [lreverse [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_BRESP[*]}]]]
+connect_debug_port $ILA_name/probe5 [lsort -dictionary [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_BRESP[*]}]]]
 create_debug_port $ILA_name probe
 set_property port_width 32 [get_debug_ports $ILA_name/probe6]
-connect_debug_port $ILA_name/probe6 [lreverse [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_RDATA[*]}]]]
+connect_debug_port $ILA_name/probe6 [lsort -dictionary [get_nets [list {u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_RDATA[*]}]]]
 create_debug_port $ILA_name probe
 set_property port_width 1 [get_debug_ports $ILA_name/probe7]
 connect_debug_port $ILA_name/probe7 [get_nets [list u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axiLite_debug/dbg_M_AXI_ARESETN ]]
