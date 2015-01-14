@@ -75,7 +75,7 @@
 # Timing Constraints
 ###############################################################################
 #
-create_clock -name sys_clk -period 10 [get_pins refclk_ibuf/O]
+create_clock -name sys_clk -period 10 [get_ports sys_clk_p]
 #
 #
 ###############################################################################
@@ -119,6 +119,7 @@ set_property LOC T25 [get_ports led_2]
 set_property IOSTANDARD LVCMOS33 [get_ports led_3]
 # USER CLK HEART BEAT = led_3
 set_property LOC R26 [get_ports led_3]
+set_false_path -to [get_ports -filter {NAME=~led_*}]
 
 
 ###############################################################################

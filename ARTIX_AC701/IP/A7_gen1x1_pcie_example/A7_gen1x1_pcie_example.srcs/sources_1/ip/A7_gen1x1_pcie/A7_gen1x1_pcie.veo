@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2014 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2015 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 // IP VLNV: xilinx.com:ip:pcie_7x:3.0
-// IP Revision: 0
+// IP Revision: 4
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections
@@ -87,14 +87,7 @@ A7_gen1x1_pcie your_instance_name (
   .cfg_interrupt_stat(cfg_interrupt_stat),                      // input wire cfg_interrupt_stat
   .cfg_pciecap_interrupt_msgnum(cfg_pciecap_interrupt_msgnum),  // input wire [4 : 0] cfg_pciecap_interrupt_msgnum
   .sys_clk(sys_clk),                                            // input wire sys_clk
-  .sys_rst_n(sys_rst_n),                                        // input wire sys_rst_n
-  .pcie_drp_clk(pcie_drp_clk),                                  // input wire pcie_drp_clk
-  .pcie_drp_en(pcie_drp_en),                                    // input wire pcie_drp_en
-  .pcie_drp_we(pcie_drp_we),                                    // input wire pcie_drp_we
-  .pcie_drp_addr(pcie_drp_addr),                                // input wire [8 : 0] pcie_drp_addr
-  .pcie_drp_di(pcie_drp_di),                                    // input wire [15 : 0] pcie_drp_di
-  .pcie_drp_do(pcie_drp_do),                                    // output wire [15 : 0] pcie_drp_do
-  .pcie_drp_rdy(pcie_drp_rdy)                                  // output wire pcie_drp_rdy
+  .sys_rst_n(sys_rst_n)                                        // input wire sys_rst_n
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

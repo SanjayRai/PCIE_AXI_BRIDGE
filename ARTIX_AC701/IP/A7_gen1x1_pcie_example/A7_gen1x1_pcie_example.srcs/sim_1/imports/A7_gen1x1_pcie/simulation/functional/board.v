@@ -75,6 +75,18 @@ reg                sys_rst_n;
 wire               ep_sys_clk;
 wire               rp_sys_clk;
 
+`ifdef ENABLE_GT
+parameter PIPE_SIM = "FALSE";
+defparam board.EP.A7_gen1x1_pcie_i.inst.inst.PIPE_SIM_MODE = "FALSE";
+defparam board.RP.rport.PIPE_SIM_MODE = "FALSE";
+`else
+parameter PIPE_SIM = "TRUE";
+defparam board.EP.A7_gen1x1_pcie_i.inst.inst.PIPE_SIM_MODE = "TRUE";
+defparam board.RP.rport.PIPE_SIM_MODE = "TRUE";
+`endif
+
+localparam EXT_PIPE_SIM = "FALSE";
+
 //
 // PCI-Express Serial Interconnect
 //
@@ -90,7 +102,8 @@ wire  [0:0]  rp_pci_exp_txp;
 
 xilinx_pcie_2_1_ep_7x # (
 
-  .PL_FAST_TRAIN("TRUE")
+  .PL_FAST_TRAIN("TRUE"),
+  .EXT_PIPE_SIM(EXT_PIPE_SIM)
 
 )
 EP (
@@ -182,6 +195,7 @@ CLK_GEN_EP (
 
 
 
+`include "pipe_interconnect.v"
 
 
 initial begin

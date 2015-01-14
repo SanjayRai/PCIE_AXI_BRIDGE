@@ -2,10 +2,10 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Fri Jan  2 11:36:03 2015
-# Process ID: 24928
-# Log file: /mnt/projects_MCshare/GIT_HUB_UPDATE_2014_4/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/vivado.log
-# Journal file: /mnt/projects_MCshare/GIT_HUB_UPDATE_2014_4/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/vivado.jou
+# Start of session at: Tue Jan 13 17:16:25 2015
+# Process ID: 28213
+# Log file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/vivado.log
+# Journal file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/vivado.jou
 #-----------------------------------------------------------
 start_gui
 source vivado_project.tcl

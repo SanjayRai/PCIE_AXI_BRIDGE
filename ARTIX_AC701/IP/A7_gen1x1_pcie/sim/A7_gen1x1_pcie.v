@@ -349,7 +349,7 @@ input wire sys_rst_n;
     .c_aer_cap_optional_err_support("000000"),
     .LINK_CAP_MAX_LINK_WIDTH(1),
     .C_DATA_WIDTH(64),
-    .PIPE_SIM("FALSE"),
+    .PIPE_SIM("TRUE"),
     .PCIE_EXT_CLK("FALSE"),
     .PCIE_EXT_GT_COMMON("FALSE"),
     .EXT_CH_GT_DRP("FALSE"),

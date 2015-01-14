@@ -1,11 +1,11 @@
 #-----------------------------------------------------------
-# Vivado v2013.4 (64-bit)
-# SW Build 353583 on Mon Dec  9 17:26:26 MST 2013
-# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
-# Start of session at: Sat Jan 25 07:55:06 2014
-# Process ID: 1545
-# Log file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test18/IP/A7_gen1x1_pcie_example/vivado.log
-# Journal file: /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test18/IP/A7_gen1x1_pcie_example/vivado.jou
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Mon Jan 12 16:40:35 2015
+# Process ID: 27586
+# Log file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/vivado.log
+# Journal file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/vivado.jou
 #-----------------------------------------------------------
 start_gui
-source /home/sanjayr/projects/KC705/PCIe_gen2x8_PIO_test18/IP/A7_gen1x1_pcie/A7_gen1x1_pcie_ex.tcl
+source /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie/A7_gen1x1_pcie_ex.tcl

@@ -386,7 +386,7 @@ end
           $display("[%t] :    Check Max Link Speed = 5.0GT/s - PASSED", $realtime);
     end else begin
           $display("[%t] :    Check Max Link Speed - FAILED", $realtime);
-          $display("[%t] : Data Error Mismatch, Parameter Data %s != Read Data %x", $realtime, "1", P_READ_DATA[19:16]);
+          $display("[%t] : Data Error Mismatch, Parameter Data %x != Read Data %x", $realtime, "1", P_READ_DATA[19:16]);
     end
 
 

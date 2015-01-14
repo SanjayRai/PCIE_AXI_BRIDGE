@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2014 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2015 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:pcie_7x:3.0
-// IP Revision: 0
+// IP Revision: 4
 
 `timescale 1ns/1ps
 
@@ -86,14 +86,7 @@ module A7_gen1x1_pcie (
   cfg_interrupt_stat,
   cfg_pciecap_interrupt_msgnum,
   sys_clk,
-  sys_rst_n,
-  pcie_drp_clk,
-  pcie_drp_en,
-  pcie_drp_we,
-  pcie_drp_addr,
-  pcie_drp_di,
-  pcie_drp_do,
-  pcie_drp_rdy
+  sys_rst_n
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_7x_mgt txp" *)
@@ -160,21 +153,8 @@ input wire [4 : 0] cfg_pciecap_interrupt_msgnum;
 input wire sys_clk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.sys_rst_n RST" *)
 input wire sys_rst_n;
-input wire pcie_drp_clk;
-(* X_INTERFACE_INFO = "xilinx.com:interface:drp:1.0 drp DEN" *)
-input wire pcie_drp_en;
-(* X_INTERFACE_INFO = "xilinx.com:interface:drp:1.0 drp DWE" *)
-input wire pcie_drp_we;
-(* X_INTERFACE_INFO = "xilinx.com:interface:drp:1.0 drp DADDR" *)
-input wire [8 : 0] pcie_drp_addr;
-(* X_INTERFACE_INFO = "xilinx.com:interface:drp:1.0 drp DI" *)
-input wire [15 : 0] pcie_drp_di;
-(* X_INTERFACE_INFO = "xilinx.com:interface:drp:1.0 drp DO" *)
-output wire [15 : 0] pcie_drp_do;
-(* X_INTERFACE_INFO = "xilinx.com:interface:drp:1.0 drp DRDY" *)
-output wire pcie_drp_rdy;
 
-  pcie_7x_v3_0_top #(
+  A7_gen1x1_pcie_pcie2_top #(
     .c_component_name("A7_gen1x1_pcie"),
     .dev_port_type("0000"),
     .c_dev_port_type("0"),
@@ -231,7 +211,7 @@ output wire pcie_drp_rdy;
     .c_trgt_lnk_spd("0"),
     .c_hw_auton_spd_disable("FALSE"),
     .c_de_emph("FALSE"),
-    .slot_clk("TRUE"),
+    .slot_clk("FALSE"),
     .c_rcb("0"),
     .c_root_cap_crs("FALSE"),
     .c_slot_cap_attn_butn("FALSE"),
@@ -318,7 +298,7 @@ output wire pcie_drp_rdy;
     .c_upconfig_capable("TRUE"),
     .c_disable_scrambling("FALSE"),
     .c_disable_tx_aspm_l0s("FALSE"),
-    .c_pcie_dbg_ports("TRUE"),
+    .c_pcie_dbg_ports("FALSE"),
     .pci_exp_ref_freq("0"),
     .c_xlnx_ref_board("AC701"),
     .c_pcie_blk_locn("0"),
@@ -369,7 +349,7 @@ output wire pcie_drp_rdy;
     .c_aer_cap_optional_err_support("000000"),
     .LINK_CAP_MAX_LINK_WIDTH(1),
     .C_DATA_WIDTH(64),
-    .PIPE_SIM("FALSE"),
+    .PIPE_SIM("TRUE"),
     .PCIE_EXT_CLK("FALSE"),
     .PCIE_EXT_GT_COMMON("FALSE"),
     .EXT_CH_GT_DRP("FALSE"),
@@ -650,13 +630,13 @@ output wire pcie_drp_rdy;
     .ext_ch_gt_drpwe(1'B0),
     .ext_ch_gt_drpdo(),
     .ext_ch_gt_drprdy(),
-    .pcie_drp_clk(pcie_drp_clk),
-    .pcie_drp_en(pcie_drp_en),
-    .pcie_drp_we(pcie_drp_we),
-    .pcie_drp_addr(pcie_drp_addr),
-    .pcie_drp_di(pcie_drp_di),
-    .pcie_drp_do(pcie_drp_do),
-    .pcie_drp_rdy(pcie_drp_rdy),
+    .pcie_drp_clk(1'B1),
+    .pcie_drp_en(1'B0),
+    .pcie_drp_we(1'B0),
+    .pcie_drp_addr(9'B0),
+    .pcie_drp_di(16'B0),
+    .pcie_drp_do(),
+    .pcie_drp_rdy(),
     .common_commands_in(4'B0),
     .pipe_rx_0_sigs(25'B0),
     .pipe_rx_1_sigs(25'B0),

@@ -1,3 +1,32 @@
+2014.4:
+ * Version 3.0 (Rev. 4)
+ * Enhancement to allow debug cores to work better within Tandem designs. Build_stage1.tcl now runs befor place_design and handles bscan primitives.
+ * Added support for Artix7 xc7a15t, xc7a15tl and xa7a15t devices
+ * Added support for Zynq xc7z035 device
+ * Changed the pipe mode simulation options in GUI to radio buttons (No change in the functionality)
+
+2014.3:
+ * Version 3.0 (Rev. 3)
+ * Enabled PIPE Sim support for Root Port configuration
+ * Added support for Kintex7 Low voltage (0.9v) variants, for only Gen1 speed
+ * Added support for Kintex7 Defense grade Low voltage (0.9v) variants, for only Gen1 speed
+ * Fixed CPLL Power spike on power up issue (AR59294)
+
+2014.2:
+ * Version 3.0 (Rev. 2)
+ * Added AZynq7030 device support
+ * Added QArtix 50t device support
+ * Enabled PIPE simulation and External PIPE interface support only when shared logic option Shared Logic (clocking) in example design is selected
+
+2014.1:
+ * Version 3.0 (Rev. 1)
+ * Added Zynq7015 device support
+ * Added 35t,50t and 75t support for Artix7l and Aartix7 devices
+ * Added cpg236 and csg325 packages support for Artix7 devices
+ * Enabled Tandem PROM configuration support for Zynq 7030 and for Zynq7045 devices
+ * Enabled Tandem Configuration support for Kintex 420T device
+ * Changed the directory structure of the core without affecting the design hierarchy
+
 2013.4:
  * Version 3.0
  * Added XC7Z200TSBG484 device support
@@ -25,34 +54,34 @@
 
 2013.2:
  * Version 2.1
- * Enhancements in the Tandem Logic - added STARTUP Premitive and new ports related to this premitive (static ports) 
+ * Enhancements in the Tandem Logic - added STARTUP Premitive and new ports related to this premitive (static ports)
  * Removed the redundant blocks related to Tandem configuration logic
- * Added AER_CAP_ECRC_GEN_CAPABLE parameter in XGUI 
+ * Added AER_CAP_ECRC_GEN_CAPABLE parameter in XGUI
  * Added option to select the Internal or external clocking module (Parameter PCIE_EXT_CLK)
- * Marked Artix7 (fgg484 and fbg484) and Zynq devices as production. Added GES_and_Production option for Silicon_Rev parameter. Updated the Auto-Upgrade Script 
+ * Marked Artix7 (fgg484 and fbg484) and Zynq devices as production. Added GES_and_Production option for Silicon_Rev parameter. Updated the Auto-Upgrade Script
  * Added support for Artix7 and Kintex7 Lowvoltage family
  * Shortened the example design xdc file name (PG updated)
- * IPI Level 0 Support 
- * Added OOC flow support 
- * Fixed CDC issues with GT wrappers 
- * Removed the BETA tag for Tandem PROM and Tandem PCIe options 
- * For x8g1, 128-bit interface width configuration, Removed the optional 250MHz. Updated the Auto-upgrade script 
+ * IPI Level 0 Support
+ * Added OOC flow support
+ * Fixed CDC issues with GT wrappers
+ * Removed the BETA tag for Tandem PROM and Tandem PCIe options
+ * For x8g1, 128-bit interface width configuration, Removed the optional 250MHz. Updated the Auto-upgrade script
 
 2013.1:
  * Version 2.0
  * Lower case ports for Verilog
- * Added Zynq Support 
+ * Added Zynq Support
  * Fixed Reset Sequence issue with GTPs
- * Fixed TXOUTCLK flatline issue 
+ * Fixed TXOUTCLK flatline issue
  * Fixed the issue with GUI to select the optional frequency for g2x4, 128-bit configuration. Now the selection for 250Mhz optional frequency is removed as it is not supported configuration
- * Fixed XSIM issues with VHDL version of the core 
- * Changed upper case portlevel signals to lower case (clocking interface for partial re-configuration and ICAP interface)  
- * Added pipe_mmcm_rst_n signal at the port level as input in the core top file. 
+ * Fixed XSIM issues with VHDL version of the core
+ * Changed upper case portlevel signals to lower case (clocking interface for partial re-configuration and ICAP interface)
+ * Added pipe_mmcm_rst_n signal at the port level as input in the core top file.
  * All Kintex devices, Virtex 2000T, Artix 100t/ffg676, 200T/fbg676,ffg1156 are marked as Production. Option is added in GUI to select GES_and_Production
- * Tandem Configuration - The option is enabled independent of the Dev board selection for Kintex 325/ffg900 and Virtex 485/ffg1761/PCIe Block X1Y0 
+ * Tandem Configuration - The option is enabled independent of the Dev board selection for Kintex 325/ffg900 and Virtex 485/ffg1761/PCIe Block X1Y0
  * Tandem Confguration - Create Bin files for stage 2, Back Up & restore of bitstream generation settings
 
-(c) Copyright 2002 - 2013 Xilinx, Inc. All rights reserved.
+(c) Copyright 2002 - 2014 Xilinx, Inc. All rights reserved.
 
 This file contains confidential and proprietary information
 of Xilinx, Inc. and is protected under U.S. and

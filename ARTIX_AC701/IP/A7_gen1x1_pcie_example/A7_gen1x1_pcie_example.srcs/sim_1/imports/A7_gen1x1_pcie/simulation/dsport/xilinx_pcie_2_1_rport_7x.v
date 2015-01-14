@@ -335,8 +335,8 @@ A7_gen1x1_pcie_pipe_clock #
     .m_axis_rx_tkeep                           ( m_axis_rx_tkeep ),
     .m_axis_rx_tlast                           ( m_axis_rx_tlast ),
     .m_axis_rx_tuser                           ( m_axis_rx_tuser ),
-    .rx_np_ok                                  ( ~trn_rnp_ok_n ),
-    .rx_np_req                                 ( 1'b0 ),
+    .rx_np_ok                                  ( 1'b1 ),
+    .rx_np_req                                 ( 1'b1 ),
 
     .fc_cpld                                   ( ),
     .fc_cplh                                   ( ),

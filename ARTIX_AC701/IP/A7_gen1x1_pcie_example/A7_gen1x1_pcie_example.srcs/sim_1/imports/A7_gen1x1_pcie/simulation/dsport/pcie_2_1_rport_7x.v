@@ -67,7 +67,9 @@ module pcie_2_1_rport_7x # (
     parameter        CFG_SUBSYS_VEND_ID = 16'h10ee,
     parameter        CFG_SUBSYS_ID = 16'h0007,
 
+    parameter         PIPE_SIM_MODE = "FALSE", 
     // PCIE_2_1 params
+    parameter         EXT_PIPE_SIM = "FALSE",
     parameter        REF_CLK_FREQ = 0,
     parameter        PCIE_EXT_CLK = "FALSE",
     parameter        PIPE_PIPELINE_STAGES = 0,
@@ -801,7 +803,7 @@ module pcie_2_1_rport_7x # (
   assign pl_phy_lnk_up = pl_phy_lnk_up_q;
 
   // Register block outputs pl_received_hot_rst and phy_lnk_up to ease timing on block output
-  assign sys_or_hot_rst = !sys_rst_n || pl_received_hot_rst_q;
+  assign sys_or_hot_rst = !sys_rst_n || ((UPSTREAM_FACING == "TRUE") && pl_received_hot_rst_q);
   always @(posedge user_clk_out)
   begin
     if (!sys_rst_n) begin
@@ -1537,6 +1539,16 @@ A7_gen1x1_pcie_pcie_top # (
     .pipe_rx7_valid_gt                          ( pipe_rx7_valid_gt          )
 
   );
+  assign  common_commands_out = 12'b0;  
+  assign  pipe_tx_0_sigs      = 23'b0;   
+  assign  pipe_tx_1_sigs      = 23'b0; 
+  assign  pipe_tx_2_sigs      = 23'b0; 
+  assign  pipe_tx_3_sigs      = 23'b0; 
+  assign  pipe_tx_4_sigs      = 23'b0; 
+  assign  pipe_tx_5_sigs      = 23'b0; 
+  assign  pipe_tx_6_sigs      = 23'b0; 
+  assign  pipe_tx_7_sigs      = 23'b0; 
+
 
   //------------------------------------------------------------------------------------------------------------------//
   // **** V7/K7/A7 GTX Wrapper ****                                                                                   //
@@ -1545,6 +1557,12 @@ A7_gen1x1_pcie_pcie_top # (
   //     2) Kintex-7 GTX                                                                                              //
   //     3) Artix-7  GTP                                                                                              //
   //------------------------------------------------------------------------------------------------------------------//
+  // Selection of pipe_sim should instantiate both gt_top & gt_top_pipe_mode modules, If not selected then only gt_top//
+  // Printed the code such a way that bydefault it will keep gt_top and gt_top & gt_top_pipe_mode on pipe_sim mode    //
+  //------------------------------------------------------------------------------------------------------------------//
+ generate 
+  if (PIPE_SIM_MODE == "FALSE")
+ begin : gt_top
 A7_gen1x1_pcie_gt_top #(
     .LINK_CAP_MAX_LINK_WIDTH       ( LINK_CAP_MAX_LINK_WIDTH ),
     .REF_CLK_FREQ                  ( REF_CLK_FREQ ),
@@ -1818,6 +1836,193 @@ A7_gen1x1_pcie_gt_top #(
     .INT_RXUSRCLK_OUT(),
     .INT_PCLK_OUT_SLAVE()
   );
+ end
+  else
+ begin : gt_top
+A7_gen1x1_pcie_gt_top_pipe_mode #(
+    .LINK_CAP_MAX_LINK_WIDTH       ( LINK_CAP_MAX_LINK_WIDTH ),
+    .REF_CLK_FREQ                  ( REF_CLK_FREQ ),
+    .USER_CLK_FREQ                 ( USER_CLK_FREQ ),
+    .USER_CLK2_DIV2                ( USER_CLK2_DIV2 ),
+    .PL_FAST_TRAIN                 ( PL_FAST_TRAIN ),
+    .PCIE_EXT_CLK                  ( PCIE_EXT_CLK ),
+    .PCIE_USE_MODE                 ( PCIE_USE_MODE ),
+    .PCIE_GT_DEVICE                ( PCIE_GT_DEVICE ),
+    .PCIE_PLL_SEL                  ( PCIE_PLL_SEL ),
+    .PCIE_ASYNC_EN                 ( PCIE_ASYNC_EN ),
+    .PCIE_TXBUF_EN                 ( PCIE_TXBUF_EN ),
+    .PCIE_CHAN_BOND                ( PCIE_CHAN_BOND )
+  ) gt_top_i (
+    // pl ltssm
+    .pl_ltssm_state                ( pl_ltssm_state_int ),
+
+    // Pipe Common Signals
+    .pipe_tx_rcvr_det              ( pipe_tx_rcvr_det_gt  ),
+    .pipe_tx_reset                 ( 1'b0                 ),
+    .pipe_tx_rate                  ( pipe_tx_rate_gt      ),
+    .pipe_tx_deemph                ( pipe_tx_deemph_gt    ),
+    .pipe_tx_margin                ( pipe_tx_margin_gt    ),
+    .pipe_tx_swing                 ( 1'b0                 ),
+
+    // Pipe Per-Lane Signals - Lane 0
+    .pipe_rx0_char_is_k            ( pipe_rx0_char_is_k_gt),
+    .pipe_rx0_data                 ( pipe_rx0_data_gt     ),
+    .pipe_rx0_valid                ( pipe_rx0_valid_gt    ),
+    .pipe_rx0_chanisaligned        ( pipe_rx0_chanisaligned_gt   ),
+    .pipe_rx0_status               ( pipe_rx0_status_gt      ),
+    .pipe_rx0_phy_status           ( pipe_rx0_phy_status_gt  ),
+    .pipe_rx0_elec_idle            ( pipe_rx0_elec_idle_gt   ),
+    .pipe_rx0_polarity             ( pipe_rx0_polarity_gt    ),
+    .pipe_tx0_compliance           ( pipe_tx0_compliance_gt  ),
+    .pipe_tx0_char_is_k            ( pipe_tx0_char_is_k_gt   ),
+    .pipe_tx0_data                 ( pipe_tx0_data_gt        ),
+    .pipe_tx0_elec_idle            ( pipe_tx0_elec_idle_gt   ),
+    .pipe_tx0_powerdown            ( pipe_tx0_powerdown_gt   ),
+
+    // Pipe Per-Lane Signals - Lane 1
+
+    .pipe_rx1_char_is_k            ( pipe_rx1_char_is_k_gt),
+    .pipe_rx1_data                 ( pipe_rx1_data_gt     ),
+    .pipe_rx1_valid                ( pipe_rx1_valid_gt    ),
+    .pipe_rx1_chanisaligned        ( pipe_rx1_chanisaligned_gt   ),
+    .pipe_rx1_status               ( pipe_rx1_status_gt      ),
+    .pipe_rx1_phy_status           ( pipe_rx1_phy_status_gt  ),
+    .pipe_rx1_elec_idle            ( pipe_rx1_elec_idle_gt   ),
+    .pipe_rx1_polarity             ( pipe_rx1_polarity_gt    ),
+    .pipe_tx1_compliance           ( pipe_tx1_compliance_gt  ),
+    .pipe_tx1_char_is_k            ( pipe_tx1_char_is_k_gt   ),
+    .pipe_tx1_data                 ( pipe_tx1_data_gt        ),
+    .pipe_tx1_elec_idle            ( pipe_tx1_elec_idle_gt   ),
+    .pipe_tx1_powerdown            ( pipe_tx1_powerdown_gt   ),
+
+    // Pipe Per-Lane Signals - Lane 2
+
+    .pipe_rx2_char_is_k            ( pipe_rx2_char_is_k_gt),
+    .pipe_rx2_data                 ( pipe_rx2_data_gt     ),
+    .pipe_rx2_valid                ( pipe_rx2_valid_gt    ),
+    .pipe_rx2_chanisaligned        ( pipe_rx2_chanisaligned_gt   ),
+    .pipe_rx2_status               ( pipe_rx2_status_gt      ),
+    .pipe_rx2_phy_status           ( pipe_rx2_phy_status_gt  ),
+    .pipe_rx2_elec_idle            ( pipe_rx2_elec_idle_gt   ),
+    .pipe_rx2_polarity             ( pipe_rx2_polarity_gt    ),
+    .pipe_tx2_compliance           ( pipe_tx2_compliance_gt  ),
+    .pipe_tx2_char_is_k            ( pipe_tx2_char_is_k_gt   ),
+    .pipe_tx2_data                 ( pipe_tx2_data_gt        ),
+    .pipe_tx2_elec_idle            ( pipe_tx2_elec_idle_gt   ),
+    .pipe_tx2_powerdown            ( pipe_tx2_powerdown_gt   ),
+
+    // Pipe Per-Lane Signals - Lane 3
+
+    .pipe_rx3_char_is_k            ( pipe_rx3_char_is_k_gt),
+    .pipe_rx3_data                 ( pipe_rx3_data_gt     ),
+    .pipe_rx3_valid                ( pipe_rx3_valid_gt    ),
+    .pipe_rx3_chanisaligned        ( pipe_rx3_chanisaligned_gt   ),
+    .pipe_rx3_status               ( pipe_rx3_status_gt      ),
+    .pipe_rx3_phy_status           ( pipe_rx3_phy_status_gt  ),
+    .pipe_rx3_elec_idle            ( pipe_rx3_elec_idle_gt   ),
+    .pipe_rx3_polarity             ( pipe_rx3_polarity_gt    ),
+    .pipe_tx3_compliance           ( pipe_tx3_compliance_gt  ),
+    .pipe_tx3_char_is_k            ( pipe_tx3_char_is_k_gt   ),
+    .pipe_tx3_data                 ( pipe_tx3_data_gt        ),
+    .pipe_tx3_elec_idle            ( pipe_tx3_elec_idle_gt   ),
+    .pipe_tx3_powerdown            ( pipe_tx3_powerdown_gt   ),
+
+    // Pipe Per-Lane Signals - Lane 4
+
+    .pipe_rx4_char_is_k            ( pipe_rx4_char_is_k_gt),
+    .pipe_rx4_data                 ( pipe_rx4_data_gt     ),
+    .pipe_rx4_valid                ( pipe_rx4_valid_gt    ),
+    .pipe_rx4_chanisaligned        ( pipe_rx4_chanisaligned_gt   ),
+    .pipe_rx4_status               ( pipe_rx4_status_gt      ),
+    .pipe_rx4_phy_status           ( pipe_rx4_phy_status_gt  ),
+    .pipe_rx4_elec_idle            ( pipe_rx4_elec_idle_gt   ),
+    .pipe_rx4_polarity             ( pipe_rx4_polarity_gt    ),
+    .pipe_tx4_compliance           ( pipe_tx4_compliance_gt  ),
+    .pipe_tx4_char_is_k            ( pipe_tx4_char_is_k_gt   ),
+    .pipe_tx4_data                 ( pipe_tx4_data_gt        ),
+    .pipe_tx4_elec_idle            ( pipe_tx4_elec_idle_gt   ),
+    .pipe_tx4_powerdown            ( pipe_tx4_powerdown_gt   ),
+
+    // Pipe Per-Lane Signals - Lane 5
+
+    .pipe_rx5_char_is_k            ( pipe_rx5_char_is_k_gt),
+    .pipe_rx5_data                 ( pipe_rx5_data_gt     ),
+    .pipe_rx5_valid                ( pipe_rx5_valid_gt    ),
+    .pipe_rx5_chanisaligned        ( pipe_rx5_chanisaligned_gt   ),
+    .pipe_rx5_status               ( pipe_rx5_status_gt      ),
+    .pipe_rx5_phy_status           ( pipe_rx5_phy_status_gt  ),
+    .pipe_rx5_elec_idle            ( pipe_rx5_elec_idle_gt   ),
+    .pipe_rx5_polarity             ( pipe_rx5_polarity_gt    ),
+    .pipe_tx5_compliance           ( pipe_tx5_compliance_gt  ),
+    .pipe_tx5_char_is_k            ( pipe_tx5_char_is_k_gt   ),
+    .pipe_tx5_data                 ( pipe_tx5_data_gt        ),
+    .pipe_tx5_elec_idle            ( pipe_tx5_elec_idle_gt   ),
+    .pipe_tx5_powerdown            ( pipe_tx5_powerdown_gt   ),
+
+    // Pipe Per-Lane Signals - Lane 6
+
+    .pipe_rx6_char_is_k            ( pipe_rx6_char_is_k_gt),
+    .pipe_rx6_data                 ( pipe_rx6_data_gt     ),
+    .pipe_rx6_valid                ( pipe_rx6_valid_gt    ),
+    .pipe_rx6_chanisaligned        ( pipe_rx6_chanisaligned_gt   ),
+    .pipe_rx6_status               ( pipe_rx6_status_gt      ),
+    .pipe_rx6_phy_status           ( pipe_rx6_phy_status_gt  ),
+    .pipe_rx6_elec_idle            ( pipe_rx6_elec_idle_gt   ),
+    .pipe_rx6_polarity             ( pipe_rx6_polarity_gt    ),
+    .pipe_tx6_compliance           ( pipe_tx6_compliance_gt  ),
+    .pipe_tx6_char_is_k            ( pipe_tx6_char_is_k_gt   ),
+    .pipe_tx6_data                 ( pipe_tx6_data_gt        ),
+    .pipe_tx6_elec_idle            ( pipe_tx6_elec_idle_gt   ),
+    .pipe_tx6_powerdown            ( pipe_tx6_powerdown_gt   ),
+
+    // Pipe Per-Lane Signals - Lane 7
+
+    .pipe_rx7_char_is_k            ( pipe_rx7_char_is_k_gt),
+    .pipe_rx7_data                 ( pipe_rx7_data_gt     ),
+    .pipe_rx7_valid                ( pipe_rx7_valid_gt    ),
+    .pipe_rx7_chanisaligned        ( pipe_rx7_chanisaligned_gt   ),
+    .pipe_rx7_status               ( pipe_rx7_status_gt      ),
+    .pipe_rx7_phy_status           ( pipe_rx7_phy_status_gt  ),
+    .pipe_rx7_elec_idle            ( pipe_rx7_elec_idle_gt   ),
+    .pipe_rx7_polarity             ( pipe_rx7_polarity_gt    ),
+    .pipe_tx7_compliance           ( pipe_tx7_compliance_gt  ),
+    .pipe_tx7_char_is_k            ( pipe_tx7_char_is_k_gt   ),
+    .pipe_tx7_data                 ( pipe_tx7_data_gt        ),
+    .pipe_tx7_elec_idle            ( pipe_tx7_elec_idle_gt   ),
+    .pipe_tx7_powerdown            ( pipe_tx7_powerdown_gt   ),
+
+    // PCI Express Signals
+    .pci_exp_txn                   ( pci_exp_txn          ),
+    .pci_exp_txp                   ( pci_exp_txp          ),
+    .pci_exp_rxn                   ( pci_exp_rxn          ),
+    .pci_exp_rxp                   ( pci_exp_rxp          ),
+
+    // Non PIPE Signals
+    .sys_clk                       ( sys_clk             ),
+    .sys_rst_n                     ( sys_rst_n           ),
+    .PIPE_MMCM_RST_N               (),
+    .pipe_clk                      ( pipe_clk            ),
+
+    .user_clk                      ( user_clk            ),
+    .user_clk2                     ( user_clk2           ),
+    .phy_rdy_n                     ( phy_rdy_n           ),
+
+    .PIPE_PCLK_IN                  ( pipe_pclk_in ),
+    .PIPE_RXUSRCLK_IN              ( pipe_rxusrclk_in ),
+    .PIPE_RXOUTCLK_IN              ( pipe_rxoutclk_in ),
+    .PIPE_DCLK_IN                  ( pipe_dclk_in ),
+    .PIPE_USERCLK1_IN              ( pipe_userclk1_in ),
+    .PIPE_USERCLK2_IN              ( pipe_userclk2_in ),
+    .PIPE_OOBCLK_IN                ( pipe_oobclk_in ),
+    .PIPE_MMCM_LOCK_IN             ( pipe_mmcm_lock_in ),
+
+    .PIPE_TXOUTCLK_OUT             ( pipe_txoutclk_out ),
+    .PIPE_RXOUTCLK_OUT             ( pipe_rxoutclk_out ),
+    .PIPE_PCLK_SEL_OUT             ( pipe_pclk_sel_out ),
+    .PIPE_GEN3_OUT                 ( pipe_gen3_out )
+     );
+ end
+ endgenerate
 
   assign  common_commands_out = 12'b0;  
   assign  pipe_tx_0_sigs      = 23'b0;   
