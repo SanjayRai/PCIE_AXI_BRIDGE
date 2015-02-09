@@ -404,8 +404,10 @@ proc create_root_design { parentCell } {
   # Create instance: pcie_7x_0, and set properties
   set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 pcie_7x_0 ]
   set_property -dict [ list CONFIG.Bar0_Scale {Gigabytes} \
-CONFIG.Bar0_Size {1} CONFIG.Bar1_Enabled {false} \
-CONFIG.Bar2_Enabled {false} CONFIG.Bar3_Enabled {false} \
+CONFIG.Bar0_Size {1} CONFIG.Bar1_Enabled {true} \
+CONFIG.Bar1_Size {64} CONFIG.Bar1_Type {Memory} \
+CONFIG.Bar2_Enabled {false} CONFIG.Bar2_Type {N/A} \
+CONFIG.Bar3_Enabled {false} CONFIG.Bar3_Type {N/A} \
 CONFIG.Device_ID {7021} CONFIG.Interface_Width {64_bit} \
 CONFIG.Link_Speed {5.0_GT/s} CONFIG.Max_Payload_Size {512_bytes} \
 CONFIG.Maximum_Link_Width {X1} CONFIG.Trgt_Link_Speed {4'h2} \
@@ -418,7 +420,7 @@ CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
 
   # Create instance: pcie_axi_brdg, and set properties
   set pcie_axi_brdg [ create_bd_cell -type ip -vlnv sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0 pcie_axi_brdg ]
-  set_property -dict [ list CONFIG.AXI_BAR_0_ADDR {0x20000000} CONFIG.AXI_BAR_0_MASK {0xC0000000} CONFIG.AXI_BAR_1_ADDR {0x40000000} CONFIG.AXI_BAR_2_ADDR {0x60000000} CONFIG.AXI_BAR_3_ADDR {0x80000000} CONFIG.C_DATA_WIDTH {64}  ] $pcie_axi_brdg
+  set_property -dict [ list CONFIG.AXI_BAR_0_ADDR {0x20000000} CONFIG.AXI_BAR_0_MASK {0xC0000000} CONFIG.AXI_BAR_1_ADDR {0x40000000} CONFIG.AXI_BAR_1_MASK {0xFFFF0000} CONFIG.AXI_BAR_2_ADDR {0x60000000} CONFIG.AXI_BAR_3_ADDR {0x80000000} CONFIG.C_DATA_WIDTH {64}  ] $pcie_axi_brdg
 
   # Create instance: rst_mig_7series_0_200M, and set properties
   set rst_mig_7series_0_200M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_mig_7series_0_200M ]
@@ -456,8 +458,8 @@ CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
   connect_bd_net -net sys_rst_n_1 [get_bd_ports pcie_rst_n] [get_bd_pins pcie_7x_0/sys_rst_n]
 
   # Create address segments
-  create_bd_addr_seg -range 0x10000 -offset 0x40000000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
-  create_bd_addr_seg -range 0x10000 -offset 0x40010000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
+  create_bd_addr_seg -range 0x4000 -offset 0x40000000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
+  create_bd_addr_seg -range 0x1000 -offset 0x40004000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x20000000 -offset 0x20000000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
   
 
