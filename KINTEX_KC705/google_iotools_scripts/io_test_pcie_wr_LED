@@ -1,18 +1,18 @@
 for ((i=0; i < 10; i++))
 do
-iotools mmio_write32 0xa0010000 0x00000000
+iotools mmio_write32 0xc0004000 0x00000000
 sleep 1                     
-iotools mmio_write32 0xa0010000 0x18000000
+iotools mmio_write32 0xc0004000 0x18000000
 sleep 1                     
-iotools mmio_write32 0xa0010000 0x24000000
+iotools mmio_write32 0xc0004000 0x24000000
 sleep 1                     
-iotools mmio_write32 0xa0010000 0x42000000
+iotools mmio_write32 0xc0004000 0x42000000
 sleep 1                     
-iotools mmio_write32 0xa0010000 0x81000000
+iotools mmio_write32 0xc0004000 0x81000000
 sleep 1                     
-iotools mmio_write32 0xa0010000 0x55555555
+iotools mmio_write32 0xc0004000 0x55555555
 sleep 1                     
-iotools mmio_write32 0xa0010000 0xAAAAAAAA
+iotools mmio_write32 0xc0004000 0xAAAAAAAA
 sleep 1                     
-iotools mmio_write32 0xa0010000 0x00000000
+iotools mmio_write32 0xc0004000 0x00000000
 done
