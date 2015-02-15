@@ -133,11 +133,11 @@ localparam PIO_TX_CPLD_QW1   = 1'b1;
 
     always @ (rd_be or req_addr or compl_wd) begin
     casex ({compl_wd, rd_be[3:0]})
-       5'b1_0000 : lower_addr = {req_addr[6:2], 2'b00};
-       5'b1_xxx1 : lower_addr = {req_addr[6:2], 2'b00};
-       5'b1_xx10 : lower_addr = {req_addr[6:2], 2'b01};
-       5'b1_x100 : lower_addr = {req_addr[6:2], 2'b10};
-       5'b1_1000 : lower_addr = {req_addr[6:2], 2'b11};
+       5'b1_0000 : lower_addr = {req_addr[4:0], 2'b00};
+       5'b1_xxx1 : lower_addr = {req_addr[4:0], 2'b00};
+       5'b1_xx10 : lower_addr = {req_addr[4:0], 2'b01};
+       5'b1_x100 : lower_addr = {req_addr[4:0], 2'b10};
+       5'b1_1000 : lower_addr = {req_addr[4:0], 2'b11};
        5'b0_xxxx : lower_addr = 8'h0;
     endcase // casex ({compl_wd, rd_be[3:0]})
     end

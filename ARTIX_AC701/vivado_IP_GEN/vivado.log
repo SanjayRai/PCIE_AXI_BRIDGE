@@ -2,8 +2,8 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Tue Jan 13 17:16:25 2015
-# Process ID: 28213
+# Start of session at: Sun Feb 15 07:31:19 2015
+# Process ID: 9190
 # Log file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/vivado.log
 # Journal file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/vivado.jou
 #-----------------------------------------------------------
@@ -87,4 +87,4 @@ WARNING: command 'get_user_parameter' will be removed in the 2014.3 release, use
 # ipx::check_integrity -quiet [ipx::current_core]
 # ipx::archive_core {./pcie_axi_stream_to_axi_lite_bridge.zip} [ipx::current_core]
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 13 17:17:08 2015...
+INFO: [Common 17-206] Exiting Vivado at Sun Feb 15 07:31:42 2015...

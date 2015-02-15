@@ -2,19 +2,15 @@
 # Vivado v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Tue Jan 13 19:53:06 2015
-# Process ID: 4366
+# Start of session at: Sun Feb 15 07:32:15 2015
+# Process ID: 10119
 # Log file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.log
 # Journal file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.jou
 #-----------------------------------------------------------
-start_gui
 source vivado_project.tcl
 # set DEVICE_TYPE xc7k325tffg900-2
 # set TOP_module pcie_axi_stream_to_axi_lite_bridge
 # create_project pcie_axi_stream_to_axi_lite_bridge pcie_axi_stream_to_axi_lite_bridge -part $DEVICE_TYPE 
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2014.4/data/ip'.
 # import_files -force -norecurse {
 # ../../common_src/PIO.v
 # ../../common_src/PIO_EP.v
@@ -30,6 +26,9 @@ INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/V
 # set ROOT_DIR [pwd]
 # ipx::package_project -root_dir $ROOT_DIR
 WARNING: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2014.4/data/ip'.
 INFO: [IP_Flow 19-2418] Expression "((C_DATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
 INFO: [IP_Flow 19-2418] Expression "((C_DATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
 INFO: [IP_Flow 19-2228] Inferred bus interface "M_AXI" of definition type "xilinx.com:interface:aximm:1.0".
@@ -86,5 +85,4 @@ WARNING: command 'get_user_parameter' will be removed in the 2014.3 release, use
 # ipx::save_core [ipx::current_core]
 # ipx::check_integrity -quiet [ipx::current_core]
 # ipx::archive_core {./pcie_axi_stream_to_axi_lite_bridge.zip} [ipx::current_core]
-exit
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 13 19:53:55 2015...
+INFO: [Common 17-206] Exiting Vivado at Sun Feb 15 07:32:19 2015...
