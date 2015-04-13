@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:blk_mem_gen:8.2
-// IP Revision: 3
+// IP Revision: 4
 
 `timescale 1ns/1ps
 
