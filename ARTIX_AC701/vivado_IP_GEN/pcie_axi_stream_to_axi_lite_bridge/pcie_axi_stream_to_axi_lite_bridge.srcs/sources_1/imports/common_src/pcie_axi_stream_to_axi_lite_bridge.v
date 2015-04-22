@@ -70,9 +70,6 @@ wire  [31:0]    wr_data;
 wire            wr_en;
 wire            wr_busy;
 wire [3:0]      wr_be_i;
-  assign wr_busy = 1'b0;
-
-
 
 
 // Register Declaration
@@ -167,7 +164,7 @@ axi_lite_master_if # (
     .wr_be(wr_be_i),                 // input  [3:0]                    
     .wr_data(wr_data),               // input  [31:0]                   
     .wr_en(wr_en),                 // input                           
-    .wr_busy(wr_busy),               // input                           
+    .wr_busy(wr_busy),               // output                           
     .M_AXI_ACLK(user_clk),            // input wire                      
     .M_AXI_ARESETN(M_AXI_ARESETN),         // input wire                      
     .M_AXI_AWADDR(M_AXI_AWADDR),          // output wire [31 : 0]            

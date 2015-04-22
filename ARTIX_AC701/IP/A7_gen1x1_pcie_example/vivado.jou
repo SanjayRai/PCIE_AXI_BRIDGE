@@ -1,11 +1,16 @@
 #-----------------------------------------------------------
-# Vivado v2014.4 (64-bit)
-# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
-# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Mon Jan 12 16:40:35 2015
-# Process ID: 27586
+# Vivado v2014.4.1 (64-bit)
+# SW Build 1149489 on Thu Feb 19 16:00:12 MST 2015
+# IP Build 1147552 on Wed Feb 18 14:25:16 MST 2015
+# Start of session at: Sun Apr 12 19:58:04 2015
+# Process ID: 8805
 # Log file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/vivado.log
 # Journal file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/vivado.jou
 #-----------------------------------------------------------
 start_gui
-source /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie/A7_gen1x1_pcie_ex.tcl
+open_project A7_gen1x1_pcie_example.xpr
+launch_simulation
+source board.tcl
+report_compile_order ./srai_co.txt
+report_compile_order -file ./srai_co.txt
+close_sim

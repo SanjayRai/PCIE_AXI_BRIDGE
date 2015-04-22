@@ -1,102 +1,271 @@
 #-----------------------------------------------------------
-# Vivado v2014.4 (64-bit)
-# SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
-# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Mon Jan 12 16:40:35 2015
-# Process ID: 27586
+# Vivado v2014.4.1 (64-bit)
+# SW Build 1149489 on Thu Feb 19 16:00:12 MST 2015
+# IP Build 1147552 on Wed Feb 18 14:25:16 MST 2015
+# Start of session at: Sun Apr 12 19:58:04 2015
+# Process ID: 8805
 # Log file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/vivado.log
 # Journal file: /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/vivado.jou
 #-----------------------------------------------------------
 start_gui
-source /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie/A7_gen1x1_pcie_ex.tcl
-# set srcIpDir "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie"
-# create_project -name A7_gen1x1_pcie_example -force
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2014.4/data/ip'.
-# set_property part xc7a200tfbg676-2 [current_project]
-# set_property target_language verilog [current_project]
-# set_property simulator_language MIXED [current_project]
-# set returnCode 0
-# set_property ip_repo_paths [list [list /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN]] [current_fileset]
-# update_ip_catalog
+open_project A7_gen1x1_pcie_example.xpr
+Scanning sources...
+Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN'.
-# import_ip -files [list [file join $srcIpDir A7_gen1x1_pcie.xci]] -name A7_gen1x1_pcie
-# reset_target {example} [get_ips A7_gen1x1_pcie]
-WARNING: [Vivado 12-4104] The example target will be deprecated in a future release.
-# proc _filter_supported_targets {targets ip} {
-#   set res {}
-#   set all [get_property SUPPORTED_TARGETS $ip]
-#   foreach target $targets {
-#     lappend res {*}[lsearch -all -inline -nocase $all $target]
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2014.4/data/ip'.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'board' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.sim/sim_1/behav'
+xvlog -m64 -prj board_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/EP_MEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EP_MEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/PIO_EP_MEM_ACCESS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIO_EP_MEM_ACCESS
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/PIO_RX_ENGINE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIO_RX_ENGINE
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/PIO_TX_ENGINE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIO_TX_ENGINE
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/PIO_EP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIO_EP
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/PIO_TO_CTRL.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIO_TO_CTRL
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/PIO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PIO
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_top_pipe_mode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gt_top_pipe_mode
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pipe_clock.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pipe_clock
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pipe_eq.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pipe_eq
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pipe_drp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pipe_drp
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pipe_rate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pipe_rate
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pipe_reset.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pipe_reset
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pipe_sync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pipe_sync
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gtp_pipe_rate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gtp_pipe_rate
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gtp_pipe_drp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gtp_pipe_drp
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gtp_pipe_reset.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gtp_pipe_reset
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pipe_user.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pipe_user
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pipe_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pipe_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_qpll_drp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_qpll_drp
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_qpll_reset.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_qpll_reset
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_qpll_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_qpll_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_rxeq_scan.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_rxeq_scan
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_core_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_core_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_axi_basic_rx_null_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_axi_basic_rx_null_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_axi_basic_rx_pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_axi_basic_rx_pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_axi_basic_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_axi_basic_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_axi_basic_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_axi_basic_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_axi_basic_tx_pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_axi_basic_tx_pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_axi_basic_tx_thrtl_ctl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_axi_basic_tx_thrtl_ctl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_axi_basic_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_axi_basic_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie_bram_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie_bram_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie_bram_top_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie_bram_top_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie_brams_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie_brams_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie_pipe_lane.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie_pipe_lane
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie_pipe_misc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie_pipe_misc
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie_pipe_pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie_pipe_pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gt_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_common.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gt_common
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gtp_cpllpd_ovrd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gtp_cpllpd_ovrd
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gtx_cpllpd_ovrd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gtx_cpllpd_ovrd
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_rx_valid_filter_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gt_rx_valid_filter_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_gt_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/source/A7_gen1x1_pcie_pcie2_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie_pcie2_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/ip/A7_gen1x1_pcie/sim/A7_gen1x1_pcie.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A7_gen1x1_pcie
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/pcie_app_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pcie_app_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_cfg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pci_exp_usrapp_cfg
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_com.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pci_exp_usrapp_com
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_pl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pci_exp_usrapp_pl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_rx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pci_exp_usrapp_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pci_exp_usrapp_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/functional/sys_clk_gen.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sys_clk_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport/pcie_axi_trn_bridge.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pcie_axi_trn_bridge
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport/pcie_2_1_rport_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pcie_2_1_rport_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/xilinx_pcie_2_1_ep_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xilinx_pcie_2_1_ep_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/functional/sys_clk_gen_ds.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sys_clk_gen_ds
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport/xilinx_pcie_2_1_rport_7x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xilinx_pcie_2_1_rport_7x
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/functional/board.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module board
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.sim/sim_1/behav'
+Vivado Simulator 2014.4
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/applications/Xilinx/Vivado/2014.4/bin/unwrapped/lnx64.o/xelab -wto 3161606b44dd47688e1d55a95938b10f --debug typical --relax --include ../../../A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/dsport --include ../../../A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/functional --include ../../../A7_gen1x1_pcie_example.srcs/sim_1/imports/A7_gen1x1_pcie/simulation/tests -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot board_behav xil_defaultlib.board xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 6 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port cfg_to_turnoff [/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/pcie_app_7x.v:145]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 16 for port cfg_completer_id [/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.srcs/sources_1/imports/A7_gen1x1_pcie/example_design/pcie_app_7x.v:146]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.IBUFDS_GTE2
+Compiling module unisims_ver.OBUF
+Compiling module xil_defaultlib.A7_gen1x1_pcie_axi_basic_rx_pipe...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_axi_basic_rx_null...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_axi_basic_rx(C_DA...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_axi_basic_tx_pipe...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_axi_basic_tx_thrt...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_axi_basic_tx(C_DA...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_axi_basic_top(C_D...
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(DOA_REG=0,DOB...
+Compiling module unisims_ver.RAMB36E1(DOA_REG=0,DOB_REG=1,INI...
+Compiling module unimacro_ver.BRAM_TDP_MACRO(BRAM_SIZE="36Kb",...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_bram_7x(LINK...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_brams_7x(LIN...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_bram_top_7x(...
+Compiling secureip modules ...
+Compiling module unisims_ver.PCIE_2_1(AER_BASE_PTR=12'b0,AER_...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_7x(AER_BASE_...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_pipe_misc(PI...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_pipe_lane(PI...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_pipe_pipelin...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_top(PIPE_PIP...
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFGCTRL_default
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pipe_clock(PCIE_A...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_gt_top_pipe_mode(...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_core_top(PIPE_SIM...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie2_top(c_compo...
+Compiling module xil_defaultlib.A7_gen1x1_pcie
+Compiling module unisims_ver.RB36_INTERNAL_VLOG(DOA_REG=1,DOB...
+Compiling module unisims_ver.RAMB36E1(DOA_REG=1,DOB_REG=1,REA...
+Compiling module xil_defaultlib.EP_MEM
+Compiling module xil_defaultlib.PIO_EP_MEM_ACCESS(TCQ=1)
+Compiling module xil_defaultlib.PIO_RX_ENGINE(TCQ=1,C_DATA_WIDTH...
+Compiling module xil_defaultlib.PIO_TX_ENGINE(C_DATA_WIDTH=64,TC...
+Compiling module xil_defaultlib.PIO_EP(C_DATA_WIDTH=64,KEEP_WIDT...
+Compiling module xil_defaultlib.PIO_TO_CTRL(TCQ=1)
+Compiling module xil_defaultlib.PIO(C_DATA_WIDTH=64,KEEP_WIDTH=8...
+Compiling module xil_defaultlib.pcie_app_7x(C_DATA_WIDTH=64,TCQ=...
+Compiling module xil_defaultlib.xilinx_pcie_2_1_ep_7x(PL_FAST_TR...
+Compiling secureip modules ...
+Compiling module unisims_ver.PCIE_2_1(AER_BASE_PTR=12'b010010...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_7x(AER_BASE_...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_pcie_top(PIPE_PIP...
+Compiling module xil_defaultlib.A7_gen1x1_pcie_gt_top_pipe_mode(...
+Compiling module xil_defaultlib.pcie_2_1_rport_7x(PIPE_SIM_MODE=...
+Compiling module xil_defaultlib.pci_exp_usrapp_rx(C_DATA_WIDTH=6...
+Compiling module xil_defaultlib.pci_exp_usrapp_tx(LINK_CAP_MAX_L...
+Compiling module xil_defaultlib.pci_exp_usrapp_cfg
+Compiling module xil_defaultlib.pci_exp_usrapp_com
+Compiling module xil_defaultlib.pci_exp_usrapp_pl(LINK_CAP_MAX_L...
+Compiling module xil_defaultlib.pcie_axi_trn_bridge(C_DATA_WIDTH...
+Compiling module xil_defaultlib.xilinx_pcie_2_1_rport_7x(PL_FAST...
+Compiling module xil_defaultlib.sys_clk_gen(halfcycle=5000)
+Compiling module xil_defaultlib.sys_clk_gen(offset=0,halfcycle=5...
+Compiling module xil_defaultlib.sys_clk_gen_ds(halfcycle=5000)
+Compiling module xil_defaultlib.board
+Compiling module xil_defaultlib.glbl
+Waiting for 9 sub-compilation(s) to finish...
+Built simulation snapshot board_behav
+
+****** Webtalk v2014.4.1 (64-bit)
+  **** SW Build 1149489 on Thu Feb 19 16:00:12 MST 2015
+  **** IP Build 1147552 on Wed Feb 18 14:25:16 MST 2015
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.sim/sim_1/behav/xsim.dir/board_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.sim/sim_1/behav/xsim.dir/board_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Apr 12 19:59:38 2015. For additional details about this file, please refer to the WebTalk help file at /home/applications/Xilinx/Vivado/2014.4/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sun Apr 12 19:59:38 2015...
+run_program: Time (s): cpu = 00:04:33 ; elapsed = 00:01:06 . Memory (MB): peak = 5823.020 ; gain = 0.000 ; free physical = 9218 ; free virtual = 22377
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie_example/A7_gen1x1_pcie_example.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "board_behav -key {Behavioral:sim_1:Functional:board} -tclbatch {board.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.4
+Time resolution is 1 ps
+source board.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
 #   }
-#   return $res
 # }
-# generate_target [_filter_supported_targets {instantiation_template synthesis simulation implementation shared_logic} [get_ips A7_gen1x1_pcie]] [get_ips A7_gen1x1_pcie]
-INFO: [IP_Flow 19-1706] Not generating 'Instantiation Template' target for IP 'A7_gen1x1_pcie'. Target already exists and is up to date.
-INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'A7_gen1x1_pcie'. Target already exists and is up to date.
-INFO: [IP_Flow 19-1706] Not generating 'Simulation' target for IP 'A7_gen1x1_pcie'. Target already exists and is up to date.
-# add_files -scan_for_includes -quiet -fileset [current_fileset] \
-#   [list [file join $srcIpDir example_design/EP_MEM.v]] \
-#   [list [file join $srcIpDir example_design/PIO_EP_MEM_ACCESS.v]] \
-#   [list [file join $srcIpDir example_design/PIO_EP.v]] \
-#   [list [file join $srcIpDir example_design/PIO_RX_ENGINE.v]] \
-#   [list [file join $srcIpDir example_design/PIO_TO_CTRL.v]] \
-#   [list [file join $srcIpDir example_design/PIO_TX_ENGINE.v]] \
-#   [list [file join $srcIpDir example_design/PIO.v]] \
-#   [list [file join $srcIpDir example_design/pcie_app_7x.v]] \
-#   [list [file join $srcIpDir example_design/xilinx_pcie_2_1_ep_7x.v]]
-# add_files -quiet -fileset [current_fileset] \
-#   [list [file join $srcIpDir hierarchy.txt]]
-# add_files -quiet -fileset [current_fileset -constrset] \
-#   [list [file join $srcIpDir example_design/xilinx_pcie_7x_ep_x1g1_AC701.xdc]]
-# if { [catch {current_fileset -simset} exc] } { create_fileset -simset sim_1 }
-# add_files -quiet -scan_for_includes -fileset [current_fileset -simset] \
-#   [list [file join $srcIpDir simulation/dsport/pci_exp_expect_tasks.vh]] \
-#   [list [file join $srcIpDir simulation/dsport/pci_exp_usrapp_cfg.v]] \
-#   [list [file join $srcIpDir simulation/dsport/pci_exp_usrapp_com.v]] \
-#   [list [file join $srcIpDir simulation/dsport/pci_exp_usrapp_pl.v]] \
-#   [list [file join $srcIpDir simulation/dsport/pci_exp_usrapp_rx.v]] \
-#   [list [file join $srcIpDir simulation/dsport/pci_exp_usrapp_tx.v]] \
-#   [list [file join $srcIpDir simulation/functional/sys_clk_gen_ds.v]] \
-#   [list [file join $srcIpDir simulation/functional/sys_clk_gen.v]] \
-#   [list [file join $srcIpDir simulation/dsport/pcie_axi_trn_bridge.v]] \
-#   [list [file join $srcIpDir simulation/functional/board.v]] \
-#   [list [file join $srcIpDir simulation/functional/board_common.vh]] \
-#   [list [file join $srcIpDir simulation/tests/sample_tests1.vh]] \
-#   [list [file join $srcIpDir simulation/tests/tests.vh]] \
-#   [list [file join $srcIpDir simulation/dsport/pcie_2_1_rport_7x.v]] \
-#   [list [file join $srcIpDir simulation/dsport/xilinx_pcie_2_1_rport_7x.v]] \
-#   [list [file join $srcIpDir source/A7_gen1x1_pcie_gt_top_pipe_mode.v]] \
-#   [list [file join $srcIpDir simulation/functional/pipe_interconnect.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/pci_exp_expect_tasks.vh]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/pci_exp_usrapp_cfg.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/pci_exp_usrapp_com.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/pci_exp_usrapp_pl.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/pci_exp_usrapp_rx.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/pci_exp_usrapp_tx.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/functional/sys_clk_gen_ds.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/functional/sys_clk_gen.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/pcie_axi_trn_bridge.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/functional/board.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/functional/board_common.vh]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/tests/sample_tests1.vh]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/tests/tests.vh]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/pcie_2_1_rport_7x.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/dsport/xilinx_pcie_2_1_rport_7x.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir source/A7_gen1x1_pcie_gt_top_pipe_mode.v]]
-# set_property USED_IN_SYNTHESIS false [get_files [file join $srcIpDir simulation/functional/pipe_interconnect.v]]
-# import_files
-# set_property TOP [lindex [find_top] 0] [current_fileset]
-# update_compile_order -fileset [current_fileset]
-# update_compile_order -fileset [current_fileset -simset]
-# set dfile /home/sanjayr/projects/PCIE_AXI_BRIDGE/ARTIX_AC701/IP/A7_gen1x1_pcie/oepdone.txt
-# set doneFile [open $dfile w]
-# puts $doneFile "Open Example Project DONE"
-# close $doneFile
-# if { $returnCode != 0 } {
-#   error "Problems were encountered while executing the example design script, please review the log files."
-# }
+# run 1000ns
+[                   0] board.EP.A7_gen1x1_pcie_i.inst.inst.pcie_top_i.pcie_7x_i.pcie_bram_top.pcie_brams_tx NUM_BRAMS 4  DOB_REG 1 WIDTH 18 RAM_WRITE_LATENCY 0 RAM_RADDR_LATENCY 0 RAM_RDATA_LATENCY 2
+[                   0] board.EP.A7_gen1x1_pcie_i.inst.inst.pcie_top_i.pcie_7x_i.pcie_bram_top.pcie_brams_rx NUM_BRAMS 4  DOB_REG 1 WIDTH 18 RAM_WRITE_LATENCY 0 RAM_RADDR_LATENCY 0 RAM_RDATA_LATENCY 2
+[                   0] board.EP.A7_gen1x1_pcie_i.inst.inst.pcie_top_i.pcie_7x_i.pcie_bram_top ROWS_TX 1 COLS_TX 4
+[                   0] board.EP.A7_gen1x1_pcie_i.inst.inst.pcie_top_i.pcie_7x_i.pcie_bram_top ROWS_RX 1 COLS_RX 4
+[                   0] board.RP.rport.pcie_top_i.pcie_7x_i.pcie_bram_top.pcie_brams_tx NUM_BRAMS 4  DOB_REG 1 WIDTH 18 RAM_WRITE_LATENCY 0 RAM_RADDR_LATENCY 0 RAM_RDATA_LATENCY 2
+[                   0] board.RP.rport.pcie_top_i.pcie_7x_i.pcie_bram_top.pcie_brams_rx NUM_BRAMS 4  DOB_REG 1 WIDTH 18 RAM_WRITE_LATENCY 0 RAM_RADDR_LATENCY 0 RAM_RDATA_LATENCY 2
+[                   0] board.RP.rport.pcie_top_i.pcie_7x_i.pcie_bram_top ROWS_TX 1 COLS_TX 4
+[                   0] board.RP.rport.pcie_top_i.pcie_7x_i.pcie_bram_top ROWS_RX 1 COLS_RX 4
+Running default test {pio_writeReadBack_test0}......
+[                   0] : System Reset Asserted...
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'board_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:04:37 ; elapsed = 00:01:09 . Memory (MB): peak = 5881.797 ; gain = 58.777 ; free physical = 9066 ; free virtual = 22226
+report_compile_order ./srai_co.txt
+ERROR: [Common 17-165] Too many positional options when parsing './srai_co.txt', please type 'report_compile_order -help' for usage info.
+report_compile_order -file ./srai_co.txt
+INFO: [Vivado 12-3442] The output from report_compile_order is primarily targeted for human readability and ease of use. As such, the format and details in the output below could change over time. The 'get_files -compile_order' command produces this same information, but in a format that is better suited for using in any automated scripts, and is less likely to change format over time.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Mon Jan 12 16:41:01 2015...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 12 20:34:53 2015...

@@ -20,7 +20,7 @@ module axi_lite_master_if #
         input  [3:0]     wr_be,
         input  [31:0]    wr_data,
         input            wr_en,
-        input            wr_busy,
+        output            wr_busy,
         input wire  M_AXI_ACLK,
         input wire  M_AXI_ARESETN,
         output wire [31 : 0] M_AXI_AWADDR,
@@ -83,6 +83,7 @@ assign M_AXI_ARPROT	= 3'b001;
 assign M_AXI_RREADY	= axi_rready;
 assign rd_data = axi_rddata;
 assign rd_data_valid = axi_rready;
+assign wr_busy = ~M_AXI_BVALID;
 
   always @(posedge M_AXI_ACLK) begin                                                                        
     if (wr_en_pulse) begin 

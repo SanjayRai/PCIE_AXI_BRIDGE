@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="board_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="board" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="69" />
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/pci_exp_txp">
+      <obj_property name="ElementShortName">pci_exp_txp[0:0]</obj_property>
+      <obj_property name="ObjectShortName">pci_exp_txp[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/pci_exp_txn">
+      <obj_property name="ElementShortName">pci_exp_txn[0:0]</obj_property>
+      <obj_property name="ObjectShortName">pci_exp_txn[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/pci_exp_rxp">
+      <obj_property name="ElementShortName">pci_exp_rxp[0:0]</obj_property>
+      <obj_property name="ObjectShortName">pci_exp_rxp[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/pci_exp_rxn">
+      <obj_property name="ElementShortName">pci_exp_rxn[0:0]</obj_property>
+      <obj_property name="ObjectShortName">pci_exp_rxn[0:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/pci_ref_clk_p">
+      <obj_property name="ElementShortName">pci_ref_clk_p</obj_property>
+      <obj_property name="ObjectShortName">pci_ref_clk_p</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/pci_ref_clk_n">
+      <obj_property name="ElementShortName">pci_ref_clk_n</obj_property>
+      <obj_property name="ObjectShortName">pci_ref_clk_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/pci_sys_rst_n">
+      <obj_property name="ElementShortName">pci_sys_rst_n</obj_property>
+      <obj_property name="ObjectShortName">pci_sys_rst_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_AWADDR">
+      <obj_property name="ElementShortName">M_AXI_AWADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_AWADDR[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/app/PIO/PIO_EP_inst/EP_RX_inst/tlp_type">
+      <obj_property name="ElementShortName">tlp_type[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tlp_type[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_BVALID">
+      <obj_property name="ElementShortName">M_AXI_BVALID</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_BVALID</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_AWVALID">
+      <obj_property name="ElementShortName">M_AXI_AWVALID</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_AWVALID</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_BREADY">
+      <obj_property name="ElementShortName">M_AXI_BREADY</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_BREADY</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_AWREADY">
+      <obj_property name="ElementShortName">M_AXI_AWREADY</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_AWREADY</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_WREADY">
+      <obj_property name="ElementShortName">M_AXI_WREADY</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_WREADY</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/m_axis_rx_tready">
+      <obj_property name="ElementShortName">m_axis_rx_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_rx_tready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axi_if/wr_en_pulse">
+      <obj_property name="ElementShortName">wr_en_pulse</obj_property>
+      <obj_property name="ObjectShortName">wr_en_pulse</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axi_if/wr_en_i0">
+      <obj_property name="ElementShortName">wr_en_i0</obj_property>
+      <obj_property name="ObjectShortName">wr_en_i0</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/u_axi_if/wr_en">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_WVALID">
+      <obj_property name="ElementShortName">M_AXI_WVALID</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_WVALID</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/app/PIO/PIO_EP_inst/EP_RX_inst/state">
+      <obj_property name="ElementShortName">state[7:0]</obj_property>
+      <obj_property name="ObjectShortName">state[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/app/PIO/PIO_EP_inst/EP_RX_inst/state_ascii">
+      <obj_property name="ElementShortName">state_ascii[160:1]</obj_property>
+      <obj_property name="ObjectShortName">state_ascii[160:1]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/u_pcie_axi_stream_to_axi_lite_bridge/wr_busy">
+      <obj_property name="ElementShortName">wr_busy</obj_property>
+      <obj_property name="ObjectShortName">wr_busy</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_WDATA">
+      <obj_property name="ElementShortName">M_AXI_WDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_WDATA[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_WSTRB">
+      <obj_property name="ElementShortName">M_AXI_WSTRB[3:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_WSTRB[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_BRESP">
+      <obj_property name="ElementShortName">M_AXI_BRESP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_BRESP[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_ARADDR">
+      <obj_property name="ElementShortName">M_AXI_ARADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARADDR[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_ARVALID">
+      <obj_property name="ElementShortName">M_AXI_ARVALID</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARVALID</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_ARREADY">
+      <obj_property name="ElementShortName">M_AXI_ARREADY</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARREADY</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_RDATA">
+      <obj_property name="ElementShortName">M_AXI_RDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_RDATA[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_RRESP">
+      <obj_property name="ElementShortName">M_AXI_RRESP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_RRESP[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_RVALID">
+      <obj_property name="ElementShortName">M_AXI_RVALID</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_RVALID</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/M_AXI_RREADY">
+      <obj_property name="ElementShortName">M_AXI_RREADY</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_RREADY</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/user_clk_out">
+      <obj_property name="ElementShortName">user_clk_out</obj_property>
+      <obj_property name="ObjectShortName">user_clk_out</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/user_reset_out_n">
+      <obj_property name="ElementShortName">user_reset_out_n</obj_property>
+      <obj_property name="ObjectShortName">user_reset_out_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/user_clk">
+      <obj_property name="ElementShortName">user_clk</obj_property>
+      <obj_property name="ObjectShortName">user_clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/user_reset">
+      <obj_property name="ElementShortName">user_reset</obj_property>
+      <obj_property name="ObjectShortName">user_reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/user_lnk_up">
+      <obj_property name="ElementShortName">user_lnk_up</obj_property>
+      <obj_property name="ObjectShortName">user_lnk_up</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/i_user_reset_out_n">
+      <obj_property name="ElementShortName">i_user_reset_out_n</obj_property>
+      <obj_property name="ObjectShortName">i_user_reset_out_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/s_axis_tx_tready">
+      <obj_property name="ElementShortName">s_axis_tx_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tx_tready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/s_axis_tx_tuser">
+      <obj_property name="ElementShortName">s_axis_tx_tuser[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tx_tuser[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/s_axis_tx_tdata">
+      <obj_property name="ElementShortName">s_axis_tx_tdata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tx_tdata[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/s_axis_tx_tkeep">
+      <obj_property name="ElementShortName">s_axis_tx_tkeep[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tx_tkeep[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/s_axis_tx_tlast">
+      <obj_property name="ElementShortName">s_axis_tx_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tx_tlast</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/s_axis_tx_tvalid">
+      <obj_property name="ElementShortName">s_axis_tx_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_tx_tvalid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/m_axis_rx_tdata">
+      <obj_property name="ElementShortName">m_axis_rx_tdata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_rx_tdata[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/m_axis_rx_tkeep">
+      <obj_property name="ElementShortName">m_axis_rx_tkeep[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_rx_tkeep[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/m_axis_rx_tlast">
+      <obj_property name="ElementShortName">m_axis_rx_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_rx_tlast</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/m_axis_rx_tvalid">
+      <obj_property name="ElementShortName">m_axis_rx_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_rx_tvalid</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/m_axis_rx_tuser">
+      <obj_property name="ElementShortName">m_axis_rx_tuser[21:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_rx_tuser[21:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/cfg_interrupt">
+      <obj_property name="ElementShortName">cfg_interrupt</obj_property>
+      <obj_property name="ObjectShortName">cfg_interrupt</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/cfg_interrupt_assert">
+      <obj_property name="ElementShortName">cfg_interrupt_assert</obj_property>
+      <obj_property name="ObjectShortName">cfg_interrupt_assert</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/cfg_interrupt_di">
+      <obj_property name="ElementShortName">cfg_interrupt_di[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cfg_interrupt_di[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/cfg_interrupt_stat">
+      <obj_property name="ElementShortName">cfg_interrupt_stat</obj_property>
+      <obj_property name="ObjectShortName">cfg_interrupt_stat</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/cfg_pciecap_interrupt_msgnum">
+      <obj_property name="ElementShortName">cfg_pciecap_interrupt_msgnum[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cfg_pciecap_interrupt_msgnum[4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/sys_rst_n_c">
+      <obj_property name="ElementShortName">sys_rst_n_c</obj_property>
+      <obj_property name="ObjectShortName">sys_rst_n_c</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/sys_clk">
+      <obj_property name="ElementShortName">sys_clk</obj_property>
+      <obj_property name="ObjectShortName">sys_clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/user_reset_q">
+      <obj_property name="ElementShortName">user_reset_q</obj_property>
+      <obj_property name="ObjectShortName">user_reset_q</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/board/EP/u_pcie_axi_bridge/user_lnk_up_q">
+      <obj_property name="ElementShortName">user_lnk_up_q</obj_property>
+      <obj_property name="ObjectShortName">user_lnk_up_q</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/C_DATA_WIDTH">
+      <obj_property name="ElementShortName">C_DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">C_DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/KEEP_WIDTH">
+      <obj_property name="ElementShortName">KEEP_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">KEEP_WIDTH[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/AXI_BAR_0_ADDR">
+      <obj_property name="ElementShortName">AXI_BAR_0_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BAR_0_ADDR[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/AXI_BAR_0_MASK">
+      <obj_property name="ElementShortName">AXI_BAR_0_MASK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BAR_0_MASK[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/AXI_BAR_1_ADDR">
+      <obj_property name="ElementShortName">AXI_BAR_1_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BAR_1_ADDR[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/AXI_BAR_1_MASK">
+      <obj_property name="ElementShortName">AXI_BAR_1_MASK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BAR_1_MASK[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/AXI_BAR_2_ADDR">
+      <obj_property name="ElementShortName">AXI_BAR_2_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BAR_2_ADDR[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/AXI_BAR_2_MASK">
+      <obj_property name="ElementShortName">AXI_BAR_2_MASK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BAR_2_MASK[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/AXI_BAR_3_ADDR">
+      <obj_property name="ElementShortName">AXI_BAR_3_ADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BAR_3_ADDR[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/AXI_BAR_3_MASK">
+      <obj_property name="ElementShortName">AXI_BAR_3_MASK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_BAR_3_MASK[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/board/EP/u_pcie_axi_bridge/TCQ">
+      <obj_property name="ElementShortName">TCQ[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TCQ[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

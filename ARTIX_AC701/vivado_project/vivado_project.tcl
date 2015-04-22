@@ -19,55 +19,34 @@ add_file {
     ../../common_src/pcie_axi_stream_to_axi_lite_bridge.v
     ../src/pcie_gen1x1_axi_lite_bridge.v
     ../src/pcie_gen1x1_axi_lite_bridge_example_top.v
-    ../sim_src/A7_gen1x1_pcie/simulation/tests/tests.vh
-    ../sim_src/A7_gen1x1_pcie/simulation/tests/sample_tests1.vh
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_expect_tasks.vh
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/board_common.vh
-    ../sim_src/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_top_pipe_mode.v       
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_cfg.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_com.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_pl.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_rx.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_tx.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/sys_clk_gen.v            
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pcie_axi_trn_bridge.v        
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pcie_2_1_rport_7x.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/sys_clk_gen_ds.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/xilinx_pcie_2_1_rport_7x.v   
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/board.v                  
 }
-set_property used_in_synthesis false [get_files { 
-    ../sim_src/A7_gen1x1_pcie/simulation/tests/tests.vh
-    ../sim_src/A7_gen1x1_pcie/simulation/tests/sample_tests1.vh
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_expect_tasks.vh
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/board_common.vh
-    ../sim_src/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_top_pipe_mode.v       
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_cfg.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_com.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_pl.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_rx.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_tx.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/sys_clk_gen.v            
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pcie_axi_trn_bridge.v        
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pcie_2_1_rport_7x.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/sys_clk_gen_ds.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/xilinx_pcie_2_1_rport_7x.v   
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/board.v                  
-    }]
-set_property used_in_implementation false [get_files {
-    ../sim_src/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_top_pipe_mode.v       
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_cfg.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_com.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_pl.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_rx.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_tx.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/sys_clk_gen.v            
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pcie_axi_trn_bridge.v        
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/pcie_2_1_rport_7x.v          
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/sys_clk_gen_ds.v         
-    ../sim_src/A7_gen1x1_pcie/simulation/dsport/xilinx_pcie_2_1_rport_7x.v   
-    ../sim_src/A7_gen1x1_pcie/simulation/functional/board.v                  
-    }]
+add_files -fileset sim_1 -norecurse {
+    ../../sim_src/A7_gen1x1_pcie/simulation/tests/tests.vh
+    ../../sim_src/A7_gen1x1_pcie/simulation/tests/sample_tests1.vh
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_expect_tasks.vh
+    ../../sim_src/A7_gen1x1_pcie/simulation/functional/board_common.vh
+    ../../sim_src/A7_gen1x1_pcie/source/A7_gen1x1_pcie_gt_top_pipe_mode.v       
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_cfg.v         
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_com.v         
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_pl.v          
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_rx.v          
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/pci_exp_usrapp_tx.v          
+    ../../sim_src/A7_gen1x1_pcie/simulation/functional/sys_clk_gen.v            
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/pcie_axi_trn_bridge.v        
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/pcie_2_1_rport_7x.v          
+    ../../sim_src/A7_gen1x1_pcie/simulation/functional/sys_clk_gen_ds.v         
+    ../../sim_src/A7_gen1x1_pcie/simulation/dsport/xilinx_pcie_2_1_rport_7x.v   
+    ../../sim_src/A7_gen1x1_pcie/simulation/functional/board.v                  
+    ../../sim_src/A7_gen1x1_pcie/simulation/board_behav.wcfg
+}
 
 
 add_files -fileset constrs_1 ../src/xdc/pcie_gen1x1_axi_lite_bridge_example_top.xdc
+
+set_property top pcie_gen1x1_axi_lite_bridge_example_top [current_fileset]
+set_property top board [get_filesets sim_1]
+
+
+launch_simulation
+open_wave_config {../../sim_src/A7_gen1x1_pcie/simulation/board_behav.wcfg}
+run 200 us

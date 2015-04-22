@@ -1,6 +1,8 @@
 `timescale 1ns / 1ps
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module pcie_gen1x1_axi_lite_bridge_example_top # (
+  parameter PL_FAST_TRAIN       = "FALSE", // Simulation Speedup
+  parameter EXT_PIPE_SIM        = "FALSE"   // This Parameter has effect on selecting Enable External PIPE Interface in GUI.
 ) (
   output  [0:0]    pci_exp_txp,
   output  [0:0]    pci_exp_txn,
