@@ -10,7 +10,7 @@
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2014.4
+set scripts_vivado_version 2015.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -32,6 +32,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 #    create_project project_1 myproj -part xc7a200tfbg676-2
 #    set_property BOARD_PART xilinx.com:ac701:part0:1.0 [current_project]
 
+# CHECKING IF PROJECT EXISTS
+if { [get_projects -quiet] eq "" } {
+   puts "ERROR: Please open or create a project!"
+   return 1
+}
+
+
 
 # CHANGE DESIGN NAME HERE
 set design_name pcie_gen1x1_sub_sys
@@ -39,13 +46,6 @@ set design_name pcie_gen1x1_sub_sys
 # If you do not already have an existing IP Integrator design open,
 # you can create a design using the following command:
 #    create_bd_design $design_name
-
-# CHECKING IF PROJECT EXISTS
-if { [get_projects -quiet] eq "" } {
-   puts "ERROR: Please open or create a project!"
-   return 1
-}
-
 
 # Creating design if needed
 set errMsg ""
@@ -238,8 +238,8 @@ proc create_root_design { parentCell } {
   set_property -dict [ list CONFIG.POLARITY {ACTIVE_HIGH}  ] $reset
 
   # Create instance: A7_gen1x1_pcie, and set properties
-  set A7_gen1x1_pcie [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 A7_gen1x1_pcie ]
-  set_property -dict [ list CONFIG.Bar0_Scale {Megabytes} CONFIG.Bar0_Size {512} CONFIG.Bar1_Enabled {true} CONFIG.Bar1_Type {Memory} CONFIG.Bar2_Enabled {true} CONFIG.Bar2_Type {Memory} CONFIG.PCIe_Debug_Ports {false} CONFIG.Xlnx_Ref_Board {AC701} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.en_ext_pipe_interface {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pipe_mode_sim {None} CONFIG.pipe_sim {true} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $A7_gen1x1_pcie
+  set A7_gen1x1_pcie [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.1 A7_gen1x1_pcie ]
+  set_property -dict [ list CONFIG.Bar0_Scale {Megabytes} CONFIG.Bar0_Size {512} CONFIG.Bar1_Enabled {true} CONFIG.Bar1_Type {Memory} CONFIG.Bar2_Enabled {true} CONFIG.Bar2_Type {Memory} CONFIG.PCIe_Debug_Ports {false} CONFIG.Xlnx_Ref_Board {AC701} CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} CONFIG.en_ext_clk {false} CONFIG.en_ext_pipe_interface {false} CONFIG.err_reporting_if {false} CONFIG.mode_selection {Advanced} CONFIG.pipe_sim {true} CONFIG.pl_interface {false} CONFIG.rcv_msg_if {false}  ] $A7_gen1x1_pcie
 
   # Create instance: axi_bram_ctrl_0, and set properties
   set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.0 axi_bram_ctrl_0 ]

@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: xilinx.com:ip:pcie_7x:3.0
-// IP Revision: 4
+// IP VLNV: xilinx.com:ip:pcie_7x:3.1
+// IP Revision: 1
 
 `timescale 1ns/1ps
 
@@ -211,7 +211,7 @@ input wire sys_rst_n;
     .c_trgt_lnk_spd("0"),
     .c_hw_auton_spd_disable("FALSE"),
     .c_de_emph("FALSE"),
-    .slot_clk("FALSE"),
+    .slot_clk("TRUE"),
     .c_rcb("0"),
     .c_root_cap_crs("FALSE"),
     .c_slot_cap_attn_butn("FALSE"),
@@ -364,7 +364,8 @@ input wire sys_rst_n;
     .CFG_FC_IF("FALSE"),
     .EXT_PIPE_INTERFACE("FALSE"),
     .EXT_STARTUP_PRIMITIVE("FALSE"),
-    .KEEP_WIDTH(8)
+    .KEEP_WIDTH(8),
+    .PCIE_ASYNC_EN("FALSE")
   ) inst (
     .pci_exp_txp(pci_exp_txp),
     .pci_exp_txn(pci_exp_txn),
@@ -586,6 +587,7 @@ input wire sys_rst_n;
     .pipe_rxprbscntreset(1'B0),
     .pipe_loopback(3'B0),
     .pipe_rxprbserr(),
+    .pipe_txinhibit(1'B0),
     .pipe_rst_fsm(),
     .pipe_qrst_fsm(),
     .pipe_rate_fsm(),

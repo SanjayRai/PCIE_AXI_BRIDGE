@@ -46,8 +46,8 @@
 // 
 // DO NOT MODIFY THIS FILE.
 
-// IP VLNV: xilinx.com:ip:pcie_7x:3.0
-// IP Revision: 4
+// IP VLNV: xilinx.com:ip:pcie_7x:3.1
+// IP Revision: 1
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections

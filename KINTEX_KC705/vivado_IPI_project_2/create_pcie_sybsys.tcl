@@ -10,7 +10,7 @@
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2014.4
+set scripts_vivado_version 2015.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -32,6 +32,13 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 #    create_project project_1 myproj -part xc7k325tffg900-2
 #    set_property BOARD_PART xilinx.com:kc705:part0:1.0 [current_project]
 
+# CHECKING IF PROJECT EXISTS
+if { [get_projects -quiet] eq "" } {
+   puts "ERROR: Please open or create a project!"
+   return 1
+}
+
+
 
 # CHANGE DESIGN NAME HERE
 set design_name pcie_gen2x8_sub_sys
@@ -39,13 +46,6 @@ set design_name pcie_gen2x8_sub_sys
 # If you do not already have an existing IP Integrator design open,
 # you can create a design using the following command:
 #    create_bd_design $design_name
-
-# CHECKING IF PROJECT EXISTS
-if { [get_projects -quiet] eq "" } {
-   puts "ERROR: Please open or create a project!"
-   return 1
-}
-
 
 # Creating design if needed
 set errMsg ""
@@ -402,7 +402,7 @@ proc create_root_design { parentCell } {
   set_property -dict [ list CONFIG.MIG_DONT_TOUCH_PARAM {Custom} CONFIG.RESET_BOARD_INTERFACE {reset} CONFIG.XML_INPUT_FILE {mig_a.prj}  ] $mig_7series_0
 
   # Create instance: pcie_7x_0, and set properties
-  set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.0 pcie_7x_0 ]
+  set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.1 pcie_7x_0 ]
   set_property -dict [ list CONFIG.Bar0_Scale {Gigabytes} \
 CONFIG.Bar0_Size {1} CONFIG.Bar1_Enabled {false} \
 CONFIG.Bar2_Enabled {false} CONFIG.Bar3_Enabled {false} \

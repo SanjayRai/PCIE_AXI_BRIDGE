@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_pipe_wrapper.v
-// Version    : 3.0
+// Version    : 3.1
 //------------------------------------------------------------------------------
 //  Filename     :  pipe_wrapper.v
 //  Description  :  PIPE Wrapper for 7 Series Transceiver
@@ -159,8 +159,8 @@ module A7_gen1x1_pcie_pipe_wrapper #
     parameter PCIE_SIM_MODE                 = "FALSE",      // PCIe sim mode 
     parameter PCIE_SIM_SPEEDUP              = "FALSE",      // PCIe sim speedup
     parameter PCIE_SIM_TX_EIDLE_DRIVE_LEVEL = "1",          // PCIe sim TX electrical idle drive level 
-    parameter PCIE_GT_DEVICE                = "GTX",        // PCIe GT device
-    parameter PCIE_USE_MODE                 = "3.0",        // PCIe use mode
+    parameter PCIE_GT_DEVICE                = "GTP",        // PCIe GT device
+    parameter PCIE_USE_MODE                 = "1.0",        // PCIe use mode
     parameter PCIE_PLL_SEL                  = "CPLL",       // PCIe PLL select for Gen1/Gen2 (GTX/GTH) only
     parameter PCIE_AUX_CDR_GEN3_EN          = "TRUE",       // PCIe AUX CDR for Gen3 (GTH 2.0) only
     parameter PCIE_LPM_DFE                  = "LPM",        // PCIe LPM or DFE mode for Gen1/Gen2 only
@@ -189,11 +189,11 @@ module A7_gen1x1_pcie_pipe_wrapper #
     parameter PCIE_CHAN_BOND                = 1,            // PCIe channel bonding mode
     parameter PCIE_CHAN_BOND_EN             = "TRUE",       // PCIe channel bonding enable for Gen1/Gen2 only
     parameter PCIE_LANE                     = 1,            // PCIe number of lanes
-    parameter PCIE_LINK_SPEED               = 3,            // PCIe link speed 
+    parameter PCIE_LINK_SPEED               = 1,            // PCIe link speed 
     parameter PCIE_REFCLK_FREQ              = 0,            // PCIe reference clock frequency
     parameter PCIE_USERCLK1_FREQ            = 2,            // PCIe user clock 1 frequency
     parameter PCIE_USERCLK2_FREQ            = 2,            // PCIe user clock 2 frequency
-    parameter PCIE_TX_EIDLE_ASSERT_DELAY    = 3'd4,         // PCIe TX electrical idle assert delay
+    parameter PCIE_TX_EIDLE_ASSERT_DELAY    = 3'd2,         // PCIe TX electrical idle assert delay
     parameter PCIE_RXEQ_MODE_GEN3           = 1,            // PCIe RX equalization mode
     parameter PCIE_OOBCLK_MODE              = 1,            // PCIe OOB clock mode
     parameter PCIE_JTAG_MODE                = 0,            // PCIe JTAG mode
@@ -312,6 +312,7 @@ module A7_gen1x1_pcie_pipe_wrapper #
     output  [1:0]                   INT_QPLLOUTREFCLK_OUT,
     input   [PCIE_LANE-1:0]         INT_PCLK_SEL_SLAVE,
 
+ 
   // Shared Logic External
     
     //---------- External Clock Ports ----------------------
@@ -354,6 +355,7 @@ module A7_gen1x1_pcie_pipe_wrapper #
     input       [ 2:0]              PIPE_LOOPBACK,          // PCLK       | PCLK
     
     output      [PCIE_LANE-1:0]     PIPE_RXPRBSERR,         // PCLK       | PCLK
+    input       [PCIE_LANE-1:0]     PIPE_TXINHIBIT,         // PCLK       | PCLK
     
     //---------- FSM Ports ---------------------------------
     output      [4:0]               PIPE_RST_FSM,           // PCLK       | PCLK
@@ -1546,6 +1548,7 @@ A7_gen1x1_pcie_gt_wrapper #
         .GT_TXMARGIN                    (PIPE_TXMARGIN),
         .GT_TXSWING                     (PIPE_TXSWING),
         .GT_TXDEEMPH                    (PIPE_TXDEEMPH[i]),  
+        .GT_TXINHIBIT                   (PIPE_TXINHIBIT[i]),
         .GT_TXPRECURSOR                 (eq_txeq_precursor[(5*i)+4:(5*i)]),
         .GT_TXMAINCURSOR                (eq_txeq_maincursor[(7*i)+6:(7*i)]),
         .GT_TXPOSTCURSOR                (eq_txeq_postcursor[(5*i)+4:(5*i)]),

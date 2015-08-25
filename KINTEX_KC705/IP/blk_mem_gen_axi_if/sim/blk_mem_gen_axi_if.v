@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:blk_mem_gen:8.2
-// IP Revision: 3
+// IP Revision: 6
 
 `timescale 1ns/1ps
 
@@ -178,6 +178,11 @@ input wire s_axi_rready;
     .C_COMMON_CLK(1),
     .C_DISABLE_WARN_BHV_COLL(0),
     .C_EN_SLEEP_PIN(0),
+    .C_USE_URAM(0),
+    .C_EN_RDADDRA_CHG(0),
+    .C_EN_RDADDRB_CHG(0),
+    .C_EN_DEEPSLEEP_PIN(0),
+    .C_EN_SHUTDOWN_PIN(0),
     .C_DISABLE_WARN_BHV_RANGE(0),
     .C_COUNT_36K_BRAM("1"),
     .C_COUNT_18K_BRAM("0"),
@@ -206,6 +211,8 @@ input wire s_axi_rready;
     .dbiterr(),
     .rdaddrecc(),
     .sleep(1'D0),
+    .deepsleep(1'D0),
+    .shutdown(1'D0),
     .s_aclk(s_aclk),
     .s_aresetn(s_aresetn),
     .s_axi_awid(4'B0),

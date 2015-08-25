@@ -1,0 +1,45 @@
+{
+   guistr: "# # String gsaved with Nlview 6.4.12  2014-12-16 bk=1.3272 VDI=35 GEI=35 GUI=JA:1.8
+#  -string -flagsOSRD
+preplace port mig_reset -pg 1 -y 20 -defaultsOSRD
+preplace port ddr3_sdram -pg 1 -y 20 -defaultsOSRD
+preplace port mig_200Mhz_diff_clock -pg 1 -y 40 -defaultsOSRD
+preplace port pcie_ref_clk -pg 1 -y 60 -defaultsOSRD
+preplace port pcie_rst_n -pg 1 -y 80 -defaultsOSRD
+preplace port led_8bits -pg 1 -y 40 -defaultsOSRD
+preplace port pcie_7x_mgt -pg 1 -y 60 -defaultsOSRD
+preplace inst pcie_axi_brdg -pg 1 -lvl 1 -y 110 -defaultsOSRD
+preplace inst pcie_7x_0 -pg 1 -lvl 2 -y 490 -defaultsOSRD
+preplace inst mig_7series_0 -pg 1 -lvl 1 -y 1110 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 1 -y 820 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 1 -y 930 -defaultsOSRD
+preplace inst rst_mig_7series_0_200M -pg 1 -lvl 2 -y 1040 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 1 -y 439 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 1 -y 700 -defaultsOSRD
+preplace inst rst_pcie_sys_250M -pg 1 -lvl 3 -y 520 -defaultsOSRD
+preplace netloc mig_7series_0_mmcm_locked 1 1 1 610
+preplace netloc mig_7series_0_DDR3 1 1 4 620 1130 NJ 1130 NJ 1130 NJ
+preplace netloc rst_mig_7series_0_200M1_peripheral_aresetn 1 0 4 290 269 NJ 269 NJ 269 1390
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 0 2 300 990 620
+preplace netloc pcie_axi_stream_to_axi_lite_bridge_0_m_axis_tx 1 1 1 650
+preplace netloc pcie_7x_0_pcie_7x_mgt 1 2 3 1040 280 NJ 60 NJ
+preplace netloc axi_interconnect_0_M02_AXI 1 0 2 300 279 620
+preplace netloc axi_bram_ctrl_0_BRAM_PORTB 1 0 2 310 1000 610
+preplace netloc sys_rst_n_1 1 0 2 220 609 NJ
+preplace netloc sys_clk_1 1 0 2 NJ 599 640
+preplace netloc pcie_7x_0_user_reset_out 1 2 1 N
+preplace netloc sys_diff_clock_1 1 0 1 230
+preplace netloc rst_mig_7series_0_200M_peripheral_aresetn 1 0 3 260 1200 NJ 1200 1020
+preplace netloc mig_7series_0_ui_clk 1 0 2 290 1010 640
+preplace netloc S00_AXI_1 1 0 2 310 190 610
+preplace netloc pcie_7x_0_user_clk_out 1 0 3 280 259 NJ 259 1030
+preplace netloc pcie_7x_0_m_axis_rx 1 0 3 310 30 NJ 30 1020
+preplace netloc axi_interconnect_0_M00_AXI 1 0 2 310 1020 630
+preplace netloc axi_gpio_0_GPIO 1 1 4 NJ 820 NJ 820 NJ 820 1450
+preplace netloc pcie_7x_0_user_lnk_up 1 0 3 270 619 NJ 619 1020
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 1 1 650
+preplace netloc axi_interconnect_0_M01_AXI 1 0 2 310 630 610
+preplace netloc reset_1 1 0 1 240
+levelinfo -pg 1 200 460 850 1220 1420 1470
+",
+}

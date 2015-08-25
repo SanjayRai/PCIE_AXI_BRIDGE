@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2014.4 (64-bit)              -->
+<!-- Product Version: Vivado v2015.2 (64-bit)              -->
 <!--                                                         -->
-<!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
+<!-- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="/home/sanjayr/projects/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.xpr">
+<Project Version="7" Minor="5" Path="/home/sanjayr/projects/boeing/IPI_demo/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/pcie_axi_stream_to_axi_lite_bridge/pcie_axi_stream_to_axi_lite_bridge.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="7fb6cf279bcf41109dbdafa3d53e7e5a"/>
+    <Option Name="Id" Val="995ea09069084e54b6c0a2ff1a6e557b"/>
     <Option Name="Part" Val="xc7k325tffg900-2"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="EnableCoreContainer" Val="FALSE"/>
+    <Option Name="EnableCoreContainerForIPI" Val="FALSE"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -19,7 +21,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/PIO_RX_ENGINE.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/PIO_RX_ENGINE.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -28,7 +30,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/PIO_TX_ENGINE.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/PIO_TX_ENGINE.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -37,7 +39,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/PIO_EP.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/PIO_EP.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -46,7 +48,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/PIO_TO_CTRL.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/PIO_TO_CTRL.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -55,7 +57,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/PIO.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/PIO.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -64,7 +66,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/pcie_app_7x.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/pcie_app_7x.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -73,7 +75,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/axi_lite_master_if.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/axi_lite_master_if.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -82,7 +84,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/axiLite_debug.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/axiLite_debug.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -91,7 +93,7 @@
       <File Path="$PSRCDIR/sources_1/imports/common_src/pcie_axi_stream_to_axi_lite_bridge.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../common_src/pcie_axi_stream_to_axi_lite_bridge.v"/>
-          <Attr Name="ImportTime" Val="1424014197"/>
+          <Attr Name="ImportTime" Val="1440439742"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -127,7 +129,10 @@
       <Option Name="CompiledLib" Val="0"/>
     </Simulator>
     <Simulator Name="ModelSim">
-      <Option Name="Description" Val="QuestaSim/ModelSim Simulator"/>
+      <Option Name="Description" Val="ModelSim Simulator"/>
+    </Simulator>
+    <Simulator Name="Questa">
+      <Option Name="Description" Val="Questa Advanced Simulator"/>
     </Simulator>
     <Simulator Name="IES">
       <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
@@ -135,11 +140,14 @@
     <Simulator Name="VCS">
       <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
     </Simulator>
+    <Simulator Name="Riviera">
+      <Option Name="Description" Val="Riviera-PRO Simulator"/>
+    </Simulator>
   </Simulators>
   <Runs Version="1" Minor="9">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7k325tffg900-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015">
           <Desc>Vivado Synthesis Defaults</Desc>
         </StratHandle>
         <Step Id="synth_design"/>
@@ -147,7 +155,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7k325tffg900-2" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" SynthRun="synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015">
           <Desc>Vivado Implementation Defaults</Desc>
         </StratHandle>
         <Step Id="init_design"/>

@@ -1,0 +1,25 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date         : Mon Aug 24 15:44:02 2015
+| Host         : MC32GBLNX running 64-bit CentOS release 6.7 (Final)
+| Command      : upgrade_ip
+| Device       : xc7k325tffg900-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'pcie_7x_gen2x8_core'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of pcie_7x_gen2x8_core from xilinx.com:ip:pcie_7x:3.0 (Rev. 4) to xilinx.com:ip:pcie_7x:3.1 (Rev. 1)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading IP 'pcie_7x_gen2x8_core'.
+
+
+-upgrade has added interface 'pcie2_ext_pipe_ep'
+-upgrade has added interface 'pcie2_ext_pipe_ep_legacy'
+

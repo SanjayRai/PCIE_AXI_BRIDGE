@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_gt_top.v
-// Version    : 3.0
+// Version    : 3.1
 //-- Description: GTX module for 7-series Integrated PCIe Block
 //--
 //--
@@ -337,6 +337,7 @@ module A7_gen1x1_pcie_gt_top #
   input                                         PIPE_RXPRBSCNTRESET,
   input       [ 2:0]                            PIPE_LOOPBACK,
   output      [LINK_CAP_MAX_LINK_WIDTH-1:0]     PIPE_RXPRBSERR,
+  input       [LINK_CAP_MAX_LINK_WIDTH-1:0]     PIPE_TXINHIBIT,
 
   //-----------Channel DRP----------------------------------------
   output                                          ext_ch_gt_drpclk,
@@ -628,8 +629,8 @@ A7_gen1x1_pcie_pipe_wrapper #
     .PIPE_TXPRBSFORCEERR      ( PIPE_TXPRBSFORCEERR ),
     .PIPE_RXPRBSCNTRESET      ( PIPE_RXPRBSCNTRESET ),
     .PIPE_LOOPBACK            ( PIPE_LOOPBACK ),
-
     .PIPE_RXPRBSERR           ( PIPE_RXPRBSERR ),
+    .PIPE_TXINHIBIT           ( PIPE_TXINHIBIT ),
 
     .PIPE_RST_FSM             ( PIPE_RST_FSM ),
     .PIPE_QRST_FSM            ( PIPE_QRST_FSM ),

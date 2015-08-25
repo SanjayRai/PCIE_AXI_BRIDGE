@@ -49,7 +49,7 @@
 ##-----------------------------------------------------------------------------
 ## Project    : Series-7 Integrated Block for PCI Express
 ## File       : A7_gen1x1_pcie-PCIE_X0Y0.xdc
-## Version    : 3.0
+## Version    : 3.1
 #
 ###############################################################################
 # User Time Names / User Time Groups / Time Specs
@@ -116,7 +116,6 @@ set_case_analysis 0 [get_pins {inst/gt_top.gt_top_i/pipe_wrapper_i/pipe_clock_in
 set_property DONT_TOUCH true [get_cells -of [get_nets -of [get_pins {inst/gt_top.gt_top_i/pipe_wrapper_i/pipe_clock_int.pipe_clock_i/pclk_i1_bufgctrl.pclk_i1/S0}]]]
 #
 #
-
 # Timing ignoring the below pins to avoid CDC analysis, but care has been taken in RTL to sync properly to other clock domain.
 #
 #

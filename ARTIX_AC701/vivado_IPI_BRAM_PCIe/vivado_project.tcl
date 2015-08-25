@@ -8,7 +8,8 @@ update_ip_catalog
 source ./create_pcie_sybsys_BRAM_ONLY.tcl
 validate_bd_design
 save_bd_design
-generate_target all [get_files ./project_X/project_X.srcs/sources_1/bd/pcie_gen1x1_sub_sys/pcie_gen1x1_sub_sys.bd]
+#generate_target all [get_files ./project_X/project_X.srcs/sources_1/bd/pcie_gen1x1_sub_sys/pcie_gen1x1_sub_sys.bd]
+add_files ./pcie_gen1x1_sub_sys_wrapper.v
 add_files -fileset constrs_1 ./pcie_gen1x1_sub_sys_wrapper.xdc
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1

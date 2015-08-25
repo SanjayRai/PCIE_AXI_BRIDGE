@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_gtp_pipe_drp.v
-// Version    : 3.0
+// Version    : 3.1
 //------------------------------------------------------------------------------
 //  Filename     :  gtp_pipe_drp.v
 //  Description  :  GTP PIPE DRP Module for 7 Series Transceiver
@@ -248,7 +248,7 @@ begin
         begin
         fsm   <= FSM_IDLE;
         index <= 5'd0;
-        done  <= 1'd0;
+        done  <= 1'd1; //Fix applied for GTP DRP issue
         end
     else
         begin
@@ -330,7 +330,7 @@ begin
                 begin
                 fsm   <= FSM_IDLE;
                 index <= 5'd0;
-                done  <= 1'd0;
+                done  <= 1'd1;	//Fix applied for GTP DRP issue
                 end
             else       
                 begin
@@ -346,7 +346,7 @@ begin
             begin      
             fsm   <= FSM_IDLE;
             index <= 5'd0;
-            done  <= 1'd0;
+            done  <= 1'd1; //Fix applied for GTP DRP issue
             end
             
         endcase

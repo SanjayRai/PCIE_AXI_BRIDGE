@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_qpll_wrapper.v
-// Version    : 3.0
+// Version    : 3.1
 //------------------------------------------------------------------------------
 //  Filename     :  qpll_wrapper.v
 //  Description  :  QPLL Wrapper Module for 7 Series Transceiver

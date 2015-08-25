@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_pipe_eq.v
-// Version    : 3.0
+// Version    : 3.1
 //------------------------------------------------------------------------------
 //  Filename     :  pipe_eq.v
 //  Description  :  PIPE Equalization Module for 7 Series Transceiver

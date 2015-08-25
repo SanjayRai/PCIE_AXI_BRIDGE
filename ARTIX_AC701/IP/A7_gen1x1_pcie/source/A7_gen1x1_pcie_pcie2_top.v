@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_pcie2_top.v
-// Version    : 3.0
+// Version    : 3.1
 
 //--------------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@
 `timescale 1ns/1ps
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module A7_gen1x1_pcie_pcie2_top # (
-parameter     c_component_name ="pcie_7x_v3_0",
+parameter     c_component_name ="pcie_7x_v3_1",
 parameter     dev_port_type ="0000",
 parameter     c_dev_port_type ="0",
 parameter     c_header_type ="00",
@@ -271,7 +271,8 @@ parameter     EXT_PIPE_INTERFACE = "FALSE",
 parameter     EXT_STARTUP_PRIMITIVE = "FALSE",
 parameter  integer   LINK_CAP_MAX_LINK_WIDTH = 6'h8,
 parameter  integer   C_DATA_WIDTH = 64, 
-parameter  integer   KEEP_WIDTH = C_DATA_WIDTH / 8
+parameter  integer   KEEP_WIDTH = C_DATA_WIDTH / 8,
+parameter  PCIE_ASYNC_EN = "FALSE"
 
 )
 (
@@ -613,6 +614,7 @@ parameter  integer   KEEP_WIDTH = C_DATA_WIDTH / 8
   input       [ 2:0]   pipe_loopback,
 
   output      [LINK_CAP_MAX_LINK_WIDTH-1:0]     pipe_rxprbserr,
+  input       [LINK_CAP_MAX_LINK_WIDTH-1:0]     pipe_txinhibit,
 
   output      [4:0]                             pipe_rst_fsm,
   output      [11:0]                            pipe_qrst_fsm,
@@ -943,6 +945,7 @@ A7_gen1x1_pcie_core_top  # (
     .pipe_rxprbscntreset                        (pipe_rxprbscntreset),
     .pipe_loopback                              (pipe_loopback ),
     .pipe_rxprbserr                             (pipe_rxprbserr),
+    .pipe_txinhibit                             (pipe_txinhibit),
     .pipe_rst_fsm                               (pipe_rst_fsm),
     .pipe_qrst_fsm                              (pipe_qrst_fsm),
     .pipe_rate_fsm                              (pipe_rate_fsm),
