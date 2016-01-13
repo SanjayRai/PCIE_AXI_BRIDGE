@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_gt_wrapper.v
-// Version    : 3.1
+// Version    : 3.2
 //------------------------------------------------------------------------------
 //  Filename     :  gt_wrapper.v
 //  Description  :  GT Wrapper Module for 7 Series Transceiver

@@ -10,7 +10,7 @@
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2015.2
+set scripts_vivado_version 2015.4
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -364,33 +364,52 @@ proc create_root_design { parentCell } {
   set ddr3_sdram [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 ddr3_sdram ]
   set led_8bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 led_8bits ]
   set mig_200Mhz_diff_clock [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 mig_200Mhz_diff_clock ]
-  set_property -dict [ list CONFIG.FREQ_HZ {200000000}  ] $mig_200Mhz_diff_clock
+  set_property -dict [ list \
+CONFIG.FREQ_HZ {200000000} \
+ ] $mig_200Mhz_diff_clock
   set pcie_7x_mgt [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:pcie_7x_mgt_rtl:1.0 pcie_7x_mgt ]
 
   # Create ports
   set mig_reset [ create_bd_port -dir I -type rst mig_reset ]
-  set_property -dict [ list CONFIG.POLARITY {ACTIVE_HIGH}  ] $mig_reset
+  set_property -dict [ list \
+CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] $mig_reset
   set pcie_ref_clk [ create_bd_port -dir I -type clk pcie_ref_clk ]
   set pcie_rst_n [ create_bd_port -dir I -type rst pcie_rst_n ]
 
   # Create instance: axi_bram_ctrl_0, and set properties
   set axi_bram_ctrl_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.0 axi_bram_ctrl_0 ]
-  set_property -dict [ list CONFIG.SUPPORTS_NARROW_BURST {0}  ] $axi_bram_ctrl_0
+  set_property -dict [ list \
+CONFIG.SUPPORTS_NARROW_BURST {0} \
+ ] $axi_bram_ctrl_0
 
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
-  set_property -dict [ list CONFIG.GPIO_BOARD_INTERFACE {led_8bits} CONFIG.USE_BOARD_FLOW {true}  ] $axi_gpio_0
+  set_property -dict [ list \
+CONFIG.GPIO_BOARD_INTERFACE {led_8bits} \
+CONFIG.USE_BOARD_FLOW {true} \
+ ] $axi_gpio_0
 
   # Create instance: axi_interconnect_0, and set properties
   set axi_interconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0 ]
-  set_property -dict [ list CONFIG.NUM_MI {3} CONFIG.S00_HAS_REGSLICE {3}  ] $axi_interconnect_0
+  set_property -dict [ list \
+CONFIG.NUM_MI {3} \
+CONFIG.S00_HAS_REGSLICE {3} \
+ ] $axi_interconnect_0
 
   # Create instance: blk_mem_gen_0, and set properties
-  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.2 blk_mem_gen_0 ]
-  set_property -dict [ list CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Use_RSTB_Pin {true}  ] $blk_mem_gen_0
+  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.3 blk_mem_gen_0 ]
+  set_property -dict [ list \
+CONFIG.Enable_B {Use_ENB_Pin} \
+CONFIG.Memory_Type {True_Dual_Port_RAM} \
+CONFIG.Port_B_Clock {100} \
+CONFIG.Port_B_Enable_Rate {100} \
+CONFIG.Port_B_Write_Rate {50} \
+CONFIG.Use_RSTB_Pin {true} \
+ ] $blk_mem_gen_0
 
   # Create instance: mig_7series_0, and set properties
-  set mig_7series_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:2.3 mig_7series_0 ]
+  set mig_7series_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mig_7series:2.4 mig_7series_0 ]
 
   # Generate the PRJ File for MIG
   set str_mig_folder [get_property IP_DIR [ get_ips [ get_property CONFIG.Component_Name $mig_7series_0 ] ] ]
@@ -399,34 +418,60 @@ proc create_root_design { parentCell } {
 
   write_mig_file_pcie_gen2x8_sub_sys_mig_7series_0_0 $str_mig_file_path
 
-  set_property -dict [ list CONFIG.MIG_DONT_TOUCH_PARAM {Custom} CONFIG.RESET_BOARD_INTERFACE {reset} CONFIG.XML_INPUT_FILE {mig_a.prj}  ] $mig_7series_0
+  set_property -dict [ list \
+CONFIG.MIG_DONT_TOUCH_PARAM {Custom} \
+CONFIG.RESET_BOARD_INTERFACE {reset} \
+CONFIG.XML_INPUT_FILE {mig_a.prj} \
+ ] $mig_7series_0
 
   # Create instance: pcie_7x_0, and set properties
-  set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.1 pcie_7x_0 ]
-  set_property -dict [ list CONFIG.Bar0_Scale {Gigabytes} \
-CONFIG.Bar0_Size {1} CONFIG.Bar1_Enabled {false} \
-CONFIG.Bar2_Enabled {false} CONFIG.Bar3_Enabled {false} \
-CONFIG.Device_ID {7028} CONFIG.Interface_Width {128_bit} \
-CONFIG.Link_Speed {5.0_GT/s} CONFIG.Max_Payload_Size {256_bytes} \
-CONFIG.Maximum_Link_Width {X8} CONFIG.Trgt_Link_Speed {4'h2} \
-CONFIG.User_Clk_Freq {250} CONFIG.Xlnx_Ref_Board {KC705_REVC} \
-CONFIG.cfg_ctl_if {false} CONFIG.cfg_fc_if {false} \
-CONFIG.cfg_mgmt_if {false} CONFIG.cfg_status_if {false} \
-CONFIG.en_ext_clk {false} CONFIG.err_reporting_if {false} \
-CONFIG.mode_selection {Advanced} CONFIG.pl_interface {false} \
-CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
+  set pcie_7x_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:pcie_7x:3.2 pcie_7x_0 ]
+  set_property -dict [ list \
+CONFIG.Bar0_Scale {Gigabytes} \
+CONFIG.Bar0_Size {1} \
+CONFIG.Bar1_Enabled {false} \
+CONFIG.Bar2_Enabled {false} \
+CONFIG.Bar3_Enabled {false} \
+CONFIG.Device_ID {7028} \
+CONFIG.Interface_Width {128_bit} \
+CONFIG.Link_Speed {5.0_GT/s} \
+CONFIG.Max_Payload_Size {256_bytes} \
+CONFIG.Maximum_Link_Width {X8} \
+CONFIG.Trgt_Link_Speed {4'h2} \
+CONFIG.User_Clk_Freq {250} \
+CONFIG.Xlnx_Ref_Board {KC705_REVC} \
+CONFIG.cfg_ctl_if {false} \
+CONFIG.cfg_fc_if {false} \
+CONFIG.cfg_mgmt_if {false} \
+CONFIG.cfg_status_if {false} \
+CONFIG.en_ext_clk {false} \
+CONFIG.err_reporting_if {false} \
+CONFIG.mode_selection {Advanced} \
+CONFIG.pl_interface {false} \
+CONFIG.rcv_msg_if {false} \
+ ] $pcie_7x_0
 
   # Create instance: pcie_axi_brdg, and set properties
   set pcie_axi_brdg [ create_bd_cell -type ip -vlnv sanjayr:user:pcie_axi_stream_to_axi_lite_bridge:1.0 pcie_axi_brdg ]
-  set_property -dict [ list CONFIG.AXI_BAR_0_ADDR {0x20000000} CONFIG.AXI_BAR_0_MASK {0xC0000000} CONFIG.AXI_BAR_1_ADDR {0x40000000} CONFIG.AXI_BAR_2_ADDR {0x60000000} CONFIG.AXI_BAR_3_ADDR {0x80000000}  ] $pcie_axi_brdg
+  set_property -dict [ list \
+CONFIG.AXI_BAR_0_ADDR {0x20000000} \
+CONFIG.AXI_BAR_0_MASK {0xC0000000} \
+CONFIG.AXI_BAR_1_ADDR {0x40000000} \
+CONFIG.AXI_BAR_2_ADDR {0x60000000} \
+CONFIG.AXI_BAR_3_ADDR {0x80000000} \
+ ] $pcie_axi_brdg
 
   # Create instance: rst_mig_7series_0_200M, and set properties
   set rst_mig_7series_0_200M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_mig_7series_0_200M ]
-  set_property -dict [ list CONFIG.C_AUX_RESET_HIGH {0}  ] $rst_mig_7series_0_200M
+  set_property -dict [ list \
+CONFIG.C_AUX_RESET_HIGH {0} \
+ ] $rst_mig_7series_0_200M
 
   # Create instance: rst_pcie_sys_250M, and set properties
   set rst_pcie_sys_250M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_pcie_sys_250M ]
-  set_property -dict [ list CONFIG.C_AUX_RESET_HIGH {0}  ] $rst_pcie_sys_250M
+  set_property -dict [ list \
+CONFIG.C_AUX_RESET_HIGH {0} \
+ ] $rst_pcie_sys_250M
 
   # Create interface connections
   connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins axi_interconnect_0/S00_AXI] [get_bd_intf_pins pcie_axi_brdg/M_AXI]
@@ -459,7 +504,53 @@ CONFIG.rcv_msg_if {false}  ] $pcie_7x_0
   create_bd_addr_seg -range 0x10000 -offset 0x40000000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
   create_bd_addr_seg -range 0x10000 -offset 0x40010000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x20000000 -offset 0x20000000 [get_bd_addr_spaces pcie_axi_brdg/M_AXI] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
-  
+
+  # Perform GUI Layout
+  regenerate_bd_layout -layout_string {
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.8
+#  -string -flagsOSRD
+preplace port mig_reset -pg 1 -y 20 -defaultsOSRD
+preplace port ddr3_sdram -pg 1 -y 20 -defaultsOSRD
+preplace port mig_200Mhz_diff_clock -pg 1 -y 40 -defaultsOSRD
+preplace port pcie_ref_clk -pg 1 -y 60 -defaultsOSRD
+preplace port pcie_rst_n -pg 1 -y 80 -defaultsOSRD
+preplace port led_8bits -pg 1 -y 40 -defaultsOSRD
+preplace port pcie_7x_mgt -pg 1 -y 60 -defaultsOSRD
+preplace inst pcie_axi_brdg -pg 1 -lvl 1 -y 110 -defaultsOSRD
+preplace inst pcie_7x_0 -pg 1 -lvl 2 -y 490 -defaultsOSRD
+preplace inst mig_7series_0 -pg 1 -lvl 1 -y 1110 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 1 -y 820 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 1 -y 930 -defaultsOSRD
+preplace inst rst_mig_7series_0_200M -pg 1 -lvl 2 -y 1040 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 1 -y 439 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 1 -y 700 -defaultsOSRD
+preplace inst rst_pcie_sys_250M -pg 1 -lvl 3 -y 520 -defaultsOSRD
+preplace netloc mig_7series_0_mmcm_locked 1 1 1 670
+preplace netloc mig_7series_0_DDR3 1 1 4 640 20 NJ 20 NJ 20 NJ
+preplace netloc rst_mig_7series_0_200M1_peripheral_aresetn 1 0 4 260 240 NJ 240 NJ 240 1390
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 0 2 310 620 610
+preplace netloc pcie_7x_0_pcie_7x_mgt 1 2 3 1050 60 NJ 60 NJ
+preplace netloc pcie_axi_stream_to_axi_lite_bridge_0_m_axis_tx 1 1 1 670
+preplace netloc axi_interconnect_0_M02_AXI 1 0 2 300 280 610
+preplace netloc axi_bram_ctrl_0_BRAM_PORTB 1 0 2 320 630 600
+preplace netloc sys_rst_n_1 1 0 2 250 30 NJ
+preplace netloc sys_clk_1 1 0 2 NJ 20 620
+preplace netloc pcie_7x_0_user_reset_out 1 2 1 N
+preplace netloc sys_diff_clock_1 1 0 1 240
+preplace netloc rst_mig_7series_0_200M_peripheral_aresetn 1 0 3 260 1200 NJ 1200 1020
+preplace netloc mig_7series_0_ui_clk 1 0 2 290 610 630
+preplace netloc S00_AXI_1 1 0 2 320 200 600
+preplace netloc pcie_7x_0_user_clk_out 1 0 3 250 250 NJ 250 1040
+preplace netloc axi_gpio_0_GPIO 1 1 4 NJ 40 NJ 40 NJ 40 N
+preplace netloc pcie_7x_0_m_axis_rx 1 0 3 300 190 NJ 190 1030
+preplace netloc axi_interconnect_0_M00_AXI 1 0 2 280 600 600
+preplace netloc pcie_7x_0_user_lnk_up 1 0 3 310 230 NJ 230 1020
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 1 1 660
+preplace netloc axi_interconnect_0_M01_AXI 1 0 2 270 270 630
+preplace netloc reset_1 1 0 1 220
+levelinfo -pg 1 200 460 850 1220 1420 1470 -top 0 -bot 1210
+",
+}
 
   # Restore current instance
   current_bd_instance $oldCurInst

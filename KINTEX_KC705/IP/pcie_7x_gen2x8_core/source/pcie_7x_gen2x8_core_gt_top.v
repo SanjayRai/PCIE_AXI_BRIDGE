@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : pcie_7x_gen2x8_core_gt_top.v
-// Version    : 3.1
+// Version    : 3.2
 //-- Description: GTX module for 7-series Integrated PCIe Block
 //--
 //--

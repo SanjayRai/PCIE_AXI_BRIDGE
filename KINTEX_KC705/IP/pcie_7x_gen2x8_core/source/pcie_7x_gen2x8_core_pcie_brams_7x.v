@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : pcie_7x_gen2x8_core_pcie_brams_7x.v
-// Version    : 3.1
+// Version    : 3.2
 //  Description : pcie bram wrapper
 //                arrange and connect brams
 //                implement address decoding, datapath muxing and pipeline stages

@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : pcie_7x_gen2x8_core_gtp_pipe_drp.v
-// Version    : 3.1
+// Version    : 3.2
 //------------------------------------------------------------------------------
 //  Filename     :  gtp_pipe_drp.v
 //  Description  :  GTP PIPE DRP Module for 7 Series Transceiver

@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : pcie_7x_gen2x8_core_pcie_bram_top_7x.v
-// Version    : 3.1
+// Version    : 3.2
 //  Description : bram wrapper for Tx and Rx
 //                given the pcie block attributes calculate the number of brams
 //                and pipeline stages and instantiate the brams

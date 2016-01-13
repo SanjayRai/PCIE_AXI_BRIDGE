@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_pipe_clock.v
-// Version    : 3.1
+// Version    : 3.2
 //------------------------------------------------------------------------------
 //  Filename     :  pipe_clock.v
 //  Description  :  PIPE Clock Module for 7 Series Transceiver

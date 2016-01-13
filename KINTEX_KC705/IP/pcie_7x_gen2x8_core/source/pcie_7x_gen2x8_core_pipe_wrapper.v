@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : pcie_7x_gen2x8_core_pipe_wrapper.v
-// Version    : 3.1
+// Version    : 3.2
 //------------------------------------------------------------------------------
 //  Filename     :  pipe_wrapper.v
 //  Description  :  PIPE Wrapper for 7 Series Transceiver

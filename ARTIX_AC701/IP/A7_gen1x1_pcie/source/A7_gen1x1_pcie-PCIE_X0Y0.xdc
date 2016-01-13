@@ -49,7 +49,7 @@
 ##-----------------------------------------------------------------------------
 ## Project    : Series-7 Integrated Block for PCI Express
 ## File       : A7_gen1x1_pcie-PCIE_X0Y0.xdc
-## Version    : 3.1
+## Version    : 3.2
 #
 ###############################################################################
 # User Time Names / User Time Groups / Time Specs

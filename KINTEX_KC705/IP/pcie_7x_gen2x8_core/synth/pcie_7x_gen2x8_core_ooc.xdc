@@ -49,7 +49,7 @@
 ##-----------------------------------------------------------------------------
 ## Project    : Series-7 Integrated Block for PCI Express
 ## File       : pcie_7x_gen2x8_core_ooc.xdc
-## Version    : 3.1
+## Version    : 3.2
 #
 # This constraints file contains default clock frequencies to be used during out-of-context flows such as
 # OOC Synthesis and Hierarchical Designs. For best results the frequencies should be modified

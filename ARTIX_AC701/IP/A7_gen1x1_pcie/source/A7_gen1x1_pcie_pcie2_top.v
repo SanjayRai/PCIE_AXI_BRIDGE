@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_pcie2_top.v
-// Version    : 3.1
+// Version    : 3.2
 
 //--------------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@
 `timescale 1ns/1ps
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module A7_gen1x1_pcie_pcie2_top # (
-parameter     c_component_name ="pcie_7x_v3_1",
+parameter     c_component_name ="pcie_7x_v3_2_1",
 parameter     dev_port_type ="0000",
 parameter     c_dev_port_type ="0",
 parameter     c_header_type ="00",

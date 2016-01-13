@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_pcie_pipe_misc.v
-// Version    : 3.1
+// Version    : 3.2
 //
 // Description: Misc PIPE module for 7-Series PCIe Block
 //

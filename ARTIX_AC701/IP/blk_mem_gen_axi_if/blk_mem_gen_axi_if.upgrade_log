@@ -1,5 +1,26 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
+| Date         : Wed Jan 13 09:42:04 2016
+| Host         : centosMC running 64-bit CentOS release 6.7 (Final)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg676-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'blk_mem_gen_axi_if'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of blk_mem_gen_axi_if from xilinx.com:ip:blk_mem_gen:8.2 (Rev. 6) to xilinx.com:ip:blk_mem_gen:8.3 (Rev. 1)
+
+
+
+
+
+
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (lin64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
 | Date         : Mon Aug 24 15:54:27 2015
 | Host         : MC32GBLNX running 64-bit CentOS release 6.7 (Final)

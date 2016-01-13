@@ -15,6 +15,7 @@ add_files -fileset constrs_1 ./pcie_gen1x1_sub_sys_wrapper.xdc
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
 
+if (1) {
 launch_runs synth_1
 wait_on_run synth_1
 open_run synth_1 -name netlist_1
@@ -23,3 +24,4 @@ wait_on_run impl_1
 open_run impl_1
 launch_runs impl_1 -to_step write_bitstream
 wait_on_run impl_1
+}

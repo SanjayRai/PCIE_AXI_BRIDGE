@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : pcie_7x_gen2x8_core_pipe_user.v
-// Version    : 3.1
+// Version    : 3.2
 //------------------------------------------------------------------------------
 //  Filename     :  pipe_user.v
 //  Description  :  PIPE User Module for 7 Series Transceiver

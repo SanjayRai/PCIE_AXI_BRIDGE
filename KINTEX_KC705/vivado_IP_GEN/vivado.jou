@@ -1,11 +1,13 @@
 #-----------------------------------------------------------
-# Vivado v2015.2 (64-bit)
-# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
-# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Mon Aug 24 11:11:12 2015
-# Process ID: 929
-# Log file: /home/sanjayr/projects/boeing/IPI_demo/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.log
-# Journal file: /home/sanjayr/projects/boeing/IPI_demo/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.jou
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Wed Jan 13 11:12:26 2016
+# Process ID: 7381
+# Current directory: /home/sanjayr/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN
+# Command line: vivado -source vivado_project.tcl
+# Log file: /home/sanjayr/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.log
+# Journal file: /home/sanjayr/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.jou
 #-----------------------------------------------------------
 start_gui
 source vivado_project.tcl

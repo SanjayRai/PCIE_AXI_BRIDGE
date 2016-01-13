@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_axi_basic_top.v
-// Version    : 3.1
+// Version    : 3.2
 //                                                                            //
 //  Description:                                                              //
 //  TRN/AXI4-S Bridge top level module. Instantiates RX and TX modules.       //

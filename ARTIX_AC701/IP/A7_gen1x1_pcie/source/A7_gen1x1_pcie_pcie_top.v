@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_pcie_top.v
-// Version    : 3.1
+// Version    : 3.2
 // Description: Solution wrapper for Virtex7 Hard Block for PCI Express
 //
 //

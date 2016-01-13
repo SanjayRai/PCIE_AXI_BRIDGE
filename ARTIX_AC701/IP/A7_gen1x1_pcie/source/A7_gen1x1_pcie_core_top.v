@@ -49,7 +49,7 @@
 //-----------------------------------------------------------------------------
 // Project    : Series-7 Integrated Block for PCI Express
 // File       : A7_gen1x1_pcie_core_top.v
-// Version    : 3.1
+// Version    : 3.2
 //
 // Description: 7-series solution wrapper : Endpoint for PCI Express
 //
@@ -59,7 +59,7 @@
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "A7_gen1x1_pcie,pcie_7x_v3_1,{LINK_CAP_MAX_LINK_SPEED=1,LINK_CAP_MAX_LINK_WIDTH=1,PCIE_CAP_DEVICE_PORT_TYPE=0000,DEV_CAP_MAX_PAYLOAD_SUPPORTED=2,USER_CLK_FREQ=1,REF_CLK_FREQ=0,MSI_CAP_ON=TRUE,MSI_CAP_MULTIMSGCAP=0,MSI_CAP_MULTIMSG_EXTENSION=0,MSIX_CAP_ON=FALSE,TL_TX_RAM_RADDR_LATENCY=0,TL_TX_RAM_RDATA_LATENCY=2,TL_RX_RAM_RADDR_LATENCY=0,TL_RX_RAM_RDATA_LATENCY=2,TL_RX_RAM_WRITE_LATENCY=0,VC0_TX_LASTPACKET=29,VC0_RX_RAM_LIMIT=7FF,VC0_TOTAL_CREDITS_PH=32,VC0_TOTAL_CREDITS_PD=437,VC0_TOTAL_CREDITS_NPH=12,VC0_TOTAL_CREDITS_NPD=24,VC0_TOTAL_CREDITS_CH=36,VC0_TOTAL_CREDITS_CD=461,VC0_CPL_INFINITE=TRUE,DEV_CAP_PHANTOM_FUNCTIONS_SUPPORT=0,DEV_CAP_EXT_TAG_SUPPORTED=FALSE,LINK_STATUS_SLOT_CLOCK_CONFIG=TRUE,DISABLE_LANE_REVERSAL=TRUE,DISABLE_SCRAMBLING=FALSE,DSN_CAP_ON=TRUE,REVISION_ID=00,VC_CAP_ON=FALSE}" *)
+(* CORE_GENERATION_INFO = "A7_gen1x1_pcie,pcie_7x_v3_2_1,{LINK_CAP_MAX_LINK_SPEED=1,LINK_CAP_MAX_LINK_WIDTH=1,PCIE_CAP_DEVICE_PORT_TYPE=0000,DEV_CAP_MAX_PAYLOAD_SUPPORTED=2,USER_CLK_FREQ=1,REF_CLK_FREQ=0,MSI_CAP_ON=TRUE,MSI_CAP_MULTIMSGCAP=0,MSI_CAP_MULTIMSG_EXTENSION=0,MSIX_CAP_ON=FALSE,TL_TX_RAM_RADDR_LATENCY=0,TL_TX_RAM_RDATA_LATENCY=2,TL_RX_RAM_RADDR_LATENCY=0,TL_RX_RAM_RDATA_LATENCY=2,TL_RX_RAM_WRITE_LATENCY=0,VC0_TX_LASTPACKET=29,VC0_RX_RAM_LIMIT=7FF,VC0_TOTAL_CREDITS_PH=32,VC0_TOTAL_CREDITS_PD=437,VC0_TOTAL_CREDITS_NPH=12,VC0_TOTAL_CREDITS_NPD=24,VC0_TOTAL_CREDITS_CH=36,VC0_TOTAL_CREDITS_CD=461,VC0_CPL_INFINITE=TRUE,DEV_CAP_PHANTOM_FUNCTIONS_SUPPORT=0,DEV_CAP_EXT_TAG_SUPPORTED=FALSE,LINK_STATUS_SLOT_CLOCK_CONFIG=TRUE,DISABLE_LANE_REVERSAL=TRUE,DISABLE_SCRAMBLING=FALSE,DSN_CAP_ON=TRUE,REVISION_ID=00,VC_CAP_ON=FALSE}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module A7_gen1x1_pcie_core_top # (
   parameter         CFG_VEND_ID        = 16'h10EE,
@@ -986,8 +986,9 @@ module A7_gen1x1_pcie_core_top # (
   wire  [2:0]          pipe_rx7_status_gt;
   wire                 pipe_rx7_valid_gt;
 
-  reg                  user_lnk_up_int;
-  reg                  user_reset_int;
+  (* ASYNC_REG = "TRUE" *) reg user_lnk_up_mux;
+  (* KEEP = "TRUE", ASYNC_REG = "TRUE" *) reg user_lnk_up_int;
+  reg user_reset_int;
 
   reg                  bridge_reset_int;
   reg                  bridge_reset_d;
@@ -1001,7 +1002,6 @@ module A7_gen1x1_pcie_core_top # (
 
   wire [5:0]           pl_ltssm_state_int;
   wire                 user_app_rdy_req;
-  reg                  user_lnk_up_mux;
 
   localparam        TCQ = 100;
   localparam        ENABLE_FAST_SIM_TRAINING   = "TRUE";
