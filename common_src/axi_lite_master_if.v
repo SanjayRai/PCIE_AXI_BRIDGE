@@ -1,5 +1,6 @@
 module axi_lite_master_if #
 (
+        parameter BIG_ENDIAN                    = 1'b0,
         parameter AXI_BAR_0_ADDR                = 32'h10000000,
         parameter AXI_BAR_0_MASK                = 32'hFFFF8000,
         parameter AXI_BAR_1_ADDR                = 32'h20000000,
@@ -66,12 +67,10 @@ wire    rd_en_pulse;
 //Adding the offset address to the base addr of the slave
 assign AXI_WR_BAR_INDEX    = wr_addr[31:30]; 
 assign M_AXI_AWADDR	= i_M_AXI_AWADDR;
-assign M_AXI_WDATA	= wr_data;
 assign M_AXI_AWPROT	= 3'b000;
 assign M_AXI_AWVALID	= axi_awvalid;
 assign M_AXI_WVALID	= axi_wvalid;
 //Set all byte strobes in this example
-assign M_AXI_WSTRB	= wr_be; 
 //Write Response (B)
 assign M_AXI_BREADY	= axi_bready;
 //Read Address (AR)
@@ -81,9 +80,20 @@ assign M_AXI_ARVALID	= axi_arvalid;
 assign M_AXI_ARPROT	= 3'b001;
 //Read and Read Response (R)
 assign M_AXI_RREADY	= axi_rready;
-assign rd_data = axi_rddata;
 assign rd_data_valid = axi_rready;
 assign wr_busy = ~M_AXI_BVALID;
+
+generate 
+    if (BIG_ENDIAN) begin
+        assign rd_data = {axi_rddata[7:0], axi_rddata[15:8], axi_rddata[23:16], axi_rddata[31:24]};
+        assign M_AXI_WDATA = {wr_data[7:0], wr_data[15:8], wr_data[23:16], wr_data[31:24]};
+        assign M_AXI_WSTRB = {wr_be[0], wr_be[1], wr_be[2], wr_be[3]}; 
+    end else begin
+        assign rd_data = axi_rddata;
+        assign M_AXI_WDATA = wr_data;
+        assign M_AXI_WSTRB = wr_be; 
+    end
+endgenerate
 
   always @(posedge M_AXI_ACLK) begin                                                                        
     if (wr_en_pulse) begin 

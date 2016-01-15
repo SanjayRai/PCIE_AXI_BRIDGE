@@ -192,17 +192,7 @@ A7_gen1x1_pcie A7_gen1x1_pcie_i
 
 );
 
-pcie_axi_stream_to_axi_lite_bridge # (
-  .C_DATA_WIDTH(C_DATA_WIDTH),            // RX/TX interface data width
-  .AXI_BAR_0_ADDR(AXI_BAR_0_ADDR), // AXI BAR 0 Address
-  .AXI_BAR_0_MASK(AXI_BAR_0_MASK), // AXI BAR 0 MASK - Must match PCIe BAR MASK (dtermines BAR Address Size)
-  .AXI_BAR_1_ADDR(AXI_BAR_1_ADDR), // AXI BAR 1 Address
-  .AXI_BAR_1_MASK(AXI_BAR_1_MASK), // AXI BAR 1 MASK - Must match PCIe BAR MASK (dtermines BAR Address Size)
-  .AXI_BAR_2_ADDR(AXI_BAR_2_ADDR), // AXI BAR 2 Address
-  .AXI_BAR_2_MASK(AXI_BAR_2_MASK), // AXI BAR 2 MASK - Must match PCIe BAR MASK (dtermines BAR Address Size)
-  .AXI_BAR_3_ADDR(AXI_BAR_3_ADDR), // AXI BAR 3 Address
-  .AXI_BAR_3_MASK(AXI_BAR_3_MASK)  // AXI BAR 3 MASK - Must match PCIe BAR MASK (dtermines BAR Address Size)
-  ) u_pcie_axi_stream_to_axi_lite_bridge (
+pcie_axi_stream_to_axi_lite_bridge_inst u_pcie_axi_stream_to_axi_lite_bridge (
    .user_lnk_up(user_lnk_up),
   .user_clk(user_clk),
 

@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Wed Jan 13 09:35:40 2016
-# Process ID: 12787
+# Start of session at: Thu Jan 14 12:08:44 2016
+# Process ID: 25879
 # Current directory: /home/sanjayr/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN
 # Command line: vivado -source vivado_project.tcl
 # Log file: /home/sanjayr/PCIE_AXI_BRIDGE/ARTIX_AC701/vivado_IP_GEN/vivado.log
@@ -46,6 +46,8 @@ INFO: [IP_Flow 19-2228] Inferred bus interface "user_clk" of definition type "xi
 # set_property company_url {www.xilinx.com} [ipx::current_core]
 WARNING: command 'get_user_parameter' will be removed in the 2015.3 release, use 'get_user_parameters' instead
 # set_property value_validation_list {{128} {64} {32}} [ipx::get_user_parameter C_DATA_WIDTH [ipx::current_core]]
+WARNING: command 'get_user_parameter' will be removed in the 2015.3 release, use 'get_user_parameters' instead
+# set_property value_validation_list {{1} {0}} [ipx::get_user_parameter BIG_ENDIAN [ipx::current_core]]
 # ipx::add_bus_interface {AXI_CLK} [ipx::current_core]
 WARNING: command 'get_bus_interface' will be removed in the 2015.3 release, use 'get_bus_interfaces' instead
 # set_property abstraction_type_vlnv {xilinx.com:signal:clock_rtl:1.0} [ipx::get_bus_interface AXI_CLK [ipx::current_core]]
@@ -81,10 +83,12 @@ WARNING: command 'get_user_parameter' will be removed in the 2015.3 release, use
 # set_property order {10700} [ipx::get_user_parameter AXI_BAR_3_MASK [ipx::current_core]]
 WARNING: command 'get_user_parameter' will be removed in the 2015.3 release, use 'get_user_parameters' instead
 # set_property order {10800} [ipx::get_user_parameter C_DATA_WIDTH [ipx::current_core]]
+WARNING: command 'get_user_parameter' will be removed in the 2015.3 release, use 'get_user_parameters' instead
+# set_property order {10900} [ipx::get_user_parameter BIG_ENDIAN [ipx::current_core]]
 # update_compile_order -fileset sources_1
 # update_compile_order -fileset sim_1
 # ipx::save_core [ipx::current_core]
 # ipx::check_integrity -quiet [ipx::current_core]
 # ipx::archive_core {./pcie_axi_stream_to_axi_lite_bridge.zip} [ipx::current_core]
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Jan 13 09:36:24 2016...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 14 12:11:11 2016...

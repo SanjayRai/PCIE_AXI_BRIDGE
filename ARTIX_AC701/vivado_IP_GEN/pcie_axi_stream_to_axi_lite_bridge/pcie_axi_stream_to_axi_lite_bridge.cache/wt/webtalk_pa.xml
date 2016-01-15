@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Jan 13 09:36:22 2016">
+<application name="pa" timeStamp="Thu Jan 14 12:11:07 2016">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="9584d653952747548daf6b0ed0713195" type="ProjectID"/>
+<property name="ProjectID" value="d674a473e9894a538a17101014ada876" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
@@ -17,9 +17,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="345" type="GuiMode"/>
+<property name="GuiMode" value="368" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="327" type="TclMode"/>
+<property name="TclMode" value="349" type="TclMode"/>
 </item>
 </section>
 </application>

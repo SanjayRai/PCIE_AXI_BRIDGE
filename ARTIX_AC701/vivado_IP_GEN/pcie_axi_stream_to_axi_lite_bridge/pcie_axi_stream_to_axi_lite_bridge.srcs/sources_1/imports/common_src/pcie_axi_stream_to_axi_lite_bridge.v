@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 (* dont_touch="true" *) module pcie_axi_stream_to_axi_lite_bridge # (
-  parameter C_DATA_WIDTH = 128,                           // RX/TX interface data width
+  parameter C_DATA_WIDTH                  = 128,                           // RX/TX interface data width
+  parameter BIG_ENDIAN                    = 1'b0,
   parameter AXI_BAR_0_ADDR                = 32'h10000000, // AXI BAR 0 Address
   parameter AXI_BAR_0_MASK                = 32'hFFFF8000, // AXI BAR 0 MASK - Must match PCIe BAR MASK (dtermines BAR Address Size)
   parameter AXI_BAR_1_ADDR                = 32'h20000000, // AXI BAR 1 Address
@@ -146,6 +147,7 @@ pcie_app_7x  #(
 
 
 axi_lite_master_if # (
+    .BIG_ENDIAN(BIG_ENDIAN),
     .AXI_BAR_0_ADDR(AXI_BAR_0_ADDR),
     .AXI_BAR_0_MASK(AXI_BAR_0_MASK),
     .AXI_BAR_1_ADDR(AXI_BAR_1_ADDR),

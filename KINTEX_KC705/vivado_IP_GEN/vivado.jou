@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Wed Jan 13 11:12:26 2016
-# Process ID: 7381
+# Start of session at: Thu Jan 14 12:42:00 2016
+# Process ID: 22297
 # Current directory: /home/sanjayr/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN
 # Command line: vivado -source vivado_project.tcl
 # Log file: /home/sanjayr/PCIE_AXI_BRIDGE/KINTEX_KC705/vivado_IP_GEN/vivado.log

@@ -30,6 +30,7 @@ set_property vendor_display_name {sanjayr} [ipx::current_core]
 set_property supported_families {{kintex7} {Pre-Production} {kintex7l} {Pre-Production} {qkintex7} {Pre-Production} {qkintex7l} {Pre-Production} {artix7} {Pre-Production} {artix7l} {Pre-Production} {aartix7} {Pre-Production} {qartix7} {Pre-Production} {zynq} {Pre-Production} {qzynq} {Pre-Production} {azynq} {Pre-Production}} [ipx::current_core]
 set_property company_url {www.xilinx.com} [ipx::current_core]
 set_property value_validation_list {{128} {64} {32}} [ipx::get_user_parameter C_DATA_WIDTH [ipx::current_core]]
+set_property value_validation_list {{1} {0}} [ipx::get_user_parameter BIG_ENDIAN [ipx::current_core]]
 
 ipx::add_bus_interface {AXI_CLK} [ipx::current_core]
 set_property abstraction_type_vlnv {xilinx.com:signal:clock_rtl:1.0} [ipx::get_bus_interface AXI_CLK [ipx::current_core]]
@@ -49,6 +50,7 @@ set_property order {10500} [ipx::get_user_parameter AXI_BAR_2_MASK [ipx::current
 set_property order {10600} [ipx::get_user_parameter AXI_BAR_3_ADDR [ipx::current_core]]
 set_property order {10700} [ipx::get_user_parameter AXI_BAR_3_MASK [ipx::current_core]]
 set_property order {10800} [ipx::get_user_parameter C_DATA_WIDTH [ipx::current_core]]
+set_property order {10900} [ipx::get_user_parameter BIG_ENDIAN [ipx::current_core]]
 
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
