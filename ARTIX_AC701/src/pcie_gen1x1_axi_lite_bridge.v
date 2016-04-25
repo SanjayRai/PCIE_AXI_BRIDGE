@@ -192,7 +192,7 @@ A7_gen1x1_pcie A7_gen1x1_pcie_i
 
 );
 
-pcie_axi_stream_to_axi_lite_bridge_inst u_pcie_axi_stream_to_axi_lite_bridge (
+pcie_axi_stream_to_axi_lite_bridge u_pcie_axi_stream_to_axi_lite_bridge (
    .user_lnk_up(user_lnk_up),
   .user_clk(user_clk),
 
